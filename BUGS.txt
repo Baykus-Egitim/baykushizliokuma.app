@@ -1,0 +1,10 @@
++ m1e4: sayı select doğru çalışmıyor
++ module pages: hide info picture in small devices
++ m1e1, m1e2, m2e3: merkezleme hatasını düzelt
++ sigaranın zararları metnini düzelt
++ m2e4: only work again after refresh
++ m4e5, m4e6: date should be included into stats
+- metin sayfa geçişlerinde callback yapıp geçişin tamamlanmasını bekle
+- m3e2: isFirstRun
+- m4e3 algrotihm check
+- m4e6: gölgeleme önce gölgele sonra göster

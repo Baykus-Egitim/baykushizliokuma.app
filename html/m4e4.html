@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Baykuş Hızlı Okuma</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="/app/img/bho_yazısız.png">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/app/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="/app/css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="/app/css/style.css">
+  <!-- Google material icons -->
+  <link href="/app/css/material-design/iconfont/material-icons.css" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/app/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="/app/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="/app/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="/app/js/mdb.min.js"></script>
+  <!-- Timer.js -->
+  <script src="/app/js/easytimer.js/dist/easytimer.js"></script>
+  <!-- Anime.js -->
+  <script src="/app/js/anime/lib/anime.min.js"></script>
+  <!-- Async.js -->
+  <script src="/app/js/async.min.js"></script>
+  <!-- Hotkeys -->
+  <script src="/app/js/hotkeys.min.js"></script>
+  <!-- Common scripts -->
+  <script src="/app/js/common.js"></script>
+  <!-- Templates -->
+  <script src="/app/js/navbar.js"></script>
+  <script src="/app/js/footer.js"></script>
+  <script src="/app/js/modal.js"></script>
+
+
+  <style>
+    html,
+    body {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #playground {
+      font-size: 18px !important;
+      height: calc(100%) !important;
+    }
+
+    input.select-dropdown.form-control {
+      color: "#fff" !important;
+    }
+
+    .word {
+      font-size: 20px !important;
+      font-weight: 500;
+      padding-left: 0.125rem !important;
+      padding-right: 0.125rem !important;
+    }
+
+    #playground {
+      max-width: 1000px !important;
+      font-size: 24px !important;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Start your project here-->
+  <div class="container" style="height: 100vh;">
+    <div id="playground" class="row w-100 h-100 justify-content-center border nodisplay m-auto">
+      <div class="grid m-auto w-100" style="height: 90% !important;"></div>
+    </div>
+    <div id="background" class="row d-flex justify-content-center h-100 align-items-center odisplay">
+      <div id="logo" class="col-12 text-center">
+        <div id="frames" style="position: relative;">
+          <img id="frame" class="visible" src="/app/img/bho_dunya_transparent.png" alt="" srcset="" style="opacity: 0.3;" height=450>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+
+    //==================================
+    // exercise specific global variables
+    //==================================
+    const module = Number(window.location.pathname.split("/")[3])
+    const exercise = Number(window.location.pathname.split("/")[5])
+    const exerciseId = `m${module}e${exercise}`
+    document.title = `BHO : Modül ${module}: Egzersiz ${exercise}`
+    let user = null
+    $.get("/app/user", res => { user = res })
+
+    //==================================
+    // generate view
+    //==================================
+    navbar(module)
+
+    addStartModal2()
+    addScoreModal2()
+    $(document).ready(function () {
+      $("#scoreModalIconCheck").removeClass("nodisplay")
+    })
+
+    footer()
+    addDurationControl("Hız", [950, 800, 650, 500, 350, 250])
+    addLevelControl("Seviye", [1, 2, 3, 4, 5, 6])
+
+    //==================================
+    // initial view functionalities
+    //==================================
+
+
+    // score modal
+    $(document).ready(function () {
+      $('#scoreModal').on('hidden.bs.modal', function (e) {
+        atTheEnd()
+      });
+    })
+
+    //==================================
+    // animation routines
+    //==================================
+    var interval = null
+    timer = null
+    var N = 7
+
+    var activeGridElements = [0, 3, 6, 21, 23, 24, 25, 27, 42, 45, 48]
+    var words = null
+    const angles = [45, 0, -45, -90]
+
+    function createGrid() {
+      var gridElementWidth = $(".grid").width() / N
+      var gridElementHeight = $(".grid").height() / N
+      $(".grid").empty()
+      $(".grid").css("grid-template-columns", `repeat(${N}, ${gridElementWidth}px)`)
+      $(".grid").css("grid-template-rows", `repeat(${N}, ${gridElementHeight}px)`)
+      for (var i = 0; i < N * N; ++i) {
+        $(".grid").append(`<span class="word text-center my-auto"></span>`)
+      }
+    }
+
+    var iteration = 0
+    function loop() {
+      $(".word").text("")
+      const angle = angles[randomInt(0, angles.length)]
+      const word = words[randomInt(0, words.length)]
+      const position = activeGridElements[randomInt(0, activeGridElements.length)]
+      $(`.word:eq(${position})`).css("transform", `rotate(${angle}deg)`);
+      setTimeout(function () { $(`.word:eq(${position})`).text(word) }, 50)
+    }
+
+    function showScore() {
+      $("#scoreModal").modal("show")
+    }
+
+
+    $(document).ready(function () {
+
+
+      $("#start").click(function () {
+        $("nav").addClass("animated fadeOutUp")
+        $("footer").addClass("animated fadeOutDown")
+        $("#background").addClass("animated zoomOut")
+        $(".btn").trigger("blur");
+
+
+        setTimeout(() => {
+          $("#background").addClass("nodisplay")
+          $("#playground").removeClass("nodisplay")
+
+        }, 500);
+        setTimeout(() => {
+          if (level == 1) words = words6
+          else if (level == 2) words = words7
+          else if (level == 3) words = words8
+          else if (level == 4) words = words9
+          else if (level == 5) words = words10
+          else words = phrases2
+          createGrid()
+
+
+
+          // prepare
+          iteration = 0
+          i = 0
+
+          // stopper
+          stopCallback = null
+          isFinished = null
+
+          // esc
+          hotkeys.unbind('esc');
+          hotkeys('esc', function (event, handler) {
+            switch (handler.key) {
+              case 'esc':
+                isFinished = true
+                stopCallback("Finish")
+                break;
+              default: null;
+            }
+          });
+
+          async.series([
+
+            function (callback) {
+              stopCallback = callback
+              if (!isFirstRun) setTimeout(callback, 500)
+              else {
+                $("#startModalCountdown").text(10)
+                let timer2 = new easytimer.Timer();
+               timer2.start({ precision: 'seconds', countdown: true, startValues: { seconds: 10 } });
+                timer2.addEventListener('secondsUpdated', function (e) {
+                  $("#startModalCountdown").text(timer2.getTimeValues().seconds);
+                });
+                timer2.addEventListener('targetAchieved', function (e) {
+                  $("#startModal").modal("hide")
+                });
+                $("#startModal").modal("show")
+                $('#startModal').off('hidden.bs.modal')
+                $('#startModal').on('hidden.bs.modal', function (e) {
+                  setTimeout(callback, 500)
+                  timer2.stop()
+                });
+              }
+            },
+            function (callback) {
+              stopCallback = callback
+              interval = setInterval(loop, duration)
+
+              timer = new easytimer.Timer();
+              timer.start({ precision: 'seconds', countdown: true, startValues: { seconds: 60 } });
+              toastr["info"]("60");
+              timer.addEventListener('secondsUpdated', function (e) {
+                $('.md-toast-message').html(timer.getTimeValues().minutes * 60 + timer.getTimeValues().seconds);
+              });
+              timer.addEventListener('targetAchieved', function (e) {
+                stopCallback()
+              });
+            },
+
+          ],
+            function (err) {
+              clearInterval(interval)
+              isFinished = true
+              if (!err) {
+                console.log("Finish")
+                isFirstRun = false
+                let date = new Date()
+                totalTime = timer.getTimeValues().minutes * 60 + timer.getTimeValues().seconds
+                // let readSpeed = (text.wordCount / totalTime * 60).toFixed(0)
+                $.post(`/app/stats`,
+                  {
+                    exercise: exerciseId,
+                    date: date.toLocaleDateString("tr-TR").split(".").join("/"),
+                    speedLevel: speedLevel,
+                    level: level,
+                    // readSpeed: readSpeed,
+                    // textTitle: text.title
+                  },
+                  res => {
+                    updateScoreTable()
+                  })
+
+                // $("#scoreModalInfo").text(`Okuma hızınız: ${readSpeed} kelime/dakika`)
+                $("#scoreModal").modal("show")
+              }
+              timer.stop()
+              toastr.clear()
+              atTheEnd()
+            }
+          )
+
+        }, 1000);
+      })
+
+
+    })
+    function atTheEnd() {
+      $("#playground").addClass("nodisplay")
+      $(".grid > span").text("")
+
+      $("nav").removeClass("animated fadeOutUp")
+      $("nav").addClass("animated fadeInDown")
+      $("footer").removeClass("animated fadeOutDown")
+      $("footer").addClass("animated fadeInUp")
+
+      $("#background").removeClass("nodisplay")
+      $("#background").removeClass("animated zoomOut")
+      $("#background").addClass("animated zoomIn")
+    }
+
+  </script>
+
+</body>
+
+</html>

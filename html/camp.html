@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>BHO : Modül 1: Egzersiz 1</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="img/bho_yazısız.png">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google material icons -->
+  <link href="css/material-design/iconfont/material-icons.css" rel="stylesheet">
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Timer.js -->
+  <script src="js/easytimer.js/dist/easytimer.js"></script>
+  <!-- Anime.js -->
+  <script src="js/anime/lib/anime.min.js"></script>
+  <!-- Async.js -->
+  <script src="js/async.min.js"></script>
+  <!-- Hotkeys -->
+  <script src="js/hotkeys.min.js"></script>
+  <!-- Common scripts -->
+  <script src="js/common.js"></script>
+  <!-- Templates -->
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/modal.js"></script>
+
+
+  <style>
+    html,
+    body {
+      height: 100vh;
+      overflow-y: auto;
+
+    }
+
+
+    body::after {
+      content: "";
+      background-image: url("/app/img/bho_yazısız.png");
+      opacity: 0.05;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;
+      background-attachment: fixed;
+      /* background-position: center; */
+      background-size: 15%;
+    }
+
+    #footercenter {
+      flex: 0 0 280px !important;
+      max-width: 280px !important;
+    }
+
+    #footerleftcenter {
+      flex: 0 0 200px !important;
+      width: 200px !important;
+    }
+
+    .container.info {
+      max-width: 900px;
+      font-weight: 400;
+    }
+
+
+    #intro {
+      border-width: 3px !important;
+      border-color: #f5ad1b #3ab2e6 #3ab2e6 #f5ad1b !important;
+    }
+
+    .collapse-content a.collapsed:after {
+      content: "Çalışmalar";
+    }
+
+    .form-check-input[type="checkbox"]:checked+label:before,
+    label.btn input[type="checkbox"]:checked+label:before {
+      border-right: 3px solid darkgreen;
+      border-bottom: 3px solid darkgreen;
+    }
+
+    th {
+      z-index: 100;
+    }
+
+    .m6e1-direct:link,
+    .m6e1-direct:visited,
+    .m6e1-direct:active{
+      text-decoration: underline;
+      text-decoration-style: dashed;
+      color: black !important;
+    }
+    .m6e1-direct:hover{
+      text-decoration: underline;
+      text-decoration-style: solid;
+      color: darkblue !important;
+      /* font-size: larger; */
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-dark sticky default-color justify-content-between odisplay white-text">
+    <a class="navbar-brand waves-effect waves-light" href="/app"><i class="fas fa-home fa-1x"></i></a>
+    <a class="navbar-brand waves-effect waves-light d-flex " href=""><span class="mx-2" style="font-size: 1rem;">Baykuş Hızlı Okuma Kampı</span></a>
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user fa-1x"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+          <a class="dropdown-item" href="#">Üyelik Bilgileri</a>
+          <a class="dropdown-item" href="/logout">Oturumu Kapat</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container info mt-2">
+    <div id="intro" class="row border w-100 mx-auto odisplay px-1">
+
+      <h3 class="mt-1 text-center">Kamp Programına Başlamadan Önce Okuma Hızımızı ve Anlama Oranımızı Ölçelim !!! </h3>
+
+      <h4 class="mt-2">Dikkat Etmemiz Gerekenler!</h4>
+      <h5 class="ml-2">
+        <strong>1-)</strong> Burada öncelikle <a class="m6e1-direct" href="/app/modules/6/exercises/1?from=camp" target="_blank"><strong><em>"Okuma Anlama Egzersizleri"</em></strong> modülü, <strong><em>"Tek Sayfa Okuma"</em></strong></a> kısmından seçeceğimiz 3 metni, normal okuma hızımızda okuyalım ve metnin sonundaki soruları cevaplayalım.<br>
+        <p class="mt-1">
+          <strong><u>Dikkat!</u> </strong> Ekrana gelecek metinleri; evde, okulda, ders çalışırken nasıl okuyorsanız o hızda sessiz(içinizden) okuyunuz. <br>
+          Sonuçların sağlıklı çıkması ve kamp programınızın sizin seviyenize uygun hazırlanması için; ne hırs yapıp hızlı okuyun, nede soruları doğru cevaplamak-yanlış yapmamak için yavaş okuyunuz! <br>
+        </p>
+      </h5>
+      <h5 class="ml-2">
+        <strong>2-)</strong> 3 Okuma metninin okuma hızını ve anlama <u>ortalamasını</u> hesaplayıp çıkartınız.
+      </h5>
+      <h5 class="ml-2">
+        <strong>3-)</strong> Çıkan ortalama okuma hızınıza göre aşağıdaki programlardan birinden çalışmaya başlayınız.
+      </h5>
+
+      <div class="text-center ml-5">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination d-flex flex-column w-100 text-left mx-auto">
+            <li id="degree0" class="page-item degree active"><a class="page-link" style="font-size:1rem;"> <strong>a)</strong> Okuma Başlangıç Hızı Dakikada 100 Kelime Altı Olanlar İçin <strong>"<u>ÇIRAK</u>"</strong></u> Programı</a></li>
+            <li id="degree1" class="page-item degree"><a class="page-link" style="font-size:1rem;"> <strong>b)</strong> Okuma Başlangıç Hızı Dakikada 100-200 Kelime Arası Olanlar İçin <strong>"<u>KALFA</u>"</strong></u> Programı</a></li>
+            <li id="degree2" class="page-item degree"><a class="page-link" style="font-size:1rem;"> <strong>c)</strong> Okuma Başlangıç Hızı Dakikada 200 Kelime ve Üstünde Olanlar İçin <strong>"<u>USTA</u>"</strong></u> Programı</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container days mt-5">
+    <div class="row mt-2 w-100">
+
+    </div>
+  </div>
+
+  <div id="worksModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" style="max-width: 940px !important;" role="document">
+      <div class="modal-content text-center">
+        <div class="modal-header d-flex justify-content-center default">
+          <h4 id="worksModalHeader" class="heading" style="font-weight: bold; color: #2bbbad;">ÇIRAK</h4>
+        </div>
+        <div class="modal-body text-center">
+          <h4 id="worksModalInfo" class="resultInfo text-weight-bold text-center">XX</h4>
+          <div class="table-wrap-long mt-4 scrollbar-secondary w-100">
+            <table class="table table-sm table-hover w-100">
+              <thead id="worksModalTableHead">
+                <tr>
+                  <th scope="col">Gün</th>
+                  <th scope="col">Sıra</th>
+                  <th scope="col text-left">Çalışma</th>
+                  <th scope="col text-left">Ayarlar</th>
+                  <th scope="col">Tekrar</th>
+                  <th scope="col">Tamamladım!</th>
+                  <th scope="col">&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody id="worksModalTableRows">
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer flex-center">
+          <div id="scoreModalOkay" class="btn btn-sm btn-outline-default btn-rounded waves-effect waves-light" data-dismiss="modal">Tamam</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <script type="text/javascript">
+    document.title = `Baykuş Hızlı Okuma Kampı`
+    let user = null
+    $.get("/app/user", res => { user = res })
+
+    let degree = null
+    $(document).ready(function () {
+      // $("#worksModal").modal("show")
+      $(".degree > .page-link").click(() => {
+        $('.page-item.degree .page-link').removeClass('active');
+        $(this).addClass('active').siblings().removeClass('active');
+
+        setTimeout(() => {
+          // console.log($('.degree.active').attr("id"))
+          degree = Number($('.degree.active').attr("id").replace("degree", ""))
+          $("#worksModalHeader").text(`${degree == 0 ? "ÇIRAK" : degree == 1 ? "KALFA" : "USTA"}`)
+          generateSchedule()
+          setTimeout(updateStats, 1000)
+          $('html, body').animate({
+            scrollTop: $(".container.days").offset().top
+          }, 500);
+        }, 100)
+      })
+
+      degree = Number($('.degree.active').attr("id").replace("degree", ""))
+      function generateSchedule() {
+        $(".container.days>.row").empty()
+        for (var i = 0; i < 14; ++i) {
+          const Nexercise = programs.filter(item => {
+            // console.log(item.degree)
+            return (i == Number(item.day.replace(".Gün", "")) - 1) && (degree == item.degree)
+
+          }).length
+          // console.log(Nexercise)
+          $(".container.days>.row").append(`
+            <div class="col-sm-4">
+              <div class="p-2">
+                <a id="triggerDay${i}" data-toggle="modal" data-target="#worksModal" >
+                <div class="card weather-card">
+                  <div class="card-body pb-3">
+                    <h4 class="card-title font-weight-bold">${degree == 0 ? "ÇIRAK" : degree == 1 ? "KALFA" : "USTA"}</h4>
+                    <!-- Text -->
+                    <!-- <p class="card-text">Başlama tarihi: </p> -->
+                    <div class="d-flex justify-content-between">
+                      <p class="display-1 degree" style="color:coral"><span style="font-family: Stencil Std, fantasy">${i + 1}. </span><span style="font-size:24px; font-weight:bold;">gün</span></p>
+                      <i class="fas fa-sun-o fa-5x pt-3 amber-text"></i>
+                    </div>
+                    <div class="d-flex justify-content-between mb-4">
+                      <p><i class="fas fa-list-ol fa-lg text-info pr-2"></i>${Nexercise} adet çalışma</p>
+                      <!-- <p><i class="fas fa-leaf fa-lg grey-text pr-2"></i>21 km/h Winds</p> -->
+                    </div>
+                    <div class="progress md-progress">
+                      <div id="progressDay${i}" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div id="progressValueDay${i}" class="text-center text-muted mb-4 h4"> %0 </div>
+  
+                    <div class="collapse-content">
+                      <hr class="">
+                    </div>
+                  </div>
+                </div>
+                </a>
+              </div>
+            </div>
+          `)
+        }
+      }
+
+      let programs = null
+      $.get("/app/collections/programs", data => {
+        programs = data
+        generateSchedule()
+        setTimeout(updateStats, 1000)
+      })
+
+      let stats = null
+      $.get("/app/stats?scope=camp", data => {
+        stats = data
+        console.log(stats)
+      })
+
+      $("#worksModal").on("shown.bs.modal", event => {
+        $("#worksModalTableRows").empty()
+      })
+
+      $("#worksModal").on("shown.bs.modal", event => {
+        $.get("/app/stats?scope=camp", data => {
+          stats = data
+
+          const day = Number(event.relatedTarget.id.replace("triggerDay", ""))
+          const dayWorks = programs.filter(item => {
+            return (day == Number(item.day.replace(".Gün", "")) - 1) && (degree == item.degree)
+          })
+          $("#worksModalInfo").text(`${day + 1}. Gün`)
+
+          for (var i = 0; i < dayWorks.length; ++i) {
+            $("#worksModalTableRows").append(`<tr><td>${dayWorks[i].day}</td><td>#${i + 1}</td></tr>`)
+            $("#worksModalTableRows > tr:last").append(`<td class="text-left"><strong> ${dayWorks[i].work}</strong></td>`)
+            $("#worksModalTableRows > tr:last").append(`<td class="text-left"><strong>${dayWorks[i].settings}</strong></td>`)
+            $("#worksModalTableRows > tr:last").append(`<td><strong>${dayWorks[i].repeat}</strong></td>`)
+            $("#worksModalTableRows > tr:last").append(`
+              <td> 
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="finishCheckd${degree}d${day}w${i}" value=0>
+                  <label class="form-check-label pl-4" for="finishCheckd${degree}d${day}w${i}"></label>
+                </div>
+              </td>
+            `)
+            $("#worksModalTableRows > tr:last").append(`
+              <td>
+                <a href="/app/modules/${dayWorks[i].module}/exercises/${dayWorks[i].exercise}?from=camp" target="_blank" id="" class="btn btn-sm btn-outline-blue btn-rounded waves-effect waves-light">Git</a>  
+              </td>
+            `)
+            if (stats.filter(stat => stat.work == `d${degree}d${day}w${i}`).length > 0) {
+              $(`#finishCheckd${degree}d${day}w${i}`).val(1)
+              $(`#finishCheckd${degree}d${day}w${i}`).trigger("click")
+            }
+          }
+
+          $(".form-check-input").click((event) => {
+            if (Number($(event.target).val()) == 0) {
+              $(event.target).val(1)
+              $.post(`/app/stats`,
+                {
+                  scope: "camp",
+                  work: event.target.id.replace("finishCheck", ""),
+                },
+                res => {
+                  console.log(res)
+                  updateStats()
+                })
+            }
+            else {
+              $(event.target).val(0)
+              $.ajax({
+                url: `/app/stats?work=${event.target.id.replace("finishCheck", "")}`,
+                type: 'DELETE',
+                success: function (res) {
+                  console.log(res)
+                  updateStats()
+                }
+              });
+            }
+          })
+        })
+      })
+
+      function updateStats() {
+        $.get("/app/stats?scope=camp", data => {
+          stats = data
+          for (var i = 0; i < 14; ++i) {
+            const Nfinished = stats.filter(item => item.work.includes(`d${degree}d${i}`)).length
+            const Ntotal = programs.filter(item => item.degree == degree && item.day == `${i + 1}.Gün`).length
+            const percentage = Math.ceil(Nfinished / Ntotal * 100)
+            $(`#progressDay${i}`).css("width", `${percentage}%`)
+            $(`#progressValueDay${i}`).text(` ${percentage}% `)
+          }
+        })
+      }
+
+    })
+
+  </script>
+
+</body>
+
+
+</html>

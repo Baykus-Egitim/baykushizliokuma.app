@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>BHO : Modül 5</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="/app/img/bho_yazısız.png">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/app/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="/app/css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="/app/css/style.css">
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/app/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="/app/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="/app/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="/app/js/mdb.min.js"></script>
+  <!-- Timer.js -->
+  <script src="/app/js/easytimer.js/dist/easytimer.js"></script>
+  <!-- Common scripts -->
+  <script src="/app/js/common.js"></script>
+  <!-- Templates -->
+  <script src="/app/js/navbar.js"></script>
+
+</head>
+
+<style>
+  html,
+  body {
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
+</style>
+
+<body>
+
+  <div class="container mt-3" style="height: calc( 100% - 57px - 3rem);">
+    <div class="row w-100 h-100 justify-content-center m-auto">
+      <div class="col-md-3 h-100 ">
+        <!-- <img class="w-100" src="/app/img/modül/egzersiz_menu-26.png" style="z-index: 0; position: absolute; top: 50%; left:50%; transform: translate(-50%, -50%);"> -->
+        <div id="exercises" class="row" style="border-width: 5px !important; border-color: #f1759e !important; border-radius: 25px;">
+        </div>
+      </div>
+      <div id="moduleBanner" class="col-md-9 h-100 text-center d-none d-md-block">
+      </div>
+    </div>
+
+    <!--Modal: Name-->
+    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header d-flex justify-content-center default">
+            <h4 class="heading my-auto" style="font-weight: bold; color: #2bbbad;">Baykuş Hızlı Okuma Ne İşe Yarar?</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">
+                <i class="fas fa-times animated jackInTheBox" style="color: orangered; font-size: 2rem !important;"></i>
+              </span>
+            </button>
+          </div>
+          <div class="modal-body mb-0 p-0">
+            <video class="video-fluid z-depth-1" controls>
+              <source src="" type="video/mp4" />
+            </video>
+          </div>
+          <div class="modal-footer justify-content-center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    //==================================
+    // generate view
+    //==================================
+    var module = 5
+    var Nexercises = 8
+    $(document).ready(() => {
+      navbar(module, true)
+      $(".navbar").removeClass("fixed-top")
+
+      for (var i = 0; i < Nexercises; ++i) {
+        $("#exercises").append(`
+          <div class="exercise col-6 my-2 pr-2">
+            <div class="w-100"> <a href="/app/modules/${module}/exercises/${i + 1}"><img id="imgEx-${i+1}" src="/app/img/modül/egzersiz${i + 1}.png"></a></div>
+            <div id="video${i}" class="w-100 video-link"><a href="#"><img src="/app/img/modül/egzersiz_video.png"></a></div>
+          </div>
+        `)
+        ++i
+        if (i < Nexercises) {
+          $("#exercises").append(`
+            <div class="exercise col-6 my-2 pl-2">
+              <div class="w-100"> <a href="/app/modules/${module}/exercises/${i + 1}"><img id="imgEx-${i+1}" src="/app/img/modül/egzersiz${i + 1}.png"></a></div>
+              <div id="video${i}" class="w-100 video-link"><a href="#"><img src="/app/img/modül/egzersiz_video.png"></a></div>
+            </div>
+          `)
+        }
+        else $("#exercises > div:last").removeClass("pr-2").addClass("mx-auto pl-2")
+      }
+      const demoExercise = 8
+      $.get("/app/user", res => { 
+        if(res.username.includes("misafir")){
+          for (var i = 0; i < Nexercises; ++i) {
+            if(i+1!=demoExercise) $(`#imgEx-${i+1}`).addClass("disable")
+          }
+        }
+      })
+
+      $("#moduleBanner").append(`
+        <img class="mx-auto" src="/app/img/modül/${module}.png">
+      `)
+
+      $(".video-link").click(() => {
+        const id = Number($(event.target).parent().parent().attr("id").replace("video", ""))
+        // console.log(id)
+        const video = `/videolar/Modül-${module}/small_${id + 1}.mp4`
+        // console.log(video)
+        $("video > source").attr("src", video)
+        $(".modal-header > .heading").text(`Modül ${module} : Egzersiz ${id + 1}`)
+        $('#modal1').modal("show")
+        $('video')[0].load()
+        // console.log(video)
+      })
+
+      // video controls
+      $('.close').click(function () {
+        $('video')[0].pause();
+      });
+      $('#modal1').on('shown.bs.modal', function (e) {
+        $('video')[0].play();
+      });
+      $('#modal1').on('hidden.bs.modal', function (e) {
+        $('video')[0].pause();
+      });
+    })
+
+  </script>
+</body>
+</html>

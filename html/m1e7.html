@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Baykuş Hızlı Okuma</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="/app/img/bho_yazısız.png">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/app/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="/app/css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="/app/css/style.css">
+  <!-- Google material icons -->
+  <link href="/app/css/material-design/iconfont/material-icons.css" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/app/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="/app/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="/app/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="/app/js/mdb.min.js"></script>
+  <!-- Timer.js -->
+  <script src="/app/js/easytimer.js/dist/easytimer.js"></script>
+  <!-- Async.js -->
+  <script src="/app/js/async.min.js"></script>
+  <!-- Hotkeys -->
+  <script src="/app/js/hotkeys.min.js"></script>
+  <!-- Common scripts -->
+  <script src="/app/js/common.js"></script>
+  <!-- Templates -->
+  <script src="/app/js/navbar.js"></script>
+  <script src="/app/js/modal.js"></script>
+
+  <style>
+    html,
+    body {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .page-item {
+      margin-right: -0.5rem;
+    }
+
+    /* switch */
+    .switch.primary-switch label .lever {
+      background-color: #689DF6;
+    }
+
+    .switch.primary-switch label input[type=checkbox]:checked+.lever {
+      background-color: #689DF6;
+    }
+
+    .switch.primary-switch label input[type=checkbox]:checked+.lever::content {
+      background-color: #4285F4;
+    }
+
+    .nodisplay {
+      display: none !important;
+    }
+
+    #toast-container>div {
+      width: 5rem !important;
+      background-image: url(/app/img/modules/1/exercises/4/hourglass.png) !important;
+      padding: 5px 5px 5px 2.5rem !important;
+    }
+
+    #playground {
+      font-size: 20px;
+    }
+
+    .form-check-input[type="checkbox"]:checked+label:before,
+    label.btn input[type="checkbox"]:checked+label:before {
+      border-right: 2px solid aliceblue;
+      border-bottom: 2px solid aliceblue;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- Start your project here-->
+  <div class="container-fluid" style="height: 100vh">
+    <div id="playground" class="flex-center flex-column nodisplay font-weight-bold border">
+      <div class="row align-items-center text-center">
+        <span class="word text-center"></span>
+        <span class="word text-center"></span>
+        <span class="word text-center"></span>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center h-100 align-items-center">
+      <div id="logo" class="col-12 text-center invisible">
+        <div id="frames" style="position: relative;">
+          <img id="frame" class="visible" src="/app/img/bho_dunya_transparent.png" alt="" srcset="" style="opacity: 0.3;" height=450>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End your project here-->
+
+  <!-- Footer -->
+  <footer class="page-footer font-small teal fixed-bottom">
+    <div class="container-fluid h-100">
+      <div class="row d-flex justify-content-between h-100 align-items-center">
+
+        <!-- left -->
+        <div class="col">
+          <div class="row d-flex justify-content-between h-100 align-items-center">
+            <div class="col text-left">
+              <nav aria-label="Page navigation example" style="margin-left: -0.5rem; margin-right: 1rem;">
+                <ul class="pagination pagination-circle pg-blue my-1">
+                  <li class="page-item white-text">
+                    <a class="page-link white-text" tabindex="-1">Hız:</a>
+                  </li>
+                  <li class="page-item active"><a class="speed page-link">1</a></li>
+                  <li class="page-item"><a class="speed page-link">2</a></li>
+                  <li class="page-item"><a class="speed page-link">3</a></li>
+                  <li class="page-item"><a class="speed page-link">4</a></li>
+                  <li class="page-item"><a class="speed page-link">5</a></li>
+                  <li class="page-item"><a class="speed page-link">6</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col text-center">
+              <div class="switch primary-switch mt-2">
+                <label>
+                  Harf
+                  <input id="char-select" type="checkbox" value=0>
+                  <span class="lever mx-1"></span> Sayı
+                </label>
+              </div>
+            </div>
+
+            <div class="col text-center">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="dletter" value=0>
+                <label class="form-check-label pl-4" for="dletter">Harf Ayır</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- center -->
+        <div class="col-2 text-center">
+          <button id="start" class="btn btn-outline-white btn-rounded">Başla!</button>
+        </div>
+
+        <!-- right -->
+        <div class="col">
+          <div class="row d-flex justify-content-between h-100 align-items-center">
+            <div class="col text-left">
+              <nav aria-label="Page navigation example" style="margin-left: -0.5rem;">
+                <ul class="pagination pagination-circle pg-blue my-1">
+                  <li class="page-item white-text">
+                    <a class="page-link white-text" tabindex="-1">Seviye:</a>
+                  </li>
+                  <li class="page-item active"><a class="char page-link">1</a></li>
+                  <li class="page-item"><a class="char page-link">2</a></li>
+                  <li class="page-item"><a class="char page-link">3</a></li>
+                  <li class="page-item"><a class="char page-link">4</a></li>
+                  <li class="page-item"><a class="char page-link">5</a></li>
+                  <li class="page-item"><a class="char page-link">6</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="col text-right">
+              <img src="/app/img/bho_logo_yazı.png" alt="" srcset="" height=50>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- number of characters -->
+
+
+      </div>
+    </div>
+  </footer> <!-- Footer -->
+
+
+  <script type="text/javascript">
+    //==================================
+    // exercise specific global variables
+    //==================================
+    const module = Number(window.location.pathname.split("/")[3])
+    const exercise = Number(window.location.pathname.split("/")[5])
+    const exerciseId = `m${module}e${exercise}`
+    document.title = `BHO : Modül ${module}: Egzersiz ${exercise}`
+    let user = null
+    $.get("/app/user", res => { user = res })
+
+    //==================================
+    // generate view
+    //==================================
+    navbar(module)
+
+    addStartModal2()
+    addScoreModal2(false)
+    $(document).ready(function () {
+      $("#scoreModalIconCheck").removeClass("nodisplay")
+    })
+
+    // Speed
+    ds = 1200 // speed span
+    s0 = 1000 // start time
+    var ss = 1 // speed set
+
+    // Timer
+    toastr.options = {
+      "closeButton": false, // true/false
+      "debug": false, // true/false
+      "newestOnTop": false, // true/false
+      "progressBar": false, // true/false
+      "positionClass": "md-toast-bottom-right", // md-toast-top-right / md-toast-top-left / md-toast-bottom-right / md- toast - bottom - left
+      "preventDuplicates": false, //true / false
+      "onclick": null,
+      "showDuration": "300", // in milliseconds
+      "hideDuration": "1000", // in milliseconds
+      "timeOut": "445000", // in milliseconds
+      "extendedTimeOut": "445000", // in milliseconds
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+    var timer = new easytimer.Timer();
+
+    // Words
+    var cc = 1 // character count
+    var words = words1 // words set
+
+    // animation loop
+    var width, Nw, dw;
+    var spacings = []
+
+
+    var charType = 0
+
+    $(document).ready(function () {
+      $('.page-item').click(function () {
+        $(this).addClass('active').siblings().removeClass('active');
+      });
+
+      $(".speed.page-link").click(function () {
+        ss = Number($(this).text())
+        ds = 200 * (7 - Number($(this).text()))
+      })
+
+      // sweep select
+      $("#dletter").change(function () {
+        if ($(this).val() == 1) {
+          $(this).attr("value", 0)
+        }
+        else {
+          $(this).attr("value", 1)
+        }
+      })
+
+      // direction select
+
+      $("#char-select").change(function () {
+        if (charType == 1) {
+          charType = 0
+          if (cc == 1) words = words1
+          else if (cc == 2) words = words2
+          else if (cc == 3) words = words3
+          else if (cc == 4) words = words4
+          else if (cc == 5) words = words5
+          else words = words6
+        }
+        else charType = 1
+        // setInitial()
+      })
+
+      $(".char.page-link").click(function () {
+        cc = Number($(this).text())
+        if (cc == 1) words = words1
+        else if (cc == 2) words = words2
+        else if (cc == 3) words = words3
+        else if (cc == 4) words = words4
+        else if (cc == 5) words = words5
+        else words = words6
+      })
+
+
+      $("#start").click(function () {
+        $("nav").addClass("animated fadeOutUp")
+        $("footer").addClass("animated fadeOutDown")
+        $("#frame").addClass("animated zoomOut")
+        $(".btn").trigger("blur");
+        setTimeout(() => {
+          $("#playground").removeClass("nodisplay")
+
+          //prepperation
+          width = ($("#dletter").val() == 1) ? 350 + (6 - cc) * 100 : 950 + (6 - cc) * 50
+          console.log(width)
+          Nw = 10
+          dw = (width / Nw) / ($("span").length - 1) / 2 // 4: how many stages, 3: span element count minus 1, 2: avoid right left two times
+          spacings = []
+          for (var i = 0; i < 10; ++i) {
+            spacings.push(i * dw)
+          }
+          $(".word").css("margin-left", `1px`)
+          $(".word").css("margin-right", `1px`)
+        }, 500);
+        setTimeout(() => {
+          // prepare
+          iteration = 0
+          i = 0
+
+          // stopper
+          stopCallback = null
+          isFinished = null
+
+          // esc
+          hotkeys.unbind('esc');
+          hotkeys('esc', function (event, handler) {
+            switch (handler.key) {
+              case 'esc':
+                isFinished = true
+                stopCallback("Finish")
+                break;
+              default: null;
+            }
+          });
+
+          async.series([
+
+            function (callback) {
+              stopCallback = callback
+              if (!isFirstRun) setTimeout(callback, 500)
+              else {
+                $("#startModalCountdown").text(10)
+                let timer2 = new easytimer.Timer();
+               timer2.start({ precision: 'seconds', countdown: true, startValues: { seconds: 10 } });
+                timer2.addEventListener('secondsUpdated', function (e) {
+                  $("#startModalCountdown").text(timer2.getTimeValues().seconds);
+                });
+                timer2.addEventListener('targetAchieved', function (e) {
+                  $("#startModal").modal("hide")
+                });
+                $("#startModal").modal("show")
+                $('#startModal').off('hidden.bs.modal')
+                $('#startModal').on('hidden.bs.modal', function (e) {
+                  setTimeout(callback, 500)
+                  timer2.stop()
+                });
+              }
+            },
+            function (callback) {
+              stopCallback = callback
+              loop()
+              interval = setInterval(loop, ds);
+              timer.start({ precision: 'seconds', countdown: true, startValues: { seconds: 60 } });
+              toastr["info"]("60");
+              timer.addEventListener('secondsUpdated', function (e) {
+                $('.md-toast-message').html(timer.getTimeValues().seconds);
+              });
+              timer.addEventListener('targetAchieved', function (e) {
+                toastr.clear()
+                clearInterval(interval)
+                callback()
+              });
+            },
+
+          ],
+            function (err) {
+              clearInterval(interval)
+              isFinished = true
+              if (!err) {
+                isFirstRun = false
+                let date = new Date()
+                $.post(`/app/stats`,
+                  {
+                    exercise: exerciseId,
+                    date: date.toLocaleDateString("tr-TR").split(".").join("/"),
+                    speedLevel: ss,
+                    level: cc,
+                    charType: charType == 0 ? "Harf" : "Sayı",
+                    split: $("#dletter").val() == 1 ? "Evet" : "Hayır"
+                  },
+                  res => {
+                    updateScoreTable()
+                  })
+                $("#scoreModal").modal("show")
+              }
+              timer.stop()
+              toastr.clear()
+              atTheEnd()
+            }
+          )
+
+        }, s0);
+      })
+
+      function atTheEnd() {
+        $("#playground").addClass("nodisplay")
+        $("#frame").attr("src", "")
+        $("#frame").attr("height", 400)
+        $("#frame").css("opacity", 0.3)
+        $("#frame").attr("src", "/app/img/bho_dunya_transparent.png")
+
+        $("nav").removeClass("animated fadeOutUp")
+        $("footer").removeClass("animated fadeOutDown")
+        $("nav").addClass("animated fadeInDown")
+        $("footer").addClass("animated fadeInUp")
+        $("#frame").removeClass("animated zoomOut")
+        $("#frame").addClass("animated zoomIn")
+      }
+
+      // var i = 0
+      function loop() {
+        var word1 = words[Math.floor(Math.random() * (words.length - 1))]
+        var word2 = words[Math.floor(Math.random() * (words.length - 1))]
+        var word3 = words[Math.floor(Math.random() * (words.length - 1))]
+        if (charType == 1) {
+          if (cc == 1) {
+            word1 = String(Math.floor(Math.random() * 9))
+            word2 = String(Math.floor(Math.random() * 9))
+            word3 = String(Math.floor(Math.random() * 9))
+          }
+          else if (cc == 2) {
+            word1 = String(Math.floor(Math.random() * 89) + 10)
+            word2 = String(Math.floor(Math.random() * 89) + 10)
+            word3 = String(Math.floor(Math.random() * 89) + 10)
+          }
+          else if (cc == 3) {
+            word1 = String(Math.floor(Math.random() * 899) + 100)
+            word2 = String(Math.floor(Math.random() * 899) + 100)
+            word3 = String(Math.floor(Math.random() * 899) + 100)
+          }
+          else if (cc == 4) {
+            word1 = String(Math.floor(Math.random() * 8999) + 1000)
+            word2 = String(Math.floor(Math.random() * 8999) + 1000)
+            word3 = String(Math.floor(Math.random() * 8999) + 1000)
+          }
+          else if (cc == 5) {
+            word1 = String(Math.floor(Math.random() * 89999) + 10000)
+            word2 = String(Math.floor(Math.random() * 89999) + 10000)
+            word3 = String(Math.floor(Math.random() * 89999) + 10000)
+          }
+          else {
+            word1 = String(Math.floor(Math.random() * 899999) + 100000)
+            word2 = String(Math.floor(Math.random() * 899999) + 100000)
+            word3 = String(Math.floor(Math.random() * 899999) + 100000)
+          }
+        }
+        $(".word").css("margin-left", `${1 + spacings[i % Nw]}px`)
+        $(".word").css("margin-right", `${1 + spacings[i % Nw]}px`)
+        if ($("#dletter").val() == 1) $(".word").css("letter-spacing", `${5 * (i % Nw)}px`)
+        $(".word:eq(0)").text(word1)
+        $(".word:eq(1)").text(word2)
+        $(".word:eq(2)").text(word3)
+        console.log(spacings[i % Nw])
+        ++i
+      }
+    })
+
+
+
+  </script>
+
+</body>
+
+</html>

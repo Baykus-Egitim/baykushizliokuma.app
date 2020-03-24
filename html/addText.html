@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Baykuş Hızlı Okuma : Modül 1: Egzersiz 1</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="img/bho_yazısız.png">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google material icons -->
+  <link href="css/material-design/iconfont/material-icons.css" rel="stylesheet">
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Timer.js -->
+  <script src="js/easytimer.js/dist/easytimer.js"></script>
+  <!-- Anime.js -->
+  <script src="js/anime/lib/anime.min.js"></script>
+  <!-- Async.js -->
+  <script src="js/async.min.js"></script>
+  <!-- Hotkeys -->
+  <script src="js/hotkeys.min.js"></script>
+  <!-- Common scripts -->
+  <script src="js/common.js"></script>
+  <!-- Templates -->
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/modal.js"></script>
+
+
+  <style>
+    html,
+    body {
+      height: 100vh;
+      overflow: hidden;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container-fluid" style="">
+    <div class="row">
+      <div class="col-6">
+        <form>
+          <div class="form-group">
+            <label for="title">Başlık</label>
+            <input type="email" class="form-control" id="title" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="wordCount">Kelime Sayısı</label>
+            <input type="email" class="form-control" id="wordCount" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="text">Metin</label>
+            <textarea class="form-control" id="text" rows="3"></textarea>
+          </div>
+          <div class="btn btm-small">Gönder</div>
+        </form>
+      </div>
+      <div class="col-6"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    function hasLetter(myString) {
+      return /[A-Z]/i.test(myString);
+    }
+    $(document).ready(() => {
+
+      $(".btn").click(() => {
+        var item = {
+          title: $("#title").val(),
+          wordCount: $("#wordCount").val(),
+          text: "",
+        }
+        for(var i=0; i<$("#text").val().split("\n").length; ++i){
+          item.text += "&emsp;"+$("#text").val().split("\n")[i]+"\n"
+        }
+        $.post("/texts2", item, res=>{
+          console.log(res.result)
+          $("#text").val("")
+          $("#title").val("")
+        })
+
+        // console.log(item)
+        // console.log(item.text.split("\n"))
+      })
+    })
+
+  </script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>BHO : Anasayfa</title>
+  <link rel="icon" href="/app/img/bho_yazısız.png">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/app/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="/app/css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="/app/css/style.css">
+</head>
+
+<style>
+  html,
+  body {
+    /* height: 100vh; */
+    /* overflow: hidden; */
+    overflow-y: auto;
+  }
+
+  .container-fluid {
+    display: flex;
+    justify-content: center;
+    /* align-items: stretch; */
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    /* align-items: stretch; */
+  }
+
+  .w1 {
+    width: 35% !important;
+  }
+
+  .w2 {
+    width: 55% !important;
+  }
+
+  .modal {
+    overflow-y: auto;
+  }
+
+  .form-check-input[type="checkbox"]:checked+label:before,
+  label.btn input[type="checkbox"]:checked+label:before {
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+
+  .test3.form-check-input[type="checkbox"]:checked+label:before,
+  .test3.label.btn input[type="checkbox"]:checked+label:before {
+    border-right: 3px solid darkgreen;
+    border-bottom: 3px solid darkgreen;
+  }
+
+  th {
+    z-index: 100;
+  }
+</style>
+
+<body>
+
+  <!--Navbar -->
+  <nav class="navbar navbar-dark default-color justify-content-between odisplay">
+    <a class="navbar-brand waves-effect waves-light" href="/app/"><i class="fas fa-home fa-1x"></i><span class="mx-3">Anasayfa</span></a>
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user fa-1x"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+          <a class="dropdown-item" data-toggle="modal" data-target="#modalWelcome" href="#">Kullanım Kılavuzu</a>
+          <a class="dropdown-item" href="/app/logout">Oturumu Kapat</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <!--Navbar -->
+
+
+  <!-- Start your project here-->
+  <div class="container-fluid h-100">
+    <div class="row w-100 justify-content-center">
+      <div class="col-md-8 text-center m-auto">
+        <div class="row w-100 justify-content-center">
+          <div class="col-md-4 m-icon animated fadeInDownBig slow"><a href="/app/modules/1"><img class="w-100" src="/app/img/anasayfa/ekran-02.png"></a></div>
+          <div class="col-md-4 m-icon animated fadeInDownBig slow "><a href="/app/modules/2"><img class="w-100" src="/app/img/anasayfa/ekran-03.png"></a></div>
+          <div class="col-md-4 m-icon animated fadeInDownBig slow "><a href="/app/modules/3"><img class="w-100" src="/app/img/anasayfa/ekran-04.png"></a></div>
+        </div>
+        <div class="row w-100 justify-content-center">
+          <div class="col-md-4 m-icon animated fadeInLeftBig slow"><a href="/app/camp"><img class="w-100" src="/app/img/anasayfa/ekran-05.png"></a></div>
+          <div class="col-md-8 logo text-center animated zoomIn slow"></div>
+        </div>
+        <div class="row w-100 justify-content-center">
+          <div class="col-md-4 m-icon animated fadeInUpBig slow"><a href="/app/modules/4"><img class="w-100" src="/app/img/anasayfa/ekran-06.png"></a></div>
+          <div class="col-md-4 m-icon animated fadeInUpBig slow"><a href="/app/modules/5"><img class="w-100" src="/app/img/anasayfa/ekran-07.png"></a></div>
+          <div class="col-md-4 m-icon animated fadeInUpBig slow"><a href="/app/modules/6"><img class="w-100" src="/app/img/anasayfa/ekran-08.png"></a></div>
+        </div>
+      </div>
+      <div class="col-md-4 text-center m-auto animated fadeInRightBig slow">
+        <div class="row justify-content-center">
+          <div class="col-sm-6">
+            <div class="my-3">
+              <span id="1"><a href="#"><img class="w1" src="/app/img/anasayfa/ekran-09.png"></a></span>
+              <span><a href="#"><img class="w2" src="/app/img/anasayfa/ekran-10.png"></a></span>
+            </div>
+            <div class="my-3">
+              <span id="2"><a href="#"><img class="w1" src="/app/img/anasayfa/ekran-09.png"></a></span>
+              <span><a href="#"><img class="w2" src="/app/img/anasayfa/ekran-11.png"></a></span>
+            </div>
+            <div class="my-3">
+              <span id="3"><a href="#"><img class="w1" src="/app/img/anasayfa/ekran-09.png"></a></span>
+              <span><a href="#"><img class="w2" src="/app/img/anasayfa/ekran-12.png"></a></span>
+            </div>
+            <div class="my-3">
+              <span id="4"><a href="#"><img class="w1" src="/app/img/anasayfa/ekran-09.png"></a></span>
+              <span><a href="#"><img class="w2" src="/app/img/anasayfa/ekran-13.png"></a></span>
+            </div>
+            <div class="my-3">
+              <span id="5"><a href="#"><img class="w1" src="/app/img/anasayfa/ekran-09.png"></a></span>
+              <span><a href="#"><img class="w2" src="/app/img/anasayfa/ekran-14.png"></a></span>
+            </div>
+
+          </div>
+          <div class="col-sm-6">
+
+            <div class="my-3">
+              <span id="6"><a href="#"><img data-toggle="modal" data-target="#modalStartTest3" class="w1" src="/app/img/anasayfa/ekran-18.png"></a></span>
+              <span><a href="#"><img data-toggle="modal" data-target="#modalStartTest3" class="w2" src="/app/img/anasayfa/ekran-15.png"></a></span>
+            </div>
+            <div class="my-3">
+              <span id="7"><a href="#"><img data-toggle="modal" data-target="#modalStartTest2" class="w1" src="/app/img/anasayfa/ekran-18.png"></a></span>
+              <span><a href="#"><img data-toggle="modal" data-target="#modalStartTest2" class="w2" src="/app/img/anasayfa/ekran-16.png"></a></span>
+            </div>
+            <div class="my-3">
+              <span id="8"><a href="#"><img data-toggle="modal" data-target="#modalStartTest1" class="w1" src="/app/img/anasayfa/ekran-18.png"></a></span>
+              <span><a href="#"><img data-toggle="modal" data-target="#modalStartTest1" class="w2" src="/app/img/anasayfa/ekran-17.png"></a></span>
+            </div>
+            <div class="my-3">
+              <span id="9"><a href="#"><img data-toggle="modal" data-target="#modal2" class="w1" src="/app/img/anasayfa/ekran-21.png"></a></span>
+              <span><a href="#"><img data-toggle="modal" data-target="#modal2" class="w2" src="/app/img/anasayfa/ekran-22.png"></a></span>
+            </div>
+            <div class="my-3">
+              <span id="10"><a href="#"><img class="w1" src="/app/img/anasayfa/ekran-09.png"></a></span>
+              <span><a href="#"><img class="w2" src="/app/img/anasayfa/ekran-19.png"></a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Modal: Name-->
+    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header d-flex justify-content-center default">
+            <h4 id="videoHeader" class="heading my-auto" style="font-weight: bold; color: #2bbbad;">Baykuş Hızlı Okuma Ne İşe Yarar?</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">
+                <i class="fas fa-times animated jackInTheBox" style="color: orangered; font-size: 2rem !important;"></i>
+              </span>
+            </button>
+          </div>
+          <div class="modal-body mb-0 p-0">
+            <video class="video-fluid z-depth-1" controls>
+              <source src="/app/media/Baykus-Hızlı-Okuma-Ne-İşe-Yarar.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="modal-footer justify-content-center">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kamp Programlarını Görüntüle -->
+    <div class="modal fade top" id="modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
+      <div class="modal-dialog modal-frame modal-top modal-notify modal-info" role="document">
+        <div class="modal-content">
+          <!--Body-->
+          <div class="modal-body">
+            <p class="h4 pt-3 pr-2 text-center mb-4">Kamp programı içeriklerini görmek için lütfen bir seviye seçiniz!</p>
+            <div class="row d-flex justify-content-around align-items-center mt-2">
+              <div class="col-sm text-center">
+                <a href="/dosyalar/BHO_ÇIRAK.pdf" target="_blank" type="button" class="btn btn-success">ÇIRAK <i class="fas fa-book ml-1"></i></a>
+                <div class="mt-3">(Dakikada 100 Kelime ve Altında Okuyanlar)</div>
+              </div>
+              <div class="col-sm text-center">
+                <a href="/dosyalar/BHO_KALFA.pdf" target="_blank" type="button" class="btn btn-info">KALFA <i class="fas fa-book ml-1"></i></a>
+                <div class="mt-3">(Dakikada 100 - 200 Kelime Arası Okuyanlar)</div>
+              </div>
+              <div class="col-sm text-center">
+                <a href="/dosyalar/BHO_USTA.pdf" target="_blank" type="button" class="btn btn-warning">USTA <i class="fas fa-book ml-1"></i></a>
+                <div class="mt-3">(Dakikada 200 Kelime ve Üstünde Okuyanlar)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer justify-content-center">
+            <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Kapat</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Okuma İsteği Ölçme Testi -->
+    <div class="modal fade" id="modalTest1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title w-100" id="myModalLabel">Okuma İsteği Ölçme Testi</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div id="modalTest1Body" class="modal-body">
+          </div>
+          <div class="modal-footer d-flex flex-center">
+            <button id="modalTest1Okay" type="button" class="btn btn-success btn-rounded btn" data-toggle="modal" data-target="#scoreModal" data-dismiss="modal">Tamamla</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modalStartTest1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content text-center">
+          <div class="modal-header d-flex justify-content-center default">
+            <p id="startModalHeader" class="heading h5" style="font-weight: bold; color: #2bbbad;">Değerli öğrencim;</p>
+          </div>
+          <div class="modal-body">
+            <h6 class="text-left" id="startModalInfo" style="line-height: 2.5rem !important;">
+              * Okuma isteği ölçme testi; bizim <em><strong>kitap okuma iştahımızı</strong> </em> ölçen bir testtir.<br>
+              * 20 sorudan oluşan testimizi dikkatli bir şekilde okuyun ve size uyan kısmı işaretleyiniz.<br>
+              * Soruları boş bırakmayınız<br>
+              * Test sonucunda kitap okuma istek puanınızı ve sonucunu görebilirsiniz.<br>
+            </h6>
+          </div>
+          <div class="modal-footer flex-center">
+            <button id="startModalOkay" type="button" data-toggle="modal" data-target="#modalTest1" class="btn btn-sm btn-outline-default btn-rounded waves-effect waves-light" data-dismiss="modal">Başla!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Score Modal -->
+    <div id="scoreModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content text-center">
+          <div class="modal-header d-flex justify-content-center default">
+            <p id="scoreModalHeader" class="heading h2" style="font-weight: bold; color: #2bbbad;">Sonucunuz</p>
+          </div>
+          <div class="modal-body text-center">
+            <i id="scoreModalIconCheck" class="scoreModalIcon fas fa-check fa-4x animated jackInTheBox mb-4 nodisplay" style="color: green"><span class="mx-2"></span></i>
+            <i id="scoreModalIconBell" class="scoreModalIcon fas fa-bell fa-4x animated jackInTheBox mb-4 nodisplay" style="color: #f5ad1b"></i>
+            <h4 id="scoreModalInfo" class="resultInfo text-weight-bold text-center mb-4">Okuma hızınız: </h4>
+            <p id="scoreModalInfoText"></p>
+          </div>
+          <div class="modal-footer flex-center">
+            <div id="scoreModalOkay" class="btn btn-sm btn-outline-default btn-rounded waves-effect waves-light" data-dismiss="modal">Tamam</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start Modal -->
+    <div class="modal fade" id="modalWelcome" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title w-100" id="myModalLabel"><img src=""> </h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">
+                <i class="fas fa-times animated jackInTheBox" style="color: orangered; font-size: 2rem !important;"></i>
+              </span>
+            </button>
+          </div>
+          <div id="modalWelcomeBody" class="modal-body text-center">
+            <img class="mb-4" src="/app/img/BHO_Logo.png" alt="" width=250>
+            <h3 class="font-weight-bold mb-4">BHO Programını Aldıktan Sonra Nasıl Giriş Yapabilirim ve Kullanmaya Başlayabilirim?</h3>
+            <h4 class="mb-4" style="font-weight: 400;">
+              Baykuş Hızlı Okuma Programından Herkese Merhaba. <br>
+              İsmim <strong>Yakup YİĞİT</strong> programın yapımcısıyım. Yaklaşık 19 yıldır öğretmenlik yapıyorum. Branşım Rehber Öğretmen, aynı zamanda Kişisel Gelişim Uzmanıyım. <br>
+              Bu metni dikkatlice okuyunuz! Sizlere programı nasıl kullanacağınızı anlatacağım.
+
+            </h4>
+            <ul class="text-left">
+              <li><a href="/app">www.baykushizliokuma.com</a> adresine gidelim.</li>
+              <li>Ana sayfanın sağ üstünde “Giriş Yap” kısmına tıklayın.</li>
+              <li>Kullanıcı adını ve şifrenizi girin.</li>
+              <li>Ana sayfa ekranı sizi karşılayacaktır.</li>
+              <li>Öncelikle okuma hızınızı ölçmeniz ve anlama oranınızı belirlemeniz gerekir.</li>
+              <li>Bunun için; “Okuma Anlama Egzersizleri” modülünden; “Tek Sayfa Okuma” egzersizini tıklayınız.</li>
+              <li>Buradan “Metin Seç” kısmına tıklayıp 2 ya da 3 parça okuyalım ve parçanın sonundaki soruları çözelim.</li>
+              <li>Çıkan okuma hızı sonuçlarınızın ortalamasını alın.</li>
+              <li>Çıkan okuma hızı ortalamanız;
+                <ol>
+                  <li>100 Kelimenin altında ise “<strong>ÇIRAK</strong>” programından başlayınız.</li>
+                  <li>100-200 kelimenin arasında ise “<strong>KALFA</strong>” programından başlayınız.</li>
+                  <li>200 kelime ve üstünde ise “<strong>USTA</strong>” programından başlayınız.</li>
+                </ol>
+              </li>
+              <br>
+              <li>İsterseniz serbest şekilde de çalışabilirsiniz. Kendi programınızı da oluşturabilirsiniz.</li>
+              <br>
+              <li>İster kendi programınızı hazırlayın ister serbest bir şekilde çalışın, çalışmalarınızda şu sıralamayı dikkat edin!
+                <ol>
+                  <li>Her gün çalışmaya “GÖZÜN AKTİF GÖRME ALANINI GENİŞLETME EGZERSİZLERİ” ile başlayın ve en az 3 egzersiz seçin ve yapın.</li>
+                  <li>Daha sonra “GÖZ SIÇRAMA - TAKİP EGZERSİZLERİ” 2 egzersiz seçin ve yapın.</li>
+                  <li>Daha sonra “GÖZ ODAKLANMA EGZERSİZLERİ” 2 egzersiz seçin ve yapın.</li>
+                  <li>Daha sonra “BLOKLAMA VE GÖLGELEME EGZERSİZLERİ” kısmında en az 3 okuma çalışması seçin ve en az 3 tekrar yapın.</li>
+                  <li>Daha sonra “HIZLI OKUMA ÇALIŞMALARI” kısmında en az 3 okuma çalışması seçin ve en az 3 tekrar yapın.</li>
+                  <li>Son olarak ta “OKUMA ANLAMA EGZERSİZLERİ” kısmında en az 2 okuma şekli seçin ve en az 3’er kez okuyun.</li>
+                </ol>
+              </li>
+              <br>
+              <li>Son olarak; egzersizleri doğru ve verimli bir şekilde gerçekleştirebilmek için en az 13 inç'lik ekrana sahip bir cihazda çalışmanızı tavsiye ederiz.</li>
+            </ul>
+          </div>
+          <div class="modal-footer text-center">
+            <div class="form-check invisible d-none d-md-block">
+              <input type="checkbox" class="form-check-input" id="isize0" value=0>
+              <label class="form-check-label pl-4" for="isize0">Bir daha gösterme</label>
+            </div>
+            <button type="button" class="btn btn-secondary btn mx-auto" data-dismiss="modal">Kapat</button>
+            <div id="showManualDiv" class="form-check">
+              <input type="checkbox" class="form-check-input" id="showManual" value=0>
+              <label class="form-check-label pl-4" for="showManual">Bir daha gösterme</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/app/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="/app/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="/app/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="/app/js/mdb.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript">
+
+    $(document).ready(() => {
+      let showManualAgain = true
+      $("#showManual").click(() => {
+        if (showManualAgain) {
+          showManualAgain = false
+          alert("Kılavuza, kullanıcı menüsünden tekrar erişebilirsiniz.")
+        }
+        else showManualAgain = true
+        $.post(`/app/user`, { showManual: showManualAgain }, res => { console.log(res) })
+      })
+    })
+
+    $(document).ready(() => {
+      let user = null
+      $.get("/app/user", res => {
+        user = res
+        if (user.showManual != "false") $("#modalWelcome").modal("show")
+        else $("#showManualDiv").addClass("invisible d-none d-md-block")
+      })
+    })
+
+
+    $(document).ready(function () {
+
+      $(".logo").append(`
+        <img class="w-100 d-block d-md-none mx-auto" src="/app/img/bho_yatay.jpg"></a></div>
+        <img height=${$(".m-icon").height()} class="d-none d-md-block mx-auto" src="/app/img/bho_yatay.jpg"></a></div>
+      `);
+
+      $(`.my-3 > span`).click((event) => {
+        const id = $(event.target).hasClass("w1") ? $(event.target).parent().parent().attr("id") : $(event.target).parent().parent().prev().attr("id")
+        // console.log(id)
+        const video = videos.filter(item => item.id == id)[0]
+        $("video > source").attr("src", src = `/app/media/${video.file}`)
+        $("#videoHeader").text(video.title)
+        $('#modal1').modal("show")
+        $('video')[0].load()
+        // console.log(video)
+      })
+
+
+      // video controls
+      $('.close').click(function () {
+        console.log("Here");
+        $('video')[0].pause();
+      });
+      $('#modal1').on('shown.bs.modal', function (e) {
+        // do something...
+        $('video')[0].play();
+      });
+      $('#modal1').on('hidden.bs.modal', function (e) {
+        // do something...
+        $('video')[0].pause();
+      });
+
+    });
+
+    const videos = [
+      {
+        id: "1",
+        title: "Baykuş Hızlı Okuma Nedir?",
+        file: "Baykuş-Hızlı-Okuma-Nedir.mp4"
+      },
+      {
+        id: "2",
+        title: "Baykuş Hızlı Okuma Ne İşe Yarar?",
+        file: "Baykus-Hızlı-Okuma-Ne-İşe-Yarar.mp4"
+      },
+      {
+        id: "3",
+        title: "İç Seslendirme Nedir, Nasıl Yapılır?",
+        file: "Anahtar-Kelime.mp4"
+      },
+      {
+        id: "4",
+        title: "Anahtar Kelime Nedir, Nasıl Bulunur?",
+        file: "Anahtar-Kelime.mp4"
+      },
+      {
+        id: "5",
+        title: "5N1K Kralı Nedir, Nasıl Yapılır?",
+        file: "5N1K.mp4"
+      },
+      {
+        id: "10",
+        title: "Hızlı Okuma ve Anlama İlişkisi Nasıl Olur?",
+        file: "Hızlı-Okuma-ve-Anlama-İlişkisi.mp4"
+      },
+    ];
+
+    //=============================
+    // Test 1
+    //=============================
+    const test1Questions = [
+      "Kitabın kapağını gördüğümde içini mutlaka merak ederim.",
+      "İlgilendiğim bir kitabın arka yazısını okursam onu mutlaka alırım.	",
+      "Bir kitaba başladığımda hiç dinlenmeden 1 saat okurum.	",
+      "TV de sevdiğim bir dizi başlasa bile okumamı yarım bırakmam	",
+      "Okumayı bitireceksem bu genelde okuduğum bölümün sonuna gelince olur.	",
+      "Elime aldığım bir kitabı ayraç kullanmadan birkaç okumada bitiririm.	",
+      "Kitap okurken dikkatim hiçbir şekilde dağılmaz, aksine okuduklarımı yaşarım.	",
+      "Her gün en az yarım saat kitap okumaya ayırırım.	",
+      "Kitap okurken uykum gelse de bir süre sonra okuma iradem üstün gelir.	",
+      "Hoşuma giden bir kitabı sonunu ve içeriğini merak ettiğim için bitirmeden bırakmam.	",
+      "Okuma öncesinde bir ön hazırlık yaparım.	",
+      "Okuduğum bölümlere zaman zaman tekrar göz atarım.	",
+      "Kitabı bitirdikten sonra o kitabın özetini çıkartırım.	",
+      "Kitap okurken sayfa kenarlarına özel notlar alırım.	",
+      "Kitap okurken önemli cümlelerin, paragrafların altını çizerim.	",
+      "Okuma öncesinde zamanla orantılı olarak hedef belirlerim. (örneğin 30 dk 20 sayfa okuyacağım gibi)	",
+      "Bir yazarın kitabını bitirdiğimde mutlaka diğer kitaplarını da okumak isterim. 	",
+      "İlgimi çekerse aynı anda birden fazla kitabı okuyup bitirebiliyorum.	",
+      "Örnek olmak için insanların içinde çokça kitap okurum. 	",
+      "Çantamda mutlaka kitap bulundururum ve hemen her yerde okuyabilirim.	",
+    ]
+    const test1Evaluations = [
+      "Daha sık kitap almalı ve okumalısın. Zorunlu okuduklarının haricinde gönüllü okuduğun kitaplarda olmalı ki iyi bir okur olabilesin. Kitap okumada yaşıtlarına göre ortalamanın altındasın. Zorunlu okumaların dışında kitap okumaya karşı biraz isteksiz görünüyorsun. Kitap Okumaya daha fazla zaman ayırmalısın.  Televizyonlardaki kültür–sanat programlarını takip etmen kitaplara karşı ısınmanda sana faydalı olabilir. Kütüphanelerde ve kitapçılarda daha fazla zaman geçirmen senin için faydalı olacaktır. Arkadaşlarından, tanıdıklarından ödünç kitaplar al. Son çıkan ve en çok satan kitapları takip et, mutlaka ilgini çeken seveceğin kitaplar olacaktır. Kitap okumaya ısınmalı, ilgini ve merakını arttıracak eylem ve davranışlarda bulunmalısın.",
+      "Daha sık kitap almalı ve okumalısın. Zorunlu okuduklarının haricinde gönüllü okuduğun kitaplarda olmalı ki iyi bir okur olabilesin. Kitap okumada yaşıtlarına göre ortalamanın altındasın. Zorunlu okumaların dışında kitap okumaya karşı biraz isteksiz görünüyorsun. Kitap Okumaya daha fazla zaman ayırmalısın.  Televizyonlardaki kültür–sanat programlarını takip etmen kitaplara karşı ısınmanda sana faydalı olabilir. Kütüphanelerde ve kitapçılarda daha fazla zaman geçirmen senin için faydalı olacaktır. Arkadaşlarından, tanıdıklarından ödünç kitaplar al. Son çıkan ve en çok satan kitapları takip et, mutlaka ilgini çeken seveceğin kitaplar olacaktır. Kitap okumaya ısınmalı, ilgini ve merakını arttıracak eylem ve davranışlarda bulunmalısın.",
+      "Okuma isteğin ortalama seviyelerde. Biraz daha sık kitap almalı ve okumalısın. Gönüllü okuduğun kitapların sayısını arttırman senin iyi bir okur almana ve entelektüel kişiliğinin gelişmesine fayda sağlayacaktır. Kütüphanelerde ve kitapçılarda daha fazla vakit geçir, son çıkan kitapları takip et, yeniliklerden haberdar ol. Tanıdıklarından ödünç kitaplar alarak belirlenen zamana kadar okumaya çalışmalısın. Televizyonlardaki kültür programlarını, gazetelerdeki kitap eklerini takip ederek bu konuya (kitap okumaya) biraz daha fazla ilgi göstermelisin. Böylece kitaba ilgin ve merakın daha da artacaktır. Unutma! İnsan dünyayı okuyarak öğrenir ve biz öğrenmelerimizin %80’ini okuyarak gerçekleştiririz.",
+      "Okuma isteğin ortalamanın üstünde. Okuma konusunda fena değilsin ve kitap okumayı seviyorsun. Bu yönünü daha da geliştirmek ve her daim aktif tutmak için konferans ve sempozyumlara katılabilir, yazılar yazabilirsin. Yazarlık konusunda ciddi düşünmelisin, çünkü bilgi birikimin ve kelime hazinen fena değil gibi gözüküyor. Okuma merakın sayesinde zengin bir kitap oluşturmuş olmalısın. Kitaplığını çeşitlendir, ve her daim zengin tut. Gelirinin bir kısmını kitaba ayırıyor olmalısın. Tebrikler!",
+      "Okumak senin için temel bir ihtiyaç. Okuma konusunda çok iyisin. Türkiye ortalamasının çok üstündesin diyebiliriz. Tam bir kitap kurdu olmalısın. Bu yönünü daha da geliştirmek ve her daim aktif tutmak için konferans ve sempozyumlara katılabilir, yazılar yazabilirsin. Bu seni çok daha ileri seviyelere götürecektir. Okuma konusunda insanlara örnek olacak düzeydesin.  Yazarlık konusunda ciddi düşünmelisin, çünkü bilgi birikimin ve kelime hazinen fena değil gibi gözüküyor."
+    ]
+    let test1Answers = []
+    $(document).ready(() => {
+      for (var i = 0; i < test1Questions.length; ++i) {
+        test1Answers.push("")
+        $("#modalTest1Body").append(`
+          <p class="font-weight-bold">
+            ${i + 1}) ${test1Questions[i]}
+          </p>
+          <div class="row justify-content-center px-2 font-small mb-4">
+            <!-- Material inline 1 -->
+              <div class="col-sm text-center border">
+                <div>Kesinlikle Uygun (HEP)</div>
+                <div class="form-check form-check-inline">
+                  <input type="radio" class="test1radio form-check-input" id="test1_${i + 1}-a" name="inlineMaterialRadiosExample${i + 1}" value=0>
+                  <label class="form-check-label" for="test1_${i + 1}-a"></label>
+                </div>
+              </div>
+              <div class="col-sm text-center border">
+                <div>Kısmen Uygun (GENELLİKLE)</div>
+                <div class="form-check form-check-inline">
+                  <input type="radio" class="test1radio form-check-input" id="test1_${i + 1}-b" name="inlineMaterialRadiosExample${i + 1}" value=0>
+                  <label class="form-check-label" for="test1_${i + 1}-b"></label>
+                </div>
+              </div>
+              <div class="col-sm text-center border">
+                <div>Uygun (BAZEN)</div>
+                <div class="form-check form-check-inline">
+                  <input type="radio" class="test1radio form-check-input" id="test1_${i + 1}-c" name="inlineMaterialRadiosExample${i + 1}" value=0>
+                  <label class="form-check-label" for="test1_${i + 1}-c"></label>
+                </div>
+              </div>
+              <div class="col-sm text-center border">
+                <div>Kısmen Uygun Değil (AZICIK)</div>
+                <div class="form-check form-check-inline">
+                  <input type="radio" class="test1radio form-check-input" id="test1_${i + 1}-d" name="inlineMaterialRadiosExample${i + 1}" value=0>
+                  <label class="form-check-label" for="test1_${i + 1}-d"></label>
+                </div>
+              </div>
+              <div class="col-sm text-center border">
+                <div>Kesinlikle Uygun Değil(HİÇ)</div>
+                <div class="form-check form-check-inline">
+                  <input type="radio" class="test1radio form-check-input" id="test1_${i + 1}-e" name="inlineMaterialRadiosExample${i + 1}" value=0>
+                  <label class="form-check-label" for="test1_${i + 1}-e"></label>
+                </div>
+              </div>
+             
+          </div>
+        `)
+
+
+        $(".test1radio").click((event) => {
+          console.log(event.target.id)
+          const index = Number(event.target.id.replace("test1_", "").split("-")[0]) - 1
+          const option = event.target.id.replace("test1_", "").split("-")[1]
+          test1Answers[index] = option
+        })
+      }
+
+      $("#modalTest1Okay").click(() => {
+        $(".scoreModalIcon").addClass("nodisplay")
+        $("#scoreModalIconBell").removeClass("nodisplay")
+        $("#scoreModalInfo").text(`Puanınız: ${test1Evaluate()}`)
+        if (test1Evaluate() <= 30) {
+          $("#scoreModalInfoText").html(`
+            <p>${test1Evaluations[0]}</p>
+          `)
+        }
+        else if (test1Evaluate() <= 50) {
+          $("#scoreModalInfoText").html(`
+            <p>${test1Evaluations[1]}</p>
+          `)
+        }
+        else if (test1Evaluate() <= 70) {
+          $("#scoreModalInfoText").html(`
+            <p>${test1Evaluations[2]}</p>
+          `)
+        }
+        else if (test1Evaluate() <= 85) {
+          $("#scoreModalInfoText").html(`
+            <p>${test1Evaluations[3]}</p>
+          `)
+        }
+        else {
+          $("#scoreModalInfoText").html(`
+            <p>${test1Evaluations[4]}</p>
+          `)
+        }
+
+      })
+    })
+
+    function test1Evaluate() {
+      return test1Answers.filter(item => item == "a").length * 5 +
+        test1Answers.filter(item => item == "b").length * 4 +
+        test1Answers.filter(item => item == "c").length * 3 +
+        test1Answers.filter(item => item == "d").length * 2 +
+        test1Answers.filter(item => item == "e").length * 1;
+    }
+
+  </script>
+
+  <!-- Test 2: Sağ-Sol Beyin Testi -->
+  <div class="modal fade" id="modalTest2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100" id="myModalLabel">Sağ-Sol Beyin Testi</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="modalTest2Body" class="modal-body"></div>
+        <div class="modal-footer d-flex flex-center">
+          <button id="modalTest2Okay" type="button" class="btn btn-success btn-rounded btn" data-toggle="modal" data-target="#scoreModal" data-dismiss="modal">Tamamla</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div id="modalStartTest2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content text-center">
+        <div class="modal-header d-flex justify-content-center default">
+          <p id="startModalHeader" class="heading h5" style="font-weight: bold; color: #2bbbad;">Değerli öğrencim;</p>
+        </div>
+        <div class="modal-body">
+          <h6 class="text-left" id="startModalInfo" style="line-height: 2.5rem !important;">
+            * Bildiğiniz üzere beynimiz 2 lobdan oluşur.<br>
+            * Sağ Lob ve Sol Lob.<br>
+            * Bu test beynimizin <em><strong>Sağ Lob</strong></em>'umu? Yoksa <em><strong>Sol Lob</strong></em>'umu daha baskın çalışıyor, bunu ölçmeye çalışan bir testtir.<br>
+            * 20 sorudan oluşan testimizde 2 şıktan birini mutlaka işaretleyiniz.<br>
+            * Hiçbir soruyu boş bırakmamanız, mutlaka 1 şık işaretlemeniz gerekir.<br>
+            * Test sonucunda hangi lobun baskın olduğu ve baskın lobun özelliklerini sonuç kısmından görebilirsiniz.<br>
+          </h6>
+        </div>
+        <div class="modal-footer flex-center">
+          <button type="button" data-toggle="modal" data-target="#modalTest2" class="btn btn-sm btn-outline-default btn-rounded waves-effect waves-light" data-dismiss="modal">Başla!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const test2Questions = [
+      "Ayrıntılı bir düzenleme sisteminiz ve her şey için bir yeriniz var mıdır?",
+      "Sınavlarda hangi soru tipini tercih edersiniz/ederdiniz?",
+      "Bir dans figürü öğrenirken, hangisi öğrenmenizi kolaylaştırır?",
+      "Bir tiyatro salonu, amfi ya da sınıfa oditoryuma girdiğinizde (başka etkileyen unsurlar olmadığını varsayarsak) hangi tarafa oturmayı tercih edersiniz?",
+      "Sık sık önsezileriniz olur mu?",
+      "Önsezilerinizi dinler misiniz?",
+      "Mobilyalarınızın yerlerini yılda bir kaç kez değiştirir misiniz yoksa aynı düzende kalmalarını mı tercih edersiniz?",
+      "Saatiniz olmadan ne kadar süre geçtiğini tahmin edebilir misiniz?",
+      "Kıyaslayacak olursak, hangisini daha kolay anlarsınız?",
+      "Hangisini daha kolay hatırlarsınız?",
+      "Birisi sizden 'Okul' kavramını anlatmanızı istese, duygularınızı çizerek mi yazarak mı ifade etmeyi yeğlersiniz?",
+      "Birisi sizinle konuşurken, neye dikkat edersiniz?",
+      "Konuşurken, ellerinizi ne kadar kullanırsınız?",
+      "Masanız / çalışma alanınız;",
+      "Hangisini okumak size kolay gelir?",
+      "Hangisinde daha iyi düşünürsünüz?",
+      "Hangi tarz şeyleri söylemek size kendinizi daha rahat hissettirir?",
+      "Matematikte;",
+      "Çocuklarla vakit geçirmek;",
+      "Not tutarken;"
+    ]
+
+    const test2Options = [
+      ["Evet", "Hayır"],
+      ["Doğru / yanlış, çoktan seçmeli, eşleme gibi yorum gerektirmeyen soruları", "Ucu açık yorum sorularını"],
+      ["Öğreteni taklit edip müziğin ritmini hissetmek", "Figürü adım adım öğrenip uygulamak "],
+      ["Sağ", "Sol"],
+      ["Evet", "Hayır"],
+      ["Evet", "Hayır"],
+      ["Değiştirmem", "Değiştiririm"],
+      ["Evet", "Hayır"],
+      ["Cebir", "Geometri"],
+      ["İsimler", "Yüzler"],
+      ["Çizerek", "Yazarak"],
+      ["Sözcük anlamı (söylenen)", "Vurgu ve duygular (nasıl söylendiği)"],
+      ["Çok az kullanırım", "Sürekli kullanırım"],
+      ["Düzenlidir", "Gerekebilecek malzemelerle dolu ve kalabalıktır"],
+      ["Ana fikirler", "Belirgin detaylar"],
+      ["Otururken", "Hareket halindeyken"],
+      ["Esprili şeyler", "Mantıklı şeyler"],
+      ["Sonuca nasıl ulaştığınızı açıklayabilirsiniz.", "Sonuca ulaşırsınız ama nasıl olduğunu açıklayamazsınız."],
+      ["Sorumluluktur", "Keyiftir"],
+      ["Birden fazla renkte kalem kullanırım", "Genellikle tek kalem kullanırım"],
+    ]
+
+    const test2Answers = [
+      ["a", "b"],
+      ["a", "b"],
+      ["b", "a"],
+      ["a", "b"],
+      ["b", "a"],
+      ["b", "a"],
+      ["a", "b"],
+      ["b", "a"],
+      ["a", "b"],
+      ["a", "b"],
+      ["b", "a"],
+      ["a", "b"],
+      ["a", "b"],
+      ["a", "b"],
+      ["b", "a"],
+      ["a", "b"],
+      ["b", "a"],
+      ["a", "b"],
+      ["a", "b"],
+      ["b", "a"]
+    ]
+
+    test2EvaluationGroups = [
+      // ["►&nbsp;Pozitif", "►&nbsp;Sezgisel"],
+      // ["►&nbsp;Analitik", "►&nbsp;İhtiyari"],
+      // ["►&nbsp;Doğrusal", "►&nbsp;İçsel"],
+      // ["►&nbsp;Kesin", "►&nbsp;Duygusal"],
+      // ["►&nbsp;Sıralı", "►&nbsp;Şakacı"],
+      // ["►&nbsp;Sözel", "►&nbsp;Sözel değil"],
+      // ["►&nbsp;Somut", "►&nbsp;Ayrıntıcı"],
+      // ["►&nbsp;Mantıklı", "►&nbsp;Görsel-resimsel"],
+      // ["►&nbsp;Aktif", "►&nbsp;Sembolik"],
+      // ["►&nbsp;Kazanç odaklı", "►&nbsp;Artistik"],
+      // ["►&nbsp;Dikkatli", "►&nbsp;Fiziksel"],
+      // ["►&nbsp;Kusursuz", "►&nbsp;Hareketleri uyumlu"],
+      // ["►&nbsp;Sistematik", "►&nbsp;Çocuksu"],
+      // ["►&nbsp;Yazılı harf-rakam", "►&nbsp;Eleştirel değil"]
+      ["►&nbsp; Mantıksaldır.", "►&nbsp; Duygusaldır.	"],
+      ["►&nbsp; Pragmatiktir, direk sonuca bakar.", "►&nbsp; Niyete bakar, iyi niyet arar.	"],
+      ["►&nbsp; Net sonuçlarla ilgilenir.", "►&nbsp; Sezgiseldir, sezgilere güvenir.	"],
+      ["►&nbsp; Somut düşünür.", "►&nbsp; Soyut düşünür.	"],
+      ["►&nbsp; Akademik ve bilimsel konularda başarılıdır.", "►&nbsp; İnsanı insan yapan, duygusallık, empati, his ve şevkat konularında iyidir.	"],
+      ["►&nbsp; Matematik konularda iyidir.", "►&nbsp; Görsel sanatsal konularda iyidir..	"],
+      ["►&nbsp; Detaycıdır, daha çok parçalara bölerek incelemek ister.", "►&nbsp; Bütünseldir, bütünü görme eğilimi içindedir.	"],
+      ["►&nbsp; Tekdüze, analitik, renksiz siyah beyaz düşünür.", "►&nbsp; Görsel düşünmeyi, renkli düşünmeyi sever; renklerden, müzkten ritimden yararlanır	"],
+      ["►&nbsp; Rasyonel-Gerçekçidir, sözlü talimatlara uyar.", "►&nbsp; Hayal gücü yüksektir, fantastik yaratıcı yön vardır.	"],
+      ["►&nbsp; Klasik okuma sol beyin faaliyetidir.", "►&nbsp; Hızlı okuma sağ beyin faaliyetidir."]
+    ]
+
+    test2LeftRight = []
+    for (var i = 0; i < test2Questions.length; ++i) { test2LeftRight.push("") }
+
+    $(document).ready(() => {
+      const optionLetters = ["a", "b"]
+      for (var i = 0; i < test2Questions.length; ++i) {
+        // console.log("Here")
+        $("#modalTest2Body").append(`
+          <div id="test2-q${i}">
+            <h5 class="text-left">${i + 1} - ${test2Questions[i]}</h5>
+            <nav aria-label="Page navigation example">
+              <ul class="pagination d-flex flex-column text-left mx-auto" style="width: 95%;">
+              </ul>
+            </nav>
+          </div>
+        `)
+        $(`#test2-q${i} > nav > .pagination`).empty()
+        for (var j = 0; j < test2Options[i].length; ++j) {
+          $(`#test2-q${i} > nav > .pagination`).append(`
+            <li class="page-item option" data-qid="test2-q${i}"><a class="page-link" style="font-size:1rem;">${optionLetters[j]}) ${test2Options[i][j]}</a></li>
+          `)
+        }
+      }
+
+      $('.page-item.option').click(function () {
+        $('.page-item.option > .page-link').css("font-weight", "");
+        $('.page-item.option > .page-link').css("background-color", "");
+        $('.page-item.option > .page-link').removeClass('active');
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.page-item.option.active > .page-link').css("font-weight", "bold");
+        $('.page-item.option.active > .page-link').css("color", "black");
+        $('.page-item.option.active > .page-link').css("background-color", "rgba(66, 244, 154, 0.7)");
+        let questionIndex = Number($(this).attr("data-qid").replace("test2-q", ""))
+        let answer = $(this).text().split(")")[0]
+        let answerIndex = optionLetters.indexOf(answer)
+        console.log(questionIndex)
+        console.log(answerIndex)
+        if (test2Answers[questionIndex].indexOf(answer) == 0) test2LeftRight[questionIndex] = "left"
+        else test2LeftRight[questionIndex] = "right"
+      });
+
+      $("#modalTest2Okay").click(() => {
+        const left = test2LeftRight.filter(item => item == "left").length * 5
+        const right = test2LeftRight.filter(item => item == "right").length * 5
+        $("#scoreModalInfo").html(`Sol Beyin <strong>% ${left}</strong>, Sağ Beyin <strong>% ${right}</strong>`)
+        $("#scoreModalInfoText").empty()
+        $("#scoreModalInfoText").append(`
+          <div class="row">
+            <div class="col-sm-6 w-100">
+              <table class="table table-sm w-100">
+                <thead id="test2EvaluationsTableHead">
+                  <tr class="text-left">
+                    <th scope="col-sm-6" style="width: 50%">Sol Beyni Baskın Olanlar</th>
+                    <th scope="col-sm-6" style="width: 50%">Sağ Beyni Baskın Olanlar</th>
+                  </tr>
+                </thead>
+                <tbody class="table-row-select" id="test2EvaluationsTableRows"></tbody>
+              </table>
+            </div>
+            <div class="col-sm-6">
+              <p class="text-left">
+                <strong>Sol lobu baskın olanlar sağ lobu çalıştırmak için ne yapmalı?</strong>
+                <div class="text-left">
+                  &emsp; ►Görselleşmeli, hayal kurmalı <br>
+                  &emsp; ►Örneklere bakmalı <br>
+                  &emsp; ►Karşıtları incelemeli <br>
+                  &emsp; ►Vücut dilini ve ses tonunu kullanmalı <br>
+                  &emsp; ►Çocuğun sağ beynine mesaj vermeli <br>
+                  &emsp; ►Empatik olmalı <br>
+                  &emsp; ►Vücudunu hareketlendirmeli <br>
+                </div>
+              </p>
+
+              <p class="mt-5 text-left">
+                <strong>Sağ lobu baskın olanlar sol lobu çalıştırmak için ne yapmalı?</strong>
+                <div class="text-left">
+                  &emsp; ►Notlar almalı, yazmalı <br>
+                  &emsp; ►Organize olmalı, önceliklerini belirlemeli <br>
+                  &emsp; ►Fikirleri değerlendirmeli, hedefleri belirlemeli <br>
+                  &emsp; ►Vücut dilini ve ses tonunu kontrol etmeli <br>
+                  &emsp; ►Daha mantıklı olmalı <br>
+                  &emsp; ►Karşılaştırmalı, eleştirmeli <br>
+                  &emsp; ►Sorgulayıcı olmalı, gözden geçirmeli<br>
+                </div>
+              </p>
+            </div>
+          </div>
+        `)
+        for (var i = 0; i < test2EvaluationGroups.length; ++i) {
+          $("#test2EvaluationsTableRows").append(`
+            <tr>
+              <td class="text-left">${test2EvaluationGroups[i][0]}</td>
+              <td class="text-left">${test2EvaluationGroups[i][1]}</td>
+            </tr>
+          `)
+        }
+      })
+    })
+  </script>
+
+  <!-- Test 3 -->
+  <!-- Ev Verimli Nasıl Öğreniyoruz Testi -->
+  <div class="modal fade" id="modalTest3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100" id="myModalLabel">Ev Verimli Nasıl Öğreniyoruz Testi</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="modalTest3Body" class="modal-body">
+          <table class="table table-sm w-100 table-bordered">
+            <thead id="test3TableAHead">
+              <tr class="text-center">
+                <th scope="col">Sıra</th>
+                <th scope="col">A Kategorisi Aktiviteler</th>
+                <th scope="col">( &#10004;)</th>
+              </tr>
+            </thead>
+            <tbody class="table-row-select" id="test3TableARows"></tbody>
+          </table>
+          <table class="table table-sm w-100 mb-4 table-bordered">
+            <thead id="test3TableBHead" style="background: #eee;">
+              <tr class="text-center">
+                <th scope="col">Sıra</th>
+                <th scope="col">B Kategorisi Aktiviteler</th>
+                <th scope="col">( &#10004;)</th>
+              </tr>
+            </thead>
+            <tbody class="table-row-select" id="test3TableBRows"></tbody>
+          </table>
+          <table class="table table-sm w-100 mb-4 table-bordered">
+            <thead id="test3TableCHead">
+              <tr class="text-center h3">
+                <th scope="col">Sıra</th>
+                <th scope="col">C Kategorisi Aktiviteler</th>
+                <th scope="col">(&#10004;)</th>
+              </tr>
+            </thead>
+            <tbody class="table-row-select" id="test3TableCRows"></tbody>
+          </table>
+        </div>
+        <div class="modal-footer flex-center">
+          <button id="modalTest3Okay" type="button" class="btn btn-success btn-rounded btn" data-toggle="modal" data-target="#scoreModal" data-dismiss="modal">Tamamla</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalStartTest3" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content text-center">
+        <div class="modal-header d-flex justify-content-center default">
+          <p id="startModalHeader" class="heading h5" style="font-weight: bold; color: #2bbbad;">Değerli öğrencim;</p>
+        </div>
+        <div class="modal-body">
+          <h6 class="text-left" id="startModalInfo" style="line-height: 2.5rem !important;">
+            <strong>3 Temel Öğrenme Stili vardır.</strong> <br>
+            &emsp;1- Görsel ağırlıklı öğrenme <br>
+            &emsp;2- İşitsel ağırlıklı öğrenme <br>
+            &emsp;3- Dokunsal / Kinetiksel ağırlıklı öğrenme <br>
+            <br>
+            * Bu test bizim hangi öğrenme şeklimizin baskın olduğunu ölçmeye çalışan bir testtir. <br>
+            * 3 Kategori başlığında, toplam 60 sorudan oluşan testi okuyun ve size uyan maddeleri işaretleyiniz. <br>
+            * Size uymayan soruları boş bırakın, tüm soruları işaretlemek zorunda değilsiniz. <br>
+            * Test sonucunda hangi öğrenme sitilinizin yüksek olduğunu görebilirsiniz. <br>
+          </h6>
+        </div>
+        <div class="modal-footer flex-center">
+          <button id="startModalOkay" type="button" data-toggle="modal" data-target="#modalTest3" class="btn btn-sm btn-outline-default btn-rounded waves-effect waves-light" data-dismiss="modal">Başla!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    const test3GroupA = [
+      "Biri bana ders verir gibi bir şeyler anlatırsa başka dünyalara dalarım.",
+      "Temiz ve düzenli bir sıraya sahip olmak isterim.",
+      "Sözel yönergeleri kullanamam, haritaya gereksinim duyarım.",
+      "Duyduğum ama görmediğim yönergelere dikkat etmekte zorlanırım.",
+      "Resimli bulmaca çözmeyi severim.",
+      "Sessiz okumayı severim.",
+      "Sözcükleri hatasız yazarım.",
+      "Gördüklerimi iyi hatırlarım.",
+      "Olaylar veya konular şema tize edilirse daha iyi anlarım.",
+      "Konuşmacının ağzını izlerim.",
+      "Resimli roman okumayı severim.",
+      "Şarkı sözlerini hatırlamakta zorlanırım.",
+      "Okunmakta olan bir metnin kopyasını takip etmezsem anlamakta zorlanırım. ",
+      "Sözel tariflerin tekrarlanmasını isterim",
+      "Kendi kendime düşünüp çalışarak öğrenmeyi severim.",
+      "Derslerde not tutmayı tercih ederim.",
+      "Boş zamanlarımda okumayı severim.",
+      "Başkalarının ne yaptığını gözlerim.",
+      "Radyo ve televizyonu yüksek sesle dinlerim.",
+      "Telefonda konuşmayı sevmem, yüz yüze konuşmayı tercih ederim."
+    ]
+
+    const test3GroupB = [
+      "Kendi kendime konuşurum.",
+      "Bütün yanlışlarımı, öğretmenin anlatarak düzeltmesini isterim.",
+      "Okurken parmağımla takip ederim.",
+      "Sınıfta arkadaşlarımla tartışarak ve sohbet ederek öğrenmeyi severim.",
+      "Okurken kâğıda çok yaklaşırım.",
+      "Gözlerimi ellerime dayarım.",
+      "Daha iyi öğrenmek için müzik ve ritmi severim.",
+      "Sınıfta çok fazla konuşurum.",
+      "Boş zamanlarımda arkadaşlarımla konuşmayı ve şaka yapmayı severim.",
+      "Genellikle grafikler, sembol ve simgeler benim öğrenmemi kolaylaştırmaz.",
+      "Yüksek sesle okumayı severim.",
+      "Yazılı karikatürleri tercih ederim.",
+      "Hikâye şiir veya kitap kasetleri dinlemeyi severim.",
+      "Anlatmayı yazmaya tercih ederim.",
+      "Görsel ve sözcük hatırlama hafızam iyi değildir.",
+      "Kendi kendime çalışmaktansa öğretmeni dinleyerek öğrenmeyi tercih ederim. ",
+      "Bir konu bana okunursa kendi okuduğumdan daha iyi anlarım.",
+      "Kopyalanacak bir şey olmadan kolay çizemem.",
+      "Haritalardan çok sözel tarifleri ve yönergeleri tercih ederim.",
+      "Sessizliğe dayanamam… ya ben yada diğerlerinin konuşmasını isterim.",
+    ]
+
+    const test3GroupC = [
+      "Boş bir kâğıda sütunlar çizmem istendiğinde kağıdı katlarım.",
+      "Ellerimi kullanabileceğim bir şeyler yapmak isterim.",
+      "Sandalyede otururken sallanırım ya da bacağımı sallarım.",
+      "Defterimin içini genellikle resimlerle, şekillerle süslerim, karalama yaparım.",
+      "Kalemimi elimde döndürürüm, masada tempo tutarım.",
+      "Öğretmenlerim asla çalışmadığımı düşünürler.",
+      "Öğretmenlerim sınıfta çok fazla hareket ettiğimi düşünürler.",
+      "Genellikle hiperaktif olduğum söylenir.",
+      "Çalışırken sık sık ara verir, başka şeyler yaparım.",
+      "Arkadaşlarıma el şakası yapmaya bayılırım.",
+      "Kapının üst çerçevesine asılarak odaya atlamak isterim.",
+      "Aktif olarak katıldığım etkinlikleri severim.",
+      "Bir şeyi görmek yada duymak yetmez, dokunmak isterim.",
+      "Her şeye dokunmak isterim.",
+      "Objeleri biriktirmeyi severim.",
+      "Sınıfta tahta silmeyi, pencere yada kapı açıp kapatmayı hep ben yapmak isterim.",
+      "Kürdanları, kibritleri küçük küçük parçalara ayırırım.",
+      "Aletleri açar, isimleri söker, ",
+      "Genellikle ellerimi kullanarak ve hızlı konuşurum.",
+      "Başkalarının sözünü sık sık keserim.",
+    ]
+
+    let test3GroupAAnswers = []
+    let test3GroupBAnswers = []
+    let test3GroupCAnswers = []
+    $(document).ready(() => {
+      for (var i = 0; i < test3GroupA.length; ++i) {
+        test3GroupAAnswers.push("")
+        $("#test3TableARows").append(`
+          <tr>
+            <td class="text-center">${i + 1}</td>
+            <td class="text-left">${test3GroupA[i]}</td>
+            <td class=""> 
+              <div class="form-check">
+                <input type="checkbox" class="test3 form-check-input" id="answerGroupA-${i}" value=0>
+                <label class="test3 form-check-label pl-4" for="answerGroupA-${i}"></label>
+              </div>
+            </td>
+          </tr>
+        `)
+      }
+      for (var i = 0; i < test3GroupB.length; ++i) {
+        test3GroupBAnswers.push("")
+        $("#test3TableBRows").append(`
+          <tr>
+            <td class="text-center">${i + 1}</td>
+            <td class="text-left">${test3GroupB[i]}</td>
+            <td class=""> 
+              <div class="form-check">
+                <input type="checkbox" class="test3 form-check-input" id="answerGroupB-${i}" value=0>
+                <label class="test3 form-check-label pl-4" for="answerGroupB-${i}"></label>
+              </div>
+            </td>
+          </tr>
+        `)
+      }
+      for (var i = 0; i < test3GroupC.length; ++i) {
+        test3GroupCAnswers.push("")
+        $("#test3TableCRows").append(`
+          <tr>
+            <td class="text-center">${i + 1}</td>
+            <td class="text-left">${test3GroupC[i]}</td>
+            <td class=""> 
+              <div class="form-check">
+                <input type="checkbox" class="test3 form-check-input" id="answerGroupC-${i}" value=0>
+                <label class="test3 form-check-label pl-4" for="answerGroupC-${i}"></label>
+              </div>
+            </td>
+          </tr>
+        `)
+      }
+
+      $(".test3.form-check-input").click(() => {
+        const group = event.target.id.replace("answerGroup", "").split("-")[0]
+        const index = event.target.id.replace("answerGroup", "").split("-")[1]
+        if (group == "A") {
+          if (test3GroupAAnswers[index] != "checked") test3GroupAAnswers[index] = "checked"
+          else test3GroupAAnswers[index] = ""
+        }
+        if (group == "B") {
+          if (test3GroupBAnswers[index] != "checked") test3GroupBAnswers[index] = "checked"
+          else test3GroupBAnswers[index] = ""
+        }
+        if (group == "C") {
+          if (test3GroupCAnswers[index] != "checked") test3GroupCAnswers[index] = "checked"
+          else test3GroupCAnswers[index] = ""
+        }
+        // console.log(group)
+        // console.log(index)
+      })
+
+      $("#modalTest3Okay").click(() => {
+        $("#scoreModalInfo").html(`
+          <div class="text-left">
+            <strong>Görsel Ağırlıklı Öğrenme Stili : <span style="color: darkgreen">% ${test3GroupAAnswers.filter(item => item == "checked").length * 5}</span> </strong> <br> <br>
+            <strong>İşitsel Ağırlıklı Öğrenme Stili : <span style="color: darkgreen">% ${test3GroupBAnswers.filter(item => item == "checked").length * 5}</span></strong> <br> <br>
+            <strong>Dokunsal / Kinetiksel Ağırlıklı Öğrenme Stili: <span style="color: darkgreen">% ${test3GroupCAnswers.filter(item => item == "checked").length * 5}</span></strong>
+          </div>
+        `)
+        $("#scoreModalInfoText").empty()
+      })
+    })
+
+
+  </script>
+
+
+</body>
+
+</html>

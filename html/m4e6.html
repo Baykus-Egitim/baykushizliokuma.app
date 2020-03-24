@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Baykuş Hızlı Okuma</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="/app/img/bho_yazısız.png">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/app/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="/app/css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="/app/css/style.css">
+  <!-- Google material icons -->
+  <link href="/app/css/material-design/iconfont/material-icons.css" rel="stylesheet">
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/app/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="/app/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="/app/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="/app/js/mdb.min.js"></script>
+  <!-- Timer.js -->
+  <script src="/app/js/easytimer.js/dist/easytimer.js"></script>
+  <!-- Anime.js -->
+  <script src="/app/js/anime/lib/anime.min.js"></script>
+  <!-- Async.js -->
+  <script src="/app/js/async.min.js"></script>
+  <!-- Hotkeys -->
+  <script src="/app/js/hotkeys.min.js"></script>
+  <!-- Hotkeys -->
+  <!-- <link rel="stylesheet" href="/js/webix/compact.min.css">
+  <script src="/app/js/webix/webix.min.js"></script> -->
+  <!-- Common scripts -->
+  <script src="/app/js/common.js"></script>
+  <!-- Templates -->
+  <script src="/app/js/navbar.js"></script>
+  <script src="/app/js/footer.js"></script>
+  <script src="/app/js/modal.js"></script>
+
+
+  <style>
+    html,
+    body {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #playground {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+
+
+    #word {
+      z-index: 1;
+      position: absolute !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%);
+    }
+
+    .animate-zoom-out {
+      font-size: 60px;
+    }
+
+    .animate-zoom-out-before {
+      font-size: 20px !important;
+    }
+
+    .animate-zoom-in {
+      font-size: 20px;
+    }
+
+    .animate-zoom-in-before {
+      font-size: 60px !important;
+    }
+
+    .animate-stretch {
+      letter-spacing: 20px;
+      word-spacing: 40px;
+    }
+
+    .animate-shrink {
+      letter-spacing: normal;
+      word-spacing: normal;
+    }
+
+    .animate-shrink-before {
+      letter-spacing: 20px !important;
+      word-spacing: 40px !important;
+    }
+
+    .animate-rotate {
+      transform: translate(-50%, -50%) rotate(-135deg) !important;
+    }
+
+    .animate-blur {
+      filter: blur(4px) !important;
+    }
+
+
+    .animate-200 {
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+    }
+
+    .animate-300 {
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+    }
+
+    .animate-400 {
+      -webkit-transition: all 0.4s ease;
+      -moz-transition: all 0.4s ease;
+      -o-transition: all 0.4s ease;
+      transition: all 0.4s ease;
+    }
+
+    .animate-500 {
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+    }
+
+    .animate-600 {
+      -webkit-transition: all 0.6s ease;
+      -moz-transition: all 0.6s ease;
+      -o-transition: all 0.6s ease;
+      transition: all 0.6s ease;
+    }
+
+    .animate-700 {
+      -webkit-transition: all 0.7s ease;
+      -moz-transition: all 0.7s ease;
+      -o-transition: all 0.7s ease;
+      transition: all 0.7s ease;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Start your project here-->
+  <div class="container-fluid" style="height: 100vh;">
+    <div id="playground" class="playground row w-100 h-100 justify-content-center border nodisplay m-auto">
+      <div id="word" class="col-12 text-center my-auto"></div>
+    </div>
+    <div id="background" class="row d-flex justify-content-center h-100 align-items-center odisplay">
+      <div id="logo" class="col-12 text-center">
+        <div id="frames" style="position: relative;">
+          <img id="frame" class="visible" src="/app/img/bho_dunya_transparent.png" alt="" srcset="" style="opacity: 0.3;" height=450>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    //==================================
+    // exercise specific global variables
+    //==================================
+    const module = 4
+    const exercise = 6
+    const exerciseId = `m${module}e${exercise}`
+    let user = null
+    $.get("/app/user", res => { user = res })
+
+
+    //==================================
+    // generate view
+    //==================================
+    navbar(module)
+
+
+    footer()
+    const durations = [750, 650, 550, 450, 350, 250]
+    addDurationControl("Hız", durations)
+    addLevelControl("Seviye", [1, 2, 3, 4, 5, 6])
+    const animations = [
+      { id: "zoom-out", label: "Büyütme" },
+      { id: "zoom-in", label: "Küçültme" },
+      { id: "stretch", label: "Uzatma" },
+      { id: "shrink", label: "Kısaltma" },
+      { id: "rotate", label: "Döndürme" },
+      { id: "blur", label: "Perdeleme" }
+    ]
+    addTypeSelect("Animasyon", animations)
+
+    addStartModal()
+    addScoreModal()
+
+
+    //==================================
+    // initial view functionalities
+    //==================================
+    // start modal
+    $(document).ready(function () {
+      $("#startModalInfo").text("Hız, seviye ve animasyon/gösterim şekli seçerek ekranda çıkan kelime ve cümleleri okumaya çalışalım.")
+      $('#startModal').on('shown.bs.modal', function (e) {
+        $("#startModalHeader").text(`Merhaba ${user.name}, Bu Egzersizde:`)
+      })
+    })
+    // score modal
+    $(document).ready(function () {
+      $("#scoreModalIconCheck").removeClass("nodisplay")
+      $("#scoreModalInfo").text("Egzersizi tamamladınız.")
+      $("#scoreModalTableHead").html(`
+        <tr>
+          <th scope="col">Sıra</th>
+          <th scope="col">Tarih</th>
+          <th scope="col">Hız</th>
+          <th scope="col">Animasyon</th>
+          <th scope="col">Seviye</th>
+        </tr>
+      `)
+      $('#scoreModal').on('shown.bs.modal', function (e) {
+        $("tbody").empty()
+        $.get(`/app/stats?exercise=${exerciseId}`, stats => {
+          for (var i = 0; i < stats.length; ++i) {
+            $("tbody").prepend(`
+              <tr>
+                <td>${i + 1}</td>
+                <td>${stats[i].date}</td>
+                <td>${stats[i].speedLevel}</td>
+                <td>${stats[i].animation}</td>
+                <td>${stats[i].level}</td>
+              </tr>
+            `)
+          }
+        })
+      });
+      $('#scoreModal').on('hidden.bs.modal', function (e) {
+        // atTheEnd()
+      });
+    })
+
+    //==================================
+    // animation routines
+    //==================================
+
+    function loop(callback = () => { }) {
+      var word = words[randomInt(0, words.length)]
+      for (var i = 0; i < animations.length; ++i) { $("#word").removeClass(`animate-${animations[i].id}`) }
+      for (var i = 0; i < durations.length; ++i) { $("#word").removeClass(`animate-${durations[i] - 50}`) }
+      $("#word").text(word)
+      setTimeout(() => {
+        $("#word").addClass(`animate-${animationDuration}`)
+        $("#word").addClass(`animate-${animation.id}`)
+      }, 50)
+    }
+
+    $(document).ready(function () {
+      $("#start").click(function () {
+        $("nav").addClass("animated fadeOutUp")
+        $("footer").addClass("animated fadeOutDown")
+        $("#background").addClass("animated zoomOut")
+        $(".btn").trigger("blur");
+
+        setTimeout(() => {
+          $("#background").addClass("nodisplay")
+          $("#playground").removeClass("nodisplay")
+        }, 500);
+
+        setTimeout(() => {
+          // prepare
+          words = []
+          if (level == 1) words = words8
+          else if (level == 2) words = words9
+          else if (level == 3) words = words10
+          else if (level == 4) words = phrases2
+          else if (level == 5) words = phrases3
+          else words = phrases4
+          animationDuration = duration - 50
+
+          animation = animations.filter(item => item.id == $("#typeSelect").val())[0]
+
+          for (var i = 0; i < animations.length; ++i) { $("#word").removeClass(`animate-${animations[i].id}`) }
+          for (var i = 0; i < animations.length; ++i) { $("#playground").removeClass(`animate-${animations[i].id}-before`) }
+          for (var i = 0; i < durations.length; ++i) { $("#word").removeClass(`animate-${durations[i] - 50}`) }
+          $("#playground").addClass(`animate-${animation.id}-before`)
+
+          // stopper
+          let stopCallback = null
+
+          // esc
+          hotkeys.unbind('esc');
+          hotkeys('esc', function (event, handler) {
+            switch (handler.key) {
+              case 'esc':
+                stopCallback("Finish")
+                break;
+              default: null;
+            }
+          });
+
+          async.series([
+            function (callback) {
+              stopCallback = callback
+              if (!isFirstRun) callback()
+              else {
+                $("#startModalCountdown").text(10)
+                let timer = new easytimer.Timer();
+                timer.start({ precision: 'seconds', countdown: true, startValues: { seconds: 5 } });
+                timer.addEventListener('secondsUpdated', function (e) {
+                  $("#startModalCountdown").text(timer.getTimeValues().seconds);
+                });
+                timer.addEventListener('targetAchieved', function (e) {
+                  $("#startModal").modal("hide")
+                });
+                $("#startModal").modal("show")
+                $('#startModal').off('hidden.bs.modal')
+                $('#startModal').on('hidden.bs.modal', function (e) {
+                  callback()
+                  timer.stop()
+                });
+              }
+            },
+            function (callback) {
+              stopCallback = callback
+              let timer = new easytimer.Timer();
+              timer.start({ precision: 'seconds', countdown: true, startValues: { seconds: 60 } });
+              toastr["info"]("60");
+              timer.addEventListener('secondsUpdated', function (e) {
+                $('.md-toast-message').html(timer.getTimeValues().minutes * 60 + timer.getTimeValues().seconds);
+              });
+              timer.addEventListener('targetAchieved', function (e) {
+                callback()
+                timer.stop()
+                toastr.clear()
+              });
+              loop()
+              interval = setInterval(loop, duration)
+            },
+          ],
+            function (err) {
+              clearInterval(interval)
+              if (!err) {
+                isFirstRun = false
+                let date = new Date()
+                $.post(`/app/stats`, {
+                  exercise: exerciseId, speedLevel: speedLevel,
+                  date: date.toLocaleDateString("tr-TR").split(".").join("/"),
+                  animation: animation.label,
+                  level: level
+                }, res => {})
+                $("#scoreModal").modal("show")
+              }
+              timer.stop()
+              atTheEnd()
+            }
+          )
+        }, 1000);
+      })
+
+
+    })
+    function atTheEnd() {
+      $("#playground").addClass("nodisplay")
+      $("#word").text("")
+
+      $("nav").removeClass("animated fadeOutUp")
+      $("nav").addClass("animated fadeInDown")
+      $("footer").removeClass("animated fadeOutDown")
+      $("footer").addClass("animated fadeInUp")
+
+      $("#background").removeClass("nodisplay")
+      $("#background").removeClass("animated zoomOut")
+      $("#background").addClass("animated zoomIn")
+    }
+
+  </script>
+
+</body>
+
+
+</html>

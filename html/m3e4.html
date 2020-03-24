@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Baykuş Hızlı Okuma</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="/app/img/bho_yazısız.png">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/app/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="/app/css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="/app/css/style.css">
+  <!-- Google material icons -->
+  <link href="/app/css/material-design/iconfont/material-icons.css" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/app/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="/app/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="/app/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="/app/js/mdb.min.js"></script>
+  <!-- Timer.js -->
+  <script src="/app/js/easytimer.js/dist/easytimer.js"></script>
+  <!-- Anime.js -->
+  <script src="/app/js/anime/lib/anime.min.js"></script>
+  <!-- Async.js -->
+  <script src="/app/js/async.min.js"></script>
+  <!-- Hotkeys -->
+  <script src="/app/js/hotkeys.min.js"></script>
+  <!-- Common scripts -->
+  <script src="/app/js/common.js"></script>
+  <!-- Templates -->
+  <script src="/app/js/navbar.js"></script>
+  <script src="/app/js/footer.js"></script>
+  <script src="/app/js/modal.js"></script>
+
+
+  <style>
+    html,
+    body {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #playground {
+      font-size: 24px !important;
+      font-weight: bold;
+      max-width: 700px !important;
+      max-height: calc(100% - 57px) !important;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Start your project here-->
+  <div class="container" style="height: 100vh;">
+    <div id="playground" class="w-100 h-100 border nodisplay mx-auto">
+
+    </div>
+    <div id="background" class="row d-flex justify-content-center h-100 align-items-center odisplay">
+      <div id="logo" class="col-auto text-center ">
+        <div id="frames" style="position: relative;">
+          <img id="frame" class="visible" src="/app/img/bho_dunya_transparent.png" alt="" srcset="" style="opacity: 0.3;" height=450>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <script type="text/javascript">
+    //==================================
+    // exercise specific global variables
+    //==================================
+    const module = Number(window.location.pathname.split("/")[3])
+    const exercise = Number(window.location.pathname.split("/")[5])
+    const exerciseId = `m${module}e${exercise}`
+    document.title = `BHO : Modül ${module}: Egzersiz ${exercise}`
+    let user = null
+    $.get("/app/user", res => { user = res })
+
+    //==================================
+    // generate view
+    //==================================
+    navbar(module)
+
+    addStartModal2()
+    addScoreModal2(false)
+    $(document).ready(function () {
+      $("#scoreModalIconCheck").removeClass("nodisplay")
+    })
+
+    footer()
+    const durations = [400, 200, 100, 75, 50, 25]
+    addDurationControl("Hız", durations)
+    addLevelControl("Seviye", [1, 2, 3])
+
+
+    $(document).ready(() => {
+
+      $("#footerleftleft").append(`
+        <div class="score pl-4 nodisplay" style="width: 200px;">
+          <div>Doğru: </div>
+          <div>Yanlış: </div>
+        </div>
+      `)
+
+      $("#footerleftcenter").html(`
+        <div class="switch primary-switch mt-2">
+          <label>
+            Harf
+            <input id="char-select" type="checkbox" value=0>
+            <span class="lever mx-2"></span> Sayı
+          </label>
+        </div>
+      `)
+      $("#char-select").change(function () {
+        if ($(this).val() == 1) $(this).attr("value", 0)
+        else $(this).attr("value", 1)
+      })
+
+      $("#footerleftright").html(`
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="randomPos" value=0>
+          <label class="form-check-label pl-4" for="randomPos">Rastgele</label>
+        </div>
+      `)
+      // icon size select
+      $("#randomPos").change(function () {
+        if ($(this).val() == 1) {
+          $(this).attr("value", 0)
+        }
+        else {
+          $(this).attr("value", 1)
+        }
+      })
+
+      $("#footercenter").append(`
+        <div class="row d-flex justify-content-center nodisplay">
+          <div id="question" class="col-4 my-auto text-right">
+            Ekranda beliren kelime/sayı nedir?
+          </div>
+          <div class="col-2 my-auto">
+            <input type="text" id="answer" class="form-control form-control-sm">
+          </div>
+          <div class="col-4 my-auto text-left">
+            <button id="answerFinish" class="btn btn btn-outline-white btn-rounded waves-effect waves-light">Cevapla</button>
+          </div>
+        </div>
+      `)
+
+      $("body").append(`
+        <div id="confirmFinish" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-notify" role="document">
+            <div class="modal-content text-center">
+              <div class="modal-header d-flex justify-content-center default">
+                <p class="heading" style="font-weight: bold; color: #2bbbad;">Cevabınız:</p>
+              </div>
+              <div class="modal-body">
+                <i class="fas fa-check fa-4x animated jackInTheBox mb-4" style="color: red"><span class="mx-2"></span></i>
+                <p class="resultInfo"></p>
+              </div>
+              <div class="modal-footer flex-center">
+                <button id="confirmFinishModalOkay" type="button" class="btn btn-sm btn-outline-default btn-rounded waves-effect waves-light" data-dismiss="modal">Tamam<span id="confirmFinishModalCountdown" class="badge badge-light rounded-circle ml-1" style="font-size: 14px; background-color: #f5ad1b !important">3</span></button>
+              </div>
+              <div class="modal-footer flex-center">
+              <p><small>Devam etmek için <kbd>Space</kbd> veya <kbd>Enter</kbd> tuşuna basınız.</small></p>
+            </div>
+            </div>
+          </div>
+        </div>
+      `)
+    })
+
+    //==================================
+    // view functionalities
+    //==================================
+
+
+    // level
+    var level = 1
+    $(document).ready(function () {
+      $('.level').click(function () {
+        level = Number($(this).text())
+      });
+    })
+
+
+    $(document).ready(function () {
+      $("#answer").on("keydown", event => {
+        if (event.keyCode == 32 || event.keyCode == 13) $("#answerFinish").trigger("click")
+      })
+      $("#confirmFinish").on("keypress", event => {
+        if (event.keyCode == 32 || event.keyCode == 13) $('#confirmFinish').modal("hide")
+      })
+
+      $("#answerFinish").click(() => {
+        if ($("#answer").val().turkishToUpper() == focusedChar) {
+          ++trueCount
+          $(".score > div:eq(0)").text(`Doğru: ${trueCount}`)
+          $("#confirmFinish > div > div > .modal-body > i").removeClass("fa-times")
+          $("#confirmFinish > div > div > .modal-body > i").removeClass("fa-question")
+          $("#confirmFinish > div > div > .modal-body > i").addClass("fa-check")
+          $("#confirmFinish > div > div > .modal-body > i").css("color", "green")
+          $("#confirmFinish > div > div > .modal-body > i > span").text("Doğru")
+          $("#confirmFinish > div > div > .modal-body > p").text("")
+        }
+        else {
+          ++wrongCount
+          $(".score > div:eq(1)").text(`Yanlış: ${wrongCount}`)
+          $("#confirmFinish > div > div > .modal-body > i").removeClass("fa-check")
+          $("#confirmFinish > div > div > .modal-body > i").removeClass("fa-question")
+          $("#confirmFinish > div > div > .modal-body > i").addClass("fa-times")
+          $("#confirmFinish > div > div > .modal-body > i").css("color", "red")
+          $("#confirmFinish > div > div > .modal-body > i > span").text("Yanlış")
+          $("#confirmFinish > div > div > .modal-body > p").text(`Doğrusu "${focusedChar}" olacaktı!`)
+        }
+        $('#confirmFinish').modal("show")
+      })
+
+      $("#confirmFinish").on("hidden.bs.modal", function () {
+        $("#answer").val("")
+        $("#answer").focus()
+        $("#confirmFinishModalCountdown").text(1);
+        confirmFinishTimer.stop()
+        if (trueCount == 10) stopCallback()
+        else loop()
+      })
+      $("#confirmFinish").on("shown.bs.modal", function () {
+        confirmFinishTimer = new easytimer.Timer();
+        $("#confirmFinishModalCountdown").text(1);
+        confirmFinishTimer.start({ precision: 'seconds', countdown: true, startValues: { seconds: 1 } });
+        confirmFinishTimer.addEventListener('secondsUpdated', function (e) {
+          $("#confirmFinishModalCountdown").text(confirmFinishTimer.getTimeValues().seconds);
+        });
+        confirmFinishTimer.addEventListener('targetAchieved', function (e) {
+          $("#confirmFinish").modal("hide")
+        });
+      })
+    })
+
+    //==================================
+    // initial functionalities
+    //==================================
+
+
+    //==================================
+    // animation
+    //==================================
+    var Ncols = 9
+    var Nrows = 9
+
+    function createGrid() {
+      var gridItemWidth = $("#playground").width() / Ncols
+      var gridItemHeight = $("#playground").height() / Nrows
+      $("#playground").addClass("grid")
+      $("#playground").empty()
+      $("#playground").css("grid-template-columns", `repeat(${Ncols}, ${gridItemWidth}px)`)
+      $("#playground").css("grid-template-rows", `repeat(${Nrows}, ${gridItemHeight}px)`)
+      for (var i = 0; i < Ncols * Nrows; ++i) {
+        $("#playground").append(`<span class="text-center my-auto"></span>`)
+      }
+    }
+
+    var trueCount = 0
+    var wrongCount = 0
+    var charType = Number($("#char-select").val())
+    var chars = null
+    var focusedChar = null
+    level = 1
+    function loop(callback = () => { }) {
+      $(`#playground > span`).text("")
+      focusedChar = chars[randomInt(0, chars.length)]
+      $(`#playground > span:eq(${Number($("#randomPos").val()) == 1 ? randomInt(0, Ncols * Nrows) : 40})`).text(focusedChar)
+      setTimeout(() => { $(`#playground > span`).text("") }, duration)
+    }
+
+
+    $(document).ready(function () {
+
+      $("#start").click(function () {
+        $("nav").addClass("animated fadeOutUp")
+        // $("footer").addClass("animated fadeOutDown")
+        $("#background").addClass("animated zoomOut")
+        $("#start").trigger("blur");
+
+
+        setTimeout(() => {
+          $("#background").addClass("nodisplay")
+          $("#playground").removeClass("nodisplay")
+
+          $("#start").addClass("nodisplay")
+          $("#footerleftleft > nav").addClass("nodisplay")
+          $(".score").removeClass("nodisplay")
+          $("#footerleftcenter > div").addClass("nodisplay")
+          $("#footerleftright > div").addClass("nodisplay")
+          $("#footerrightleft > nav").addClass("nodisplay")
+          $("#footercenter").removeClass("col-2")
+          $("#footercenter").addClass("col-8")
+          $("#footercenter > div").removeClass("nodisplay")
+          $("#answer").focus()
+
+        }, 500);
+        setTimeout(() => {
+
+          //prepare
+          trueCount = 0
+          wrongCount = 0
+          if (Number($("#char-select").val()) == 0) {
+            if (level == 1) chars = words3
+            else if (level == 2) chars = words4
+            else chars = words5
+          }
+          else {
+            if (level == 1) chars = oneDigitNumbersInStr
+            else if (level == 2) chars = twoDigitNumbersInStr
+            else chars = threeDigitNumbersInStr
+          }
+
+
+          createGrid()
+
+          // stopper
+          stopCallback = null
+
+          // esc
+          hotkeys.unbind('esc');
+          hotkeys('esc', function (event, handler) {
+            switch (handler.key) {
+              case 'esc':
+                isFinished = true
+                stopCallback("Finish")
+                break;
+              default: null;
+            }
+          });
+
+          async.series([
+            function (callback) {
+              stopCallback = callback
+              if (!isFirstRun) callback()
+              else {
+                $("#startModalCountdown").text(10)
+                let timer2 = new easytimer.Timer();
+               timer2.start({ precision: 'seconds', countdown: true, startValues: { seconds: 10 } });
+                timer2.addEventListener('secondsUpdated', function (e) {
+                  $("#startModalCountdown").text(timer2.getTimeValues().seconds);
+                });
+                timer2.addEventListener('targetAchieved', function (e) {
+                  $("#startModal").modal("hide")
+                });
+                $("#startModal").modal("show")
+                $('#startModal').off('hidden.bs.modal')
+                $('#startModal').on('hidden.bs.modal', function (e) {
+                  callback()
+                  timer2.stop()
+                  $("#answer").focus()
+                });
+              }
+            },
+            function (callback) {
+              stopCallback = callback
+              loop(callback)
+            },
+
+          ],
+            function (err) {
+              console.log(err)
+              if (!err) {
+                isFirstRun = false
+                let date = new Date()
+                $.post(`/app/stats`,
+                  {
+                    exercise: exerciseId,
+                    speedLevel: speedLevel,
+                    level: level,
+                    score: Math.floor(trueCount / (wrongCount + trueCount) * 100),
+                    date: date.toLocaleDateString("tr-TR").split(".").join("/")
+                  },
+                  res => {
+                    // console.log(res)
+                  })
+                // $("#scoreModalInfo").text(`Okuma hızınız: ${readSpeed} kelime/dakika`)
+                $("#scoreModal").modal("show")
+              }
+              timer.stop()
+              atTheEnd()
+            }
+          )
+
+        }, 1000);
+      })
+
+
+    })
+    function atTheEnd() {
+      $("#playground > div > span").text("")
+      $("#playground").removeClass("grid")
+      $("#playground").addClass("nodisplay")
+
+      $("#footercenter > div").addClass("nodisplay")
+      $("#footercenter").removeClass("col-8")
+      $("#footercenter").addClass("col-2")
+      $(".score").addClass("nodisplay")
+      $("#footerleftleft > nav").removeClass("nodisplay")
+      $("#footerleftcenter > div").removeClass("nodisplay")
+      $("#footerleftright > div").removeClass("nodisplay")
+      $("#footerrightleft > nav").removeClass("nodisplay")
+      $("#start").removeClass("nodisplay")
+      $("#start").trigger("focus")
+
+      $("#answer").trigger("blur")
+
+
+      $("nav").removeClass("animated fadeOutUp")
+      $("nav").addClass("animated fadeInDown")
+      $("#background").removeClass("nodisplay")
+      $("#background").removeClass("animated zoomOut")
+      $("#background").addClass("animated zoomIn")
+    }
+
+
+  </script>
+
+</body>
+
+</html>

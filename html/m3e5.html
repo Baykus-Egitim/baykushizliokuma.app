@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Baykuş Hızlı Okuma</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="/app/img/bho_yazısız.png">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/app/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="/app/css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="/app/css/style.css">
+  <!-- Google material icons -->
+   <link href="/app/css/material-design/iconfont/material-icons.css" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/app/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="/app/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="/app/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="/app/js/mdb.min.js"></script>
+  <!-- Timer.js -->
+  <script src="/app/js/easytimer.js/dist/easytimer.js"></script>
+  <!-- Anime.js -->
+  <script src="/app/js/anime/lib/anime.min.js"></script>
+  <!-- Async.js -->
+  <script src="/app/js/async.min.js"></script>
+  <!-- Hotkeys -->
+  <script src="/app/js/hotkeys.min.js"></script>
+  <!-- Common scripts -->
+  <script src="/app/js/common.js"></script>
+  <!-- Templates -->
+  <script src="/app/js/navbar.js"></script>
+  <script src="/app/js/footer.js"></script>
+  <script src="/app/js/modal.js"></script>
+
+
+  <style>
+    html,
+    body {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #playground {
+      font-size: 20px !important;
+      font-weight: bold;
+      height: calc(100% - 57px) !important;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Start your project here-->
+  <div class="container" style="height: 100vh;">
+    <div id="playground" class="row w-100 h-100 justify-content-center border nodisplay m-auto">
+      <div class="m-auto"></div>
+    </div>
+    <div id="background" class="row d-flex justify-content-center h-100 align-items-center odisplay">
+      <div id="logo" class="col-12 text-center ">
+        <div id="frames" style="position: relative;">
+          <img id="frame" class="visible" src="/app/img/bho_dunya_transparent.png" alt="" srcset="" style="opacity: 0.3;" height=450>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <script type="text/javascript">
+    //==================================
+    // exercise specific global variables
+    //==================================
+    const module = Number(window.location.pathname.split("/")[3])
+    const exercise = Number(window.location.pathname.split("/")[5])
+    const exerciseId = `m${module}e${exercise}`
+    document.title = `BHO : Modül ${module}: Egzersiz ${exercise}`
+    let user = null
+    $.get("/app/user", res => { user = res })
+
+    //==================================
+    // generate view
+    //==================================
+    navbar(module)
+
+    addStartModal2()
+    addScoreModal2(false)
+    $(document).ready(function () {
+      $("#scoreModalIconCheck").removeClass("nodisplay")
+    })
+
+    footer()
+    $(document).ready(() => {
+      $("#footerleftleft").html(`
+        <nav aria-label="Page navigation example" style="margin-left: -0.5rem; margin-right: 1rem;">
+          <ul class="pagination pagination-circle pg-blue my-1">
+            <li class="page-item white-text">
+              <a class="page-link white-text" tabindex="-1">Süre:</a>
+            </li>
+            <li class="page-item active"><a class="speed page-link">1</a></li>
+            <li class="page-item"><a class="speed page-link">2</a></li>
+            <li class="page-item"><a class="speed page-link">3</a></li>
+          </ul>
+        </nav>
+      `)
+      $("#footercenter").append(`
+        <div class="row d-flex justify-content-center nodisplay">
+          <div id="question" class="col-4 h5 my-auto text-right">
+            Kaç adet xx var?
+          </div>
+          <div class="col-2 my-auto">
+            <input type="number" id="answer" class="form-control form-control-sm">
+          </div>
+          <div class="col-4 my-auto text-left">
+            <button id="answerFinish" class="btn btn btn-outline-white btn-rounded waves-effect waves-light">Cevapla</button>
+          </div>
+        </div>
+      `)
+
+      $("body").append(`
+        <div id="confirmFinish" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-notify" role="document">
+            <div class="modal-content text-center">
+              <div class="modal-header d-flex justify-content-center default">
+                <p class="heading" style="font-weight: bold; color: #2bbbad;">Cevabınız:</p>
+              </div>
+              <div class="modal-body">
+                <i class="fas fa-check fa-4x animated jackInTheBox mb-4" style="color: red"><span class="mx-2"></span></i>
+                <p class="resultInfo"></p>
+              </div>
+              <div class="modal-footer flex-center">
+                <div id="continue" class="btn btn-sm btn-default waves-effect waves-light" data-dismiss="modal">Devam et</div>
+                <div id="okay" class="btn btn-sm btn-default waves-effect waves-light" data-dismiss="modal">Tamamla</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `)
+    })
+
+    //==================================
+    // initial functionalities
+    //==================================
+    // speed
+    var speedLevel = 1
+    var durationMax = 20000
+    var duration = durationMax
+    $('document').ready(function () {
+      $('.page-item').click(function () {
+        $(this).addClass('active').siblings().removeClass('active');
+      });
+
+      $('.speed').click(function () {
+        speedLevel = Number($(this).text())
+        if (speedLevel == 1) duration = 20000
+        else if (speedLevel == 2) duration = 15000
+        else duration = 10000
+      });
+    })
+
+    // level
+    var level = 1
+    $(document).ready(function () {
+      $('.level').click(function () {
+        level = Number($(this).text())
+      });
+    })
+
+    // info box (tostr) options
+    toastr.options["positionClass"] = "md-toast-top-right"
+
+    //==================================
+    // animation
+    //==================================
+    var Ncols = 9
+    var Nrows = 9
+    var emptyGridItems = []
+    var focusCharCount = 0
+    var chars = oneDigitNumbersInStr.concat(twoDigitNumbersInStr)
+    timer = null
+
+    function createGrid() {
+      emptyGridItems = []
+      var gridItemWidth = $("#playground").width() / Ncols
+      var gridItemHeight = $("#playground").height() / Nrows
+      $("#playground > div").addClass("grid")
+      $("#playground > div").empty()
+      $("#playground > div").css("grid-template-columns", `repeat(${Ncols}, ${gridItemWidth}px)`)
+      $("#playground > div").css("grid-template-rows", `repeat(${Nrows}, ${gridItemHeight}px)`)
+      for (var i = 0; i < Ncols * Nrows; ++i) {
+        $("#playground > div").append(`<span class="text-center my-auto"></span>`)
+        emptyGridItems.push(i)
+      }
+    }
+
+
+    function loop() {
+      focusCharCount = randomInt(3, 10)
+      chars = oneDigitNumbersInStr.concat(twoDigitNumbersInStr)
+      var focusChar = chars[randomInt(0, chars.length)]
+      $("#question").text(`Kaç adet ${focusChar} var?`)
+      chars.splice(chars.indexOf(focusChar), 1)
+      for (var i = 0; i < focusCharCount; ++i) {
+        var gridItemIndex = randomInt(0, emptyGridItems.length)
+        $(`#playground > div > span:eq(${emptyGridItems[gridItemIndex]})`).text(focusChar)
+        emptyGridItems.splice(emptyGridItems.indexOf(emptyGridItems[gridItemIndex]), 1)
+      }
+      for (var i = 0; i < Nrows * Ncols - focusCharCount; ++i) {
+        var gridItemIndex = randomInt(0, emptyGridItems.length)
+        $(`#playground > div > span:eq(${emptyGridItems[gridItemIndex]})`).text(chars[randomInt(0, chars.length)])
+        emptyGridItems.splice(emptyGridItems.indexOf(emptyGridItems[gridItemIndex]), 1)
+      }
+    }
+
+
+    // animation specific events
+    $(document).ready(function () {
+      $("#answerFinish").click(() => {
+        // $("#playground > div > span").text("?")
+        if (Number($("#answer").val()) == focusCharCount) {
+          $("#confirmFinish > div > div > .modal-body > i").removeClass("fa-times")
+          $("#confirmFinish > div > div > .modal-body > i").removeClass("fa-question")
+          $("#confirmFinish > div > div > .modal-body > i").addClass("fa-check")
+          $("#confirmFinish > div > div > .modal-body > i").css("color", "green")
+          $("#confirmFinish > div > div > .modal-body > i > span").text("Doğru")
+          $("#confirmFinish > div > div > .modal-body > p").text(`Süre: ${duration / 1000 - (timer.getTimeValues().minutes * 60 + timer.getTimeValues().seconds)} saniye`)
+        }
+        else if(!$("#answer").val()){
+          $("#confirmFinish > div > div > .modal-body > i").removeClass("fa-check")
+          $("#confirmFinish > div > div > .modal-body > i").removeClass("fa-times")
+          $("#confirmFinish > div > div > .modal-body > i").addClass("fa-question")
+          $("#confirmFinish > div > div > .modal-body > i").css("color", "orange")
+          $("#confirmFinish > div > div > .modal-body > p").text(`Doğrusu ${focusCharCount} tane olacaktı!`)
+        }
+        else {
+          $("#confirmFinish > div > div > .modal-body > i").removeClass("fa-check")
+          $("#confirmFinish > div > div > .modal-body > i").removeClass("fa-question")
+          $("#confirmFinish > div > div > .modal-body > i").addClass("fa-times")
+          $("#confirmFinish > div > div > .modal-body > i").css("color", "red")
+          $("#confirmFinish > div > div > .modal-body > i > span").text("Yanlış")
+          $("#confirmFinish > div > div > .modal-body > p").text(`Doğrusu ${focusCharCount} tane olacaktı!`)
+        }
+        let date = new Date()
+        let totalTime = timer.getTimeValues().minutes * 60 + timer.getTimeValues().seconds
+        $.post(`/app/stats`,
+          {
+            exercise: exerciseId,
+            date: date.toLocaleDateString("tr-TR").split(".").join("/"),
+            speedLevel: speedLevel,
+            duration: duration/1000 - totalTime,
+            score: (Number($("#answer").val()) == focusCharCount) ? "Doğru" : !$("#answer").val() ? "Boş" : "Yanlış",
+          },
+          res => {
+            updateScoreTable()
+          })
+        timer.stop()
+        toastr.clear()
+        $('#confirmFinish').modal("show")
+      })
+
+      $("#okay").click(() => {
+        $("#answer").val("")
+        $("#question").text(``)
+        stopCallback()
+      })
+      $("#continue").click(() => {
+        $("#answer").val("")
+        $("#question").text(``)
+        timer.stop()
+        toastr.clear()
+        atTheEnd()
+        $("#start").trigger("click")
+      })
+    })
+
+
+    $(document).ready(function () {
+
+
+      $("#start").click(function () {
+        $("nav").addClass("animated fadeOutUp")
+        // $("footer").addClass("animated fadeOutDown")
+        $("#background").addClass("animated zoomOut")
+        $(".btn").trigger("blur");
+
+
+        setTimeout(() => {
+          $("#background").addClass("nodisplay")
+          $("#playground").removeClass("nodisplay")
+
+          $("#start").addClass("nodisplay")
+          $("#footerleftleft > nav").addClass("nodisplay")
+          $("#footercenter").removeClass("col-2")
+          $("#footercenter").addClass("col-8")
+          $("#footercenter > div").removeClass("nodisplay")
+
+        }, 500);
+        setTimeout(() => {
+
+        
+           // prepare
+           iteration = 0
+          i = 0
+
+          // stopper
+          stopCallback = null
+          isFinished2 = null
+
+          // esc
+          hotkeys.unbind('esc');
+          hotkeys('esc', function (event, handler) {
+            switch (handler.key) {
+              case 'esc':
+                isFinished = true
+                stopCallback("Finish")
+                break;
+              default: null;
+            }
+          });
+
+          async.series([
+
+            function (callback) {
+              stopCallback = callback
+              if (!isFirstRun) setTimeout(callback, 500)
+              else {
+                $("#startModalCountdown").text(10)
+                let timer2 = new easytimer.Timer();
+               timer2.start({ precision: 'seconds', countdown: true, startValues: { seconds: 10 } });
+                timer2.addEventListener('secondsUpdated', function (e) {
+                  $("#startModalCountdown").text(timer2.getTimeValues().seconds);
+                });
+                timer2.addEventListener('targetAchieved', function (e) {
+                  $("#startModal").modal("hide")
+                });
+                $("#startModal").modal("show")
+                $('#startModal').off('hidden.bs.modal')
+                $('#startModal').on('hidden.bs.modal', function (e) {
+                  setTimeout(callback, 500)
+                  timer2.stop()
+                });
+              }
+            },
+            function (callback) {
+              stopCallback = callback
+              createGrid()
+              loop()
+              
+              timer = new easytimer.Timer();
+              toastr["info"](duration / 1000);
+              timer.start({ precision: 'seconds', countdown: true, startValues: { seconds: duration / 1000 } });
+              timer.addEventListener('secondsUpdated', function (e) {
+                $('.md-toast-message').text(timer.getTimeValues().minutes * 60 + timer.getTimeValues().seconds);
+              });
+              timer.addEventListener('targetAchieved', function (e) {
+                $("#answerFinish").trigger("click")
+              });
+
+            },
+
+          ],
+            function (err) {
+              clearInterval(interval)
+              isFinished = true
+              if (!err) {
+                console.log("Finish")
+                isFirstRun = false
+                // let date = new Date()
+                // totalTime = timer.getTimeValues().minutes * 60 + timer.getTimeValues().seconds,
+                //   $.post(`/app/stats`,
+                //     {
+                //       exercise: exerciseId,
+                //       date: date.toLocaleDateString("tr-TR").split(".").join("/"),
+                //       speedLevel: speedLevel,
+                //       level: wordCount - 1,
+                //     },
+                //     res => {
+                //       updateScoreTable()
+                //     })
+
+                // $("#scoreModalInfo").text(`Tamamlama süreniz: ${totalTime} saniye`)
+                $("#scoreModal").modal("show")
+              }
+              timer.stop()
+              toastr.clear()
+              atTheEnd()
+            }
+          )
+
+
+        }, 1000);
+      })
+
+
+    })
+    function atTheEnd() {
+      $("#playground > div > span").text("")
+      $("#playground").removeClass("grid")
+      $("#playground").addClass("nodisplay")
+
+      $("#footercenter > div").addClass("nodisplay")
+      $("#footercenter").removeClass("col-8")
+      $("#footercenter").addClass("col-2")
+      $("#footerleftleft > nav").removeClass("nodisplay")
+      $("#start").removeClass("nodisplay")
+
+
+      $("nav").removeClass("animated fadeOutUp")
+      $("nav").addClass("animated fadeInDown")
+      $("#background").removeClass("nodisplay")
+      $("#background").removeClass("animated zoomOut")
+      $("#background").addClass("animated zoomIn")
+    }
+
+  </script>
+
+</body>
+
+</html>

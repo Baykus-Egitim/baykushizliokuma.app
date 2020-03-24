@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+  <title>Baykuş Hızlı Okuma</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126752612-7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-126752612-7');
+  </script>
+
+  </script>
+
+  <!-- JQuery -->
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+  <!-- Semantic UI -->
+  <link rel="stylesheet" href="css/semantic-ui-2.4.0/semantic.min.css">
+  <script src="css/semantic-ui-2.4.0/semantic.min.js"></script>
+
+
+  <style type="text/css">
+    body {
+      background-color: #DADADA;
+    }
+
+    body>.grid {
+      height: 100%;
+    }
+
+    .image {
+      margin-top: -100px;
+    }
+
+    .column {
+      height: 100%;
+    }
+
+    .image.header {
+      margin-top: 3rem !important;
+      width: 100%;
+      text-align: center;
+    }
+
+    .image.header>img {
+      width: 30% !important;
+    }
+
+    form {
+      margin-left: auto !important;
+      margin-right: auto !important;
+      width: 85%;
+    }
+
+    .button.submit {
+      margin-top: 2rem !important;
+    }
+  </style>
+  <script>
+
+  </script>
+</head>
+
+<body>
+
+  <div class="ui middle aligned grid">
+    <div class="sixteen wide mobile eight wide tablet six wide computer column"
+      style="background: lightblue; height: 100%; width: 240px;">
+      <h2 class="ui teal image header">
+        <img src=" assets/images/baykuş-egitim-favicon.png" class="image">
+        <!-- <div class="content" style="margin-left: 1rem;">
+          Baykuş Hızlı Okuma Programı
+        </div> -->
+      </h2>
+      <form class="ui large form" style="margin-top: 2rem;">
+        <div class="field">
+          <label class="left floated">Kullanıcı Adı</label>
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" name="username" placeholder="Kullanıcı Adı...">
+          </div>
+        </div>
+        <div class="field">
+          <label>Şifre</label>
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password" name="password" placeholder="Şifre...">
+          </div>
+        </div>
+        <div class="ui large teal submit fluid button">Giriş</div>
+        <div class="ui error message"></div>
+        <div class="ui message">
+          Girişte problem mi yaşıyorsunuz? <a href="#">Bizi arayın!</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+ 
+
+  <script>
+    $(document)
+      .ready(function () {
+        $('.ui.form')
+          .form({
+            fields: {
+              username: {
+                identifier: 'username',
+                rules: [
+                  {
+                    type: 'empty',
+                    prompt: 'Lütfen kullanıcı adınızı giriniz!'
+                  }
+                ]
+              },
+              password: {
+                identifier: 'password',
+                rules: [
+                  {
+                    type: 'empty',
+                    prompt: 'Lütfen şifrenizi giriniz!'
+                  },
+                  {
+                    type: 'length[1]',
+                    prompt: 'Şifreniz en az 6 karakterlidir!'
+                  }
+                ]
+              }
+            }
+          })
+          ;
+      })
+      ;
+
+    // $(document).ready(function () {
+    //   $(".form").submit(function (e) {
+    //     e.preventDefault()
+    //     return false;
+    //   });
+    //   $(".button").click(function () {
+    //     if ($('.ui.form').form("validate form")) {
+    //       $.post("login", { username: $("input:eq(0)").val(), password: $("input:eq(1)").val() }, function (res) {
+    //         if(res.redirect) window.location = res.redirect
+    //       });
+    //     }
+    //   })
+    // })
+
+  </script>
+
+</body>
+
+</html>

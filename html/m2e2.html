@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Baykuş Hızlı Okuma</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="/app/img/bho_yazısız.png">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/app/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="/app/css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="/app/css/style.css">
+  <!-- Google material icons -->
+  <link href="/app/css/material-design/iconfont/material-icons.css" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/app/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="/app/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="/app/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="/app/js/mdb.min.js"></script>
+  <!-- Timer.js -->
+  <script src="/app/js/easytimer.js/dist/easytimer.js"></script>
+  <!-- Async.js -->
+  <script src="/app/js/async.min.js"></script>
+  <!-- Hotkeys -->
+  <script src="/app/js/hotkeys.min.js"></script>
+  <!-- Common scripts -->
+  <script src="/app/js/common.js"></script>
+  <!-- Templates -->
+  <script src="/app/js/navbar.js"></script>
+  <script src="/app/js/modal.js"></script>
+
+  <style>
+    /* apllication specific */
+    #icons>span {
+      height: 100%;
+    }
+
+    #icons>span>img {
+      height: 100%;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- Start your project here-->
+  <div class="container-fluid" style="height: 100%">
+    <div id="playground" class="row h-100 flex-column nodisplay border">
+      <div class="row rgba-purple-slight" style="height: calc(50% - 50px);"></div>
+      <div id="icons" style="height: 100px;">
+        <span class="nodisplay"><img src="/app/img/resim-TL ikonu.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-ananas.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-anasayfa ikonu.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-araba-1.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-araba-2.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-ayakkabı.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-ayran.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-ağaç.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-basket topu.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-bisiklet.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-cep tel.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-defter.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-domates.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-dondurma.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-dünya.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-dürüm.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-elma.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-fotoğraf makinası.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-futbol topu.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-gözlük.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-gül.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-kalem.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-kedi.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-keman.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-kredi kart.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-lamba.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-limon.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-muz.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-panda 1.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-panda 2.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-pc.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-rozet.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-saat.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-saksı.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-silgi.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-tekne.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-uçak.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-video ikonu.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-zeka küpü.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-çapa.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-çikolata.png"> </span>
+        <span class="nodisplay"><img src="/app/img/resim-şapka.png"> </span>
+      </div>
+      <div class="row rgba-purple-slight" style="height: calc(50% - 50px);"></div>
+    </div>
+
+    <div id="background" class="h-100 flex-column flex-center odisplay">
+      <img src="/app/img/bho_dunya_transparent.png" style="opacity: 0.3; height: 80%">
+    </div>
+  </div>
+  <!-- End your project here-->
+
+  <!-- Footer -->
+  <footer class="page-footer font-small teal fixed-bottom odisplay">
+    <div class="container-fluid h-100">
+      <div class="row d-flex justify-content-between h-100 align-items-center">
+
+        <!-- left -->
+        <div class="col">
+          <div class="row d-flex justify-content-between h-100 align-items-center">
+            <div class="col text-left">
+              <nav aria-label="Page navigation example" style="margin-left: -0.5rem; margin-right: 1rem;">
+                <ul class="pagination pagination-circle pg-blue my-1">
+                  <li class="page-item white-text">
+                    <a class="page-link white-text" tabindex="-1">Hız:</a>
+                  </li>
+                  <li class="page-item active"><a class="speed page-link">1</a></li>
+                  <li class="page-item"><a class="speed page-link">2</a></li>
+                  <li class="page-item"><a class="speed page-link">3</a></li>
+                  <li class="page-item"><a class="speed page-link">4</a></li>
+                  <li class="page-item"><a class="speed page-link">5</a></li>
+                  <li class="page-item"><a class="speed page-link">6</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="col text-center">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="isize" value=0>
+                <label class="form-check-label pl-4" for="isize">Küçük Resim</label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- center -->
+        <div class="col-2 text-center">
+          <button id="start" class="btn btn-outline-white btn-rounded">Başla!</button>
+        </div>
+
+        <!-- right -->
+        <div class="col">
+          <div class="row d-flex justify-content-between h-100 align-items-center">
+            <div class="col text-right">
+              <img src="/app/img/bho_logo_yazı.png" alt="" srcset="" height=50>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer> <!-- Footer -->
+
+
+  <script type="text/javascript">
+    $("html").css("zoom", `${window.innerWidth / 1320}`)
+    window.addEventListener("resize", () => {
+      $("html").css("zoom", `${window.innerWidth / 1320}`)
+      if (window.innerWidth < window.innerHeight) {
+        $("#rotateScreenWarningModal").modal("show")
+      }
+      else {
+        $("#rotateScreenWarningModal").modal("hide")
+      }
+    })
+    $(document).ready(() => {
+      if (window.innerWidth < window.innerHeight) {
+        $("#rotateScreenWarningModal").modal("show")
+      }
+    })
+    //==================================
+    // exercise specific global variables
+    //==================================
+    const module = Number(window.location.pathname.split("/")[3])
+    const exercise = Number(window.location.pathname.split("/")[5])
+    const exerciseId = `m${module}e${exercise}`
+    document.title = `BHO : Modül ${module}: Egzersiz ${exercise}`
+    let user = null
+    $.get("/app/user", res => { user = res })
+
+    //==================================
+    // generate view
+    //==================================
+    navbar(module)
+
+    addStartModal2()
+    addScoreModal2(false)
+    $(document).ready(function () {
+      $("#scoreModalIconCheck").removeClass("nodisplay")
+    })
+
+
+    // Speed
+    ds = 480 // speed span
+    dds = ds / 6
+    s0 = 1000 // start time
+    var ss = 1 // speed set
+
+    // Timer
+    toastr.options = {
+      "closeButton": false, // true/false
+      "debug": false, // true/false
+      "newestOnTop": false, // true/false
+      "progressBar": false, // true/false
+      "positionClass": "md-toast-bottom-right", // md-toast-top-right / md-toast-top-left / md-toast-bottom-right / md- toast - bottom - left
+      "preventDuplicates": false, //true / false
+      "onclick": null,
+      "showDuration": "300", // in milliseconds
+      "hideDuration": "1000", // in milliseconds
+      "timeOut": "445000", // in milliseconds
+      "extendedTimeOut": "445000", // in milliseconds
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+    var timer = new easytimer.Timer();
+
+    // Words
+    var cc = 1 // character count
+    var words = words1 // words set
+
+
+
+    $(document).ready(function () {
+      $('.page-item').click(function () {
+        $(this).addClass('active').siblings().removeClass('active');
+      });
+
+      var round1 = 6, round2 = 12, roundEnd = 18;
+      $(".speed.page-link").click(function () {
+        ss = Number($(this).text())
+        if (ss == 1 || ss == 2 || ss == 3) { round1 = 6; round2 = 12; roundEnd = 18; }
+        else if (ss == 4) { round1 = 12; round2 = 24; roundEnd = 36; }
+        else { round1 = 18; round2 = 36; roundEnd = 54; }
+        ds = dds * (7 - Number($(this).text()))
+      })
+
+      // char select
+      $("#char-select").change(function () {
+        if ($(this).val() == 1) {
+          $(this).attr("value", 0)
+          if (cc == 1) words = words1
+          else if (cc == 2) words = words2
+          else if (cc == 3) words = words3
+          else if (cc == 4) words = words4
+          else if (cc == 5) words = words5
+          else words = words6
+        }
+        else $(this).attr("value", 1)
+        // setInitial()
+      })
+
+      $(".char.page-link").click(function () {
+        cc = Number($(this).text())
+        if (cc == 1) words = words1
+        else if (cc == 2) words = words2
+        else if (cc == 3) words = words3
+        else if (cc == 4) words = words4
+        else if (cc == 5) words = words5
+        else words = words6
+      })
+
+      // icon size select
+      $("#isize").change(function () {
+        if ($(this).val() == 1) {
+          $(this).attr("value", 0)
+        }
+        else {
+          $(this).attr("value", 1)
+        }
+      })
+
+      // animation loop
+      var i = 0
+      var j = 0
+      var totalLength = 0
+      var scale = 100
+      function loop() {
+
+        var index = Math.floor(Math.random() * $(`#playground > div:eq(1) > span`).filter(".nodisplay").length)
+        // console.log(index)
+        var image = $($(`#playground > div:eq(1) > span`).filter(".nodisplay")[index]).children()[0].getAttribute("src").replace("/app/img/", "")
+        totalLength += image_widths[images.indexOf(image)] / image_heights[images.indexOf(image)] * scale
+        if (totalLength > $(`#playground`).width() - 100) {
+          $(`#playground > div:eq(1) > span`).addClass("nodisplay")
+          totalLength = image_widths[images.indexOf(image)] / image_heights[images.indexOf(image)] * scale
+        }
+        $($(`#playground > div:eq(1) > span`).filter(".nodisplay")[index]).insertAfter("#playground > div:eq(1) > span:last")
+        $(`#playground > div:eq(1) > span:last`).removeClass("nodisplay")
+      }
+
+      $("#start").click(function () {
+        $("nav").addClass("animated fadeOutUp")
+        $("footer").addClass("animated fadeOutDown")
+        $("#frame").addClass("animated zoomOut")
+        $(".btn").trigger("blur");
+        setTimeout(() => {
+          $("#playground").removeClass("nodisplay")
+
+          //preperation
+          $(`#playground > div:eq(1) > span`).addClass("nodisplay")
+          if ($("#isize").val() == 1) {
+            scale = 50
+            $("#icons").css("height", "50px")
+            $("#playground > div:first").css("height", "calc(50% - 25px)")
+            $("#playground > div:last").css("height", "calc(50% - 25px)")
+          }
+          else {
+            scale = 100
+            $("#icons").css("height", "100px")
+            $("#playground > div:first").css("height", "calc(50% - 50px)")
+            $("#playground > div:last").css("height", "calc(50% - 50px)")
+          }
+
+
+        }, 500);
+        setTimeout(() => {
+          // prepare
+          iteration = 0
+          i = 0
+          j = 0
+
+          // stopper
+          stopCallback = null
+          isFinished = null
+
+          // esc
+          hotkeys.unbind('esc');
+          hotkeys('esc', function (event, handler) {
+            switch (handler.key) {
+              case 'esc':
+                isFinished = true
+                stopCallback("Finish")
+                break;
+              default: null;
+            }
+          });
+
+          async.series([
+
+            function (callback) {
+              stopCallback = callback
+              if (!isFirstRun) setTimeout(callback, 500)
+              else {
+                $("#startModalCountdown").text(10)
+                let timer2 = new easytimer.Timer();
+                timer2.start({ precision: 'seconds', countdown: true, startValues: { seconds: 10 } });
+                timer2.addEventListener('secondsUpdated', function (e) {
+                  $("#startModalCountdown").text(timer2.getTimeValues().seconds);
+                });
+                timer2.addEventListener('targetAchieved', function (e) {
+                  $("#startModal").modal("hide")
+                });
+                $("#startModal").modal("show")
+                $('#startModal').off('hidden.bs.modal')
+                $('#startModal').on('hidden.bs.modal', function (e) {
+                  setTimeout(callback, 500)
+                  timer2.stop()
+                });
+              }
+            },
+            function (callback) {
+              stopCallback = callback
+              loop()
+              interval = setInterval(loop, ds);
+              timer.start({ precision: 'seconds', countdown: true, startValues: { seconds: 60 } });
+              toastr["info"]("60");
+              timer.addEventListener('secondsUpdated', function (e) {
+                $('.md-toast-message').html(timer.getTimeValues().seconds);
+              });
+              timer.addEventListener('targetAchieved', function (e) {
+                toastr.clear()
+                clearInterval(interval)
+                callback()
+              });
+            },
+
+          ],
+            function (err) {
+              clearInterval(interval)
+              isFinished = true
+              if (!err) {
+                isFirstRun = false
+                let date = new Date()
+                $.post(`/app/stats`,
+                  {
+                    exercise: exerciseId,
+                    date: date.toLocaleDateString("tr-TR").split(".").join("/"),
+                    speedLevel: ss,
+                    small: $("#isize").val() == 1 ? "Evet" : "Hayır"
+                  },
+                  res => {
+                    updateScoreTable()
+                  })
+                $("#scoreModal").modal("show")
+              }
+              timer.stop()
+              toastr.clear()
+              atTheEnd()
+            }
+          )
+
+        }, s0);
+      })
+
+      function atTheEnd() {
+        $("#playground").addClass("nodisplay")
+
+        $("nav").removeClass("animated fadeOutUp")
+        $("footer").removeClass("animated fadeOutDown")
+        $("nav").addClass("animated fadeInDown")
+        $("footer").addClass("animated fadeInUp")
+        $("#frame").removeClass("animated zoomOut")
+        $("#frame").addClass("animated zoomIn")
+      }
+
+    })
+
+
+
+    var images = ["resim-TL ikonu.png", "resim-ananas.png", "resim-anasayfa ikonu.png", "resim-araba-1.png", "resim-araba-2.png", "resim-ayakkabı.png", "resim-ayran.png", "resim-ağaç.png", "resim-basket topu.png", "resim-bisiklet.png", "resim-cep tel.png", "resim-defter.png", "resim-domates.png", "resim-dondurma.png", "resim-dünya.png", "resim-dürüm.png", "resim-elma.png", "resim-fotoğraf makinası.png", "resim-futbol topu.png", "resim-gözlük.png", "resim-gül.png", "resim-kalem.png", "resim-kedi.png", "resim-keman.png", "resim-kredi kart.png", "resim-lamba.png", "resim-limon.png", "resim-muz.png", "resim-panda 1.png", "resim-panda 2.png", "resim-pc.png", "resim-rozet.png", "resim-saat.png", "resim-saksı.png", "resim-silgi.png", "resim-tekne.png", "resim-uçak.png", "resim-video ikonu.png", "resim-zeka küpü.png", "resim-çapa.png", "resim-çikolata.png", "resim-şapka.png"]
+    var image_widths = [219, 466, 253, 516, 505, 369, 317, 316, 412, 282, 242, 344, 146, 186, 165, 438, 341, 230, 456, 300, 215, 458, 399, 481, 143, 252, 432, 430, 213, 323, 192, 254, 433, 297, 348, 307, 308, 267, 276, 433, 482, 302]
+    var image_heights = [222, 293, 253, 390, 367, 183, 309, 391, 421, 328, 472, 279, 149, 309, 165, 175, 358, 235, 452, 102, 311, 189, 215, 260, 106, 456, 307, 354, 256, 289, 178, 229, 422, 292, 190, 155, 147, 201, 273, 318, 278, 199]
+
+
+
+  </script>
+
+</body>
+
+</html>

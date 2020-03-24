@@ -1,0 +1,51 @@
++ anasayfa yazı karakteri
++ Geri tuşu
++ baykuş dünyalı logo yükseliği 450px m2e1'den öncekiler
++ common css
++ login page small screen copyright notice visibility
++ scrollbar style m2e8
++ geri ok tuşu kuyruğu uzat
++ anasayfaya anasayfa yazısı
++ common.js move words all
++ Breadcrumbs
++ m3e1: resolve bug fix
++ Harf checkbox border-right, border-bottom colors as in m1e7
++ Kademe yerine harf
+0 Switch boşlukları mx-2 before m2e6
++ m1e5: select option
++ start button trigger blur always
++ login sayfası max-width set
+- Her uygulamada kum saati olacak
+- flaticon attribute
+- feedback form
+- bug: m2e5 last ball is not displayed for each animation if it is not series it is displayed however 
+- bug: m2e5 diagonally uniform ball
+- m2e5 değişik toplar
+- initialize timer object as null in common.js nad create timer object for each start button click
+- m2e4: yılan başı büyüsün
+- anasayfa footer band
+- avoid math.floor instead use mod - use randomInt
+!+ bug: m2e8 gridItemIndex değil emptyGridItems[gridItemIndex] olacak m3e2 gibi - check again 
+- bug: gridItemIndex bug devam ediyor m3e5 öncesi
+- answer button sm kaldır m3e2 and m3e1
+- footer standartlaştırma
+- score modal animation and etc standartization
+- module 3 sorulu egzersizlerde geri sayım ekle
+- style.css add m-auto to grid class
+- gridItem splice m3e8'deki gibi
+- video modal header font size and title position
+- baykuş ackground logosu ilk hali
+- bir kullanıcı tüm metinleri sırayla okuyacak
+- m4e1: optimize algrotihm for fast speeds
+- m4e3: line left margin according to level
+- font-size: set in playground css
+- m4e5: 1. tur 2. tur yazıları alt satırda
+- score ve start modallar m4e5 öncesi
+- m4e6: letter ve word spacing word ve phrase durumları için ayrı ayrı yapılacak
+- score modal tarih : m1e3 sonrası
+- m4e8: disabled 2. round 2e9 olacak
+- textListTable: kelime sayısına göre sırala
+- 5. modül öncesi metinler kısa veya ortadan seçilecek
+- m5e8: ncesi fast paging implement edil
+- m3e8: start modal make it standart
+- Kullanıcı bilgileri

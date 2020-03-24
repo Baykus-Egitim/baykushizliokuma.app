@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>BHO : Operatör Paneli</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="img/bho_yazısız.png">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <!-- Google material icons -->
+  <link href="css/material-design/iconfont/material-icons.css" rel="stylesheet">
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Timer.js -->
+  <script src="js/easytimer.js/dist/easytimer.js"></script>
+  <!-- Anime.js -->
+  <script src="js/anime/lib/anime.min.js"></script>
+  <!-- Async.js -->
+  <script src="js/async.min.js"></script>
+  <!-- Hotkeys -->
+  <script src="js/hotkeys.min.js"></script>
+  <!-- Common scripts -->
+  <script src="js/common.js"></script>
+  <!-- Templates -->
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/modal.js"></script>
+
+
+  <style>
+    html,
+    body {
+      height: 100vh;
+      overflow-y: auto;
+
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-dark sticky default-color justify-content-between nodisplay white-text">
+    <a class="navbar-brand waves-effect waves-light" href="/app"><i class="fas fa-home fa-1x"></i></a>
+    <a class="navbar-brand waves-effect waves-light d-flex " href=""><span class="mx-2" style="font-size: 1rem;">Operatör Paneli</span></a>
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user fa-1x"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+          <a class="dropdown-item" href="#">Üyelik Bilgileri</a>
+          <a class="dropdown-item" href="/app/logout">Oturumu Kapat</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container h-100 mt-2">
+    <div class="row w-100">
+      <div id="usersTable" class="col-md-7">
+        <div class="table-responsive table-wrap-long mb-2 scrollbar-secondary">
+          <h3>Kullanıcılar</h3>
+          <table class="table table-sm w-100 ">
+            <thead id="usersTableHead">
+              <tr>
+                <th scope="col">Sıra</th>
+                <th scope="col">Ad</th>
+                <th scope="col">Soyad</th>
+                <th scope="col">Kullanıcı Adı</th>
+                <th scope="col">Şifre</th>
+                <th scope="col">Telefon</th>
+                <th scope="col">&nbsp;</th>
+              </tr>
+            </thead>
+            <tbody class="table-row-select" id="usersTableRows">
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-responsive table-wrap-long mb-2 scrollbar-secondary">
+          <h3>Ödeme Bildirimler</h3>
+          <table class="table table-sm w-100 ">
+            <thead id="paymentsTableHead">
+              <tr>
+                <th scope="col">Sıra</th>
+                <th scope="col">Ad</th>
+                <th scope="col">Telefon</th>
+                <th scope="col">E-Posta</th>
+                <th scope="col">Mesaj</th>
+                <th scope="col">&nbsp;</th>
+              </tr>
+            </thead>
+            <tbody class="table-row-select" id="paymentsTableRows">
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-responsive table-wrap-long mb-2 scrollbar-secondary">
+          <h3>Mesajlar</h3>
+          <table class="table table-sm w-100 ">
+            <thead id="contactsTableHead">
+              <tr>
+                <th scope="col">Sıra</th>
+                <th scope="col">Ad</th>
+                <th scope="col">Telefon</th>
+                <th scope="col">E-Posta</th>
+                <th scope="col">Mesaj</th>
+                <th scope="col">&nbsp;</th>
+              </tr>
+            </thead>
+            <tbody class="table-row-select" id="contactsTableRows">
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+      <div class="col-md-5">
+        <form class="text-center border border-light p-5" action="#!">
+
+          <p class="h4 mb-4">Kayıt Düzenle</p>
+
+          <input type="text" id="name" class="form-control form-control mb-2" placeholder="Ad">
+          <input type="text" id="surname" class="form-control form-control mb-4" placeholder="Soyad">
+
+          <!-- E-mail -->
+          <input type="text" id="username" class="form-control form-control " placeholder="Kullanıcı Adı">
+          <small class="form-text text-left text-muted mb-2">BHO giriş kimliği</small>
+          <input type="text" id="password" class="form-control form-control " placeholder="Şifre">
+          <small class="form-text text-left text-muted mb-4">BHO giriş şifresi</small>
+
+          <!-- Phone number -->
+          <input type="text" id="phone" class="form-control" placeholder="Telefon">
+          <small class="form-text text-left text-muted mb-4">Cep telefonu numarası</small>
+
+          <button id="addUser" class="btn btn-info mb-2 btn-block" type="submit">Kaydet</button>
+          <!-- <button id="updateUser" class="btn btn-warning btn-block" type="submit">Düzenle</button> -->
+        </form>
+      </div>
+    </div>
+
+
+    <!--Modal: confirm-->
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-notify modal-info" role="document">
+        <div class="modal-content text-center">
+          <div class="modal-header d-flex justify-content-center">
+            <p id="confirmHeading" class="heading">Be always up to date</p>
+          </div>
+          <div class="modal-body">
+            <i class="fas fa-bell fa-4x animated rotateIn mb-4"></i>
+            <p id="confirmBody">Do you want to receive the push notification about the newest posts?</p>
+          </div>
+          <div class="modal-footer flex-center">
+            <a id="confirmOkay" href="https://mdbootstrap.com/products/jquery-ui-kit/" class="btn btn-info" data-dismiss="modal">Evet</a>
+            <a id="confirmNo" type="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">Hayır</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Modal: modalConfirmDelete-->
+    <div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-notify modal-danger" role="document">
+        <div class="modal-content text-center">
+          <div class="modal-header d-flex justify-content-center">
+            <p id="modalConfirmDeleteHeading" class="heading">Are you sure?</p>
+          </div>
+          <div class="modal-body"><i class="fas fa-times fa-4x animated rotateIn"></i></div>
+          <div class="modal-footer flex-center">
+            <a id="confirmDeleteOkay" href="" class="btn btn-outline-danger" data-dismiss="modal">Evet</a>
+            <a type="button" class="btn  btn-danger waves-effect" data-dismiss="modal">Hayır</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+    let user = null
+    $.get("/app/user", res => { user = res })
+    let users = []
+    $(document).ready(() => {
+      function updateUserList() {
+        $.get("/app/users", data => {
+          users = data.filter(item => item.role != "admin" && item.role != "supervisor")
+          // console.log(users)
+          $(`#usersTableRows`).empty()
+          for (var i = 0; i < users.length; ++i) {
+            $(`#usersTableRows`).prepend(`
+              <tr>
+                <td>#${i + 1}</td>
+                <td>${users[i].name}</td>
+                <td>${users[i].surname}</td>
+                <td>${users[i].username}</td>
+                <td>${users[i].password}</td>
+                <td>${users[i].phone ? users[i].phone : "-"}</td>
+                <td><a id="delete${users[i].username}" href="#" class="btn btn-sm btn-outline-red btn-rounded waves-effect waves-light">Sil</a></td>
+              </tr>
+            `
+            )
+            let scopeUser = users[i]
+            $(`#delete${scopeUser.username}`).click(() => {
+              console.log("Delete user: ", scopeUser.name)
+              $("#modalConfirmDeleteHeading").html(`<strong>${scopeUser.username}</strong> kullanıcısını istiyor musunuz?`)
+              $("#modalConfirmDelete").modal("show")
+              $("#confirmDeleteOkay").on("click", (event) => {
+                event.preventDefault()
+                $.ajax({
+                  url: `/app/users?username=${scopeUser.username}`,
+                  type: 'DELETE',
+                  success: function (res) {
+                    console.log(res)
+                    updateUserList()
+                  }
+                });
+              })
+            })
+          }
+
+          $(`#usersTableRows`).on('click', "tr", function (event) {
+            $('tr').css("background-color", "");
+            $(this).css("background-color", "rgba(255,131,0,0.5)");
+            focusedTable = "users"
+
+            selectedUser = {
+              name: $(this).children("td:eq(1)").text(),
+              surname: $(this).children("td:eq(2)").text(),
+              username: $(this).children("td:eq(3)").text(),
+              password: $(this).children("td:eq(4)").text(),
+              phone: $(this).children("td:eq(5)").text(),
+            }
+            $("#name").val(selectedUser.name)
+            $("#surname").val(selectedUser.surname)
+            $("#username").val(selectedUser.username)
+            $("#password").val(selectedUser.password)
+            $("#phone").val(selectedUser.phone)
+            console.log(selectedUser)
+          });
+        })
+      }
+
+      updateUserList()
+
+      $("#addUser").click((event) => {
+        event.preventDefault()
+        const newUser = {
+          name: $("#name").val(),
+          surname: $("#surname").val(),
+          username: $("#username").val(),
+          password: $("#password").val(),
+          phone: $("#phone").val(),
+        }
+        // console.log(user)
+        if (users.filter(item => item.username == newUser.username).length > 0) {
+          $("#confirmHeading").text("Kayıt Güncelleme")
+          $("#confirmBody").html(`<strong>${newUser.username}</strong> kullanıcısı zaten var. Mevcut kaydı güncelleme istiyor musunuz?`)
+          console.log("Existing user")
+          $("#confirmOkay").on("click", (event) => {
+            event.preventDefault()
+            $.ajax({
+              url: `/app/users?username=${newUser.username}`,
+              type: 'PUT',
+              data: newUser,
+              success: function (res) {
+                console.log(res)
+                updateUserList()
+              }
+            });
+          })
+        }
+        else {
+          $("#confirmHeading").text("Kayıt Ekleme")
+          $("#confirmBody").html(`<strong>${newUser.username}</strong> kullanıcısını eklemek istiyor musunuz?`)
+          $("#confirmOkay").on("click", () => {
+            event.preventDefault()
+            $.post(`/app/users`, newUser,
+              res => {
+                console.log(res)
+                updateUserList()
+              })
+          })
+        }
+        $("#confirmModal").modal("show")
+        updateUserList()
+      })
+
+      setInterval(updateUserList(), 3000)
+      window.addEventListener("keypress", (event) => {
+        if (focusedTable == "users" && event.key == "d") {
+          $.ajax({
+            url: `/app/users?username=${selectedUser.username}`,
+            type: 'DELETE',
+            success: function (res) {
+              console.log(res)
+              updateUserList()
+            }
+          });
+        }
+      })
+    })
+
+
+    // Payments List
+    let focusedTable = "users"
+    function updatePaymentsList() {
+      $.get("/app/payments", payments => {
+        // console.log(payments)
+        $(`#paymentsTableRows`).empty()
+        for (var i = 0; i < payments.length; ++i) {
+          $(`#paymentsTableRows`).prepend(`
+              <tr>
+                <td>#${i + 1}</td>
+                <td>${payments[i].name}</td>
+                <td>${payments[i].phone}</td>
+                <td>${payments[i].email}</td>
+                <td>${payments[i].note}</td>
+              </tr>
+            `
+          )
+        }
+
+      })
+    }
+    $(document).ready(() => {
+      updatePaymentsList()
+      setInterval(updatePaymentsList, 5000)
+      let selectedPayment = ""
+      $(`#paymentsTableRows`).on('click', "tr", function (event) {
+        focusedTable = "payments"
+        $('tr').css("background-color", "");
+        $(this).css("background-color", "rgba(255,131,0,0.5)");
+        selectedPayment = $(this).children("td:eq(3)").text()
+      });
+      window.addEventListener("keypress", (event) => {
+        if (focusedTable == "payments" && event.key == "d") {
+          $.ajax({
+            url: `/app/payments?email=${selectedPayment}`,
+            type: 'DELETE',
+            success: function (res) {
+              console.log(res)
+              updatePaymentsList()
+            }
+          });
+        }
+      })
+    })
+
+    // Contacts List
+    function updateContactsList() {
+      $.get("/app/contacts", contacts => {
+        // console.log(contacts)
+        $(`#contactsTableRows`).empty()
+        for (var i = 0; i < contacts.length; ++i) {
+          $(`#contactsTableRows`).prepend(`
+              <tr>
+                <td>#${i + 1}</td>
+                <td>${contacts[i].name}</td>
+                <td>${contacts[i].phone}</td>
+                <td>${contacts[i].email}</td>
+                <td>${contacts[i].message}</td>
+              </tr>
+            `
+          )
+        }
+
+      })
+    }
+    $(document).ready(() => {
+      updateContactsList()
+      setInterval(updateContactsList, 5000)
+      let selectedContact = ""
+      $(`#contactsTableRows`).on('click', "tr", function (event) {
+        focusedTable = "contacts"
+        $('tr').css("background-color", "");
+        $(this).css("background-color", "rgba(255,131,0,0.5)");
+        selectedContact = $(this).children("td:eq(3)").text()
+      });
+      window.addEventListener("keypress", (event) => {
+        if (focusedTable == "contacts" && event.key == "d") {
+          $.ajax({
+            url: `/app/contacts?email=${selectedContact}`,
+            type: 'DELETE',
+            success: function (res) {
+              console.log(res)
+              updateContactsList()
+            }
+          });
+        }
+      })
+    })
+  </script>
+
+</body>
+
+
+</html>

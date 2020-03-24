@@ -1,0 +1,26 @@
+<svg width="210" height="210" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="301" width="301" y="-1" x="-1"/>
+  <g display="none" id="canvasGrid">
+   <rect fill="none" stroke-width="0" y="0" x="0" height="100%" width="100%" id="svg_3"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_4" y2="195" x2="15" y1="15" x1="15" stroke-width="8" stroke="#000000" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_5" y2="195" x2="195" y1="195" x1="15" stroke-width="8" stroke="#000000" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_6" y2="195" x2="195" y1="15" x1="195" stroke-width="8" stroke="#000000" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_7" y2="15" x2="195" y1="15" x1="15" stroke-width="8" stroke="#000000" fill="none"/>
+  <ellipse ry="10" rx="10" id="svg_8" cy="15" cx="15" stroke-width="10" stroke="#000000" fill="#000000"/>
+  <ellipse ry="10" rx="10" id="svg_9" cy="195" cx="195" stroke-width="10" stroke="#000000" fill="#000000"/>
+  <ellipse ry="10" rx="10" id="svg_10" cy="15" cx="195" stroke-width="10" stroke="#000000" fill="#000000"/>
+  <ellipse ry="10" rx="10" id="svg_11" cy="195" cx="15" stroke-width="10" stroke="#000000" fill="#000000"/>
+  <text xml:space="preserve" text-anchor="start" font-family="Courier, monospace" font-size="24" id="svg_22" y="22" x="8" stroke-width="0" stroke="#fcfcfc" fill="#ffffff">i</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Courier, monospace" font-size="24" id="svg_23" y="201" x="8" stroke-width="0" stroke="#fcfcfc" fill="#ffffff">m</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Courier, monospace" font-size="24" id="svg_24" y="201" x="189" stroke-width="0" stroke="#fcfcfc" fill="#ffffff">e</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Courier, monospace" font-size="24" id="svg_25" y="22" x="189" stroke-width="0" stroke="#fcfcfc" fill="#ffffff">s</text>
+ </g>
+</svg>

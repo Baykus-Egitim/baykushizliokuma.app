@@ -1,0 +1,27 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="402" y="-1" x="-1"/>
+  <g display="none" id="canvasGrid">
+   <rect fill="none" stroke-width="0" y="0" x="0" height="100%" width="100%" id="svg_3"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_114" y2="310" x2="310" y1="90" x1="310" stroke-width="3" stroke="#000000" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_115" y2="310" x2="310" y1="310" x1="90" stroke-width="3" stroke="#000000" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_116" y2="310" x2="90" y1="90" x1="90" stroke-width="3" stroke="#000000" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_117" y2="90" x2="310" y1="90" x1="90" stroke-width="3" stroke="#000000" fill="none"/>
+  <ellipse ry="3" rx="3" id="svg_118" cy="90" cx="90" stroke-width="3" stroke="#000000" fill="#000000"/>
+  <ellipse ry="3" rx="3" id="svg_119" cy="310" cx="310" stroke-width="3" stroke="#000000" fill="#000000"/>
+  <ellipse ry="3" rx="3" id="svg_1110" cy="90" cx="310" stroke-width="3" stroke="#000000" fill="#000000"/>
+  <ellipse ry="3" rx="3" id="svg_1111" cy="310" cx="90" stroke-width="3" stroke="#000000" fill="#000000"/>
+  <text xml:space="preserve" text-anchor="start" font-family="Courier, monospace" font-size="8" id="svg_022" y="312" x="308" stroke-width="0" stroke="#fcfcfc" fill="#ffffff">s</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Courier, monospace" font-size="8" id="svg_023" y="312" x="88" stroke-width="0" stroke="#fcfcfc" fill="#ffffff">m</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Courier, monospace" font-size="8" id="svg_024" y="92" x="308" stroke-width="0" stroke="#fcfcfc" fill="#ffffff">r</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Courier, monospace" font-size="8" id="svg_025" y="92" x="88" stroke-width="0" stroke="#fcfcfc" fill="#ffffff">a</text>
+
+ </g>
+</svg>

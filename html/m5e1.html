@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>BHO : Modül 1: Egzersiz 1</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="/app/img/bho_yazısız.png">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/app/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="/app/css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="/app/css/style.css">
+  <!-- Google material icons -->
+   <link href="/app/css/material-design/iconfont/material-icons.css" rel="stylesheet">
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/app/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="/app/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="/app/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="/app/js/mdb.min.js"></script>
+  <!-- Timer.js -->
+  <script src="/app/js/easytimer.js/dist/easytimer.js"></script>
+  <!-- Anime.js -->
+  <script src="/app/js/anime/lib/anime.min.js"></script>
+  <!-- Async.js -->
+  <script src="/app/js/async.min.js"></script>
+  <!-- Hotkeys -->
+  <script src="/app/js/hotkeys.min.js"></script>
+  <!-- Common scripts -->
+  <script src="/app/js/common.js"></script>
+  <!-- Templates -->
+  <script src="/app/js/navbar.js"></script>
+  <script src="/app/js/footer.js"></script>
+  <script src="/app/js/modal.js"></script>
+
+
+  <style>
+    html,
+    body {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+
+    #footercenter {
+      flex: 0 0 180px !important;
+      max-width: 180px !important;
+    }
+
+    #footerrightcenter {
+      flex: 0 0 200px !important;
+      width: 200px !important;
+    }
+
+
+
+    .container {
+      max-width: 750px;
+    }
+    #playground {
+      font-size: 20px;
+      font-weight: 400;
+      column-count: 1;
+      column-fill: auto;
+      column-rule: 1px solid lightblue;
+    }
+
+    .word {
+      padding-left: 0.125rem !important;
+      padding-right: 0.125rem !important;
+    }
+
+    h3 {
+      column-span: all;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container p-0" style="height: 100vh;">
+    <div id="playground" class="w-100 h-100 border px-1 nodisplay mx-auto">
+      <h3 class="text-center mt-1"></h3>
+    </div>
+    <div id="background" class="w-100 h-100 flex-column flex-center odisplay">
+      <img src="/app/img/bho_dunya_transparent.png" style="opacity: 0.3;" height=450>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    //==================================
+    // exercise specific global variables
+    //==================================
+    const module = Number(window.location.pathname.split("/")[3])
+    const exercise = Number(window.location.pathname.split("/")[5])
+    const exerciseId = `m${module}e${exercise}`
+    document.title = `BHO : Modül ${module}: Egzersiz ${exercise}`
+    let user = null
+    $.get("/app/user", res => { user = res })
+
+    //==================================
+    // generate view
+    //==================================
+    navbar(module)
+
+    footer()
+    $.get(`/app/collections/configs?exerciseId=${exerciseId}`, res => {
+      addDurationControl("Hız", res[0].durations)
+      addLevelControl("Seviye", res[0].levels)
+    })
+
+    addTextSelectControl()
+    addTextSelectModal()
+
+    addStartModal2()
+    addScoreModal2()
+    $(document).ready(function () {
+      $("#scoreModalIconClock").removeClass("nodisplay")
+    })
+
+
+    //==================================
+    // animation routines
+    //==================================
+    var text = null
+    selectedTextTitle = null
+    function fetchText(callback = () => { }) {
+      if (selectedTextTitle) {
+        $.get(`/app/collections/texts?title=${selectedTextTitle}`, res => {
+          callback(res[0])
+        })
+      }
+      else {
+        $.get(`/app/collections/textList`, res => {
+          selectedTextTitle = res[randomInt(0, res.length)].title
+          $.get(`/app/collections/texts?title=${selectedTextTitle}`, res => {
+            callback(res[0])
+          })
+        })
+      }
+    }
+
+    function fillText(callback = () => { }) {
+      fetchText(data => {
+        text = data
+        // console.log(text)
+        $("#playground > h3").text(text.title)
+        var paragraphs = text.text.split("\n")
+        for (var i = 0; i < paragraphs.length; ++i) {
+          if (hasLetter(paragraphs[i])) {
+            var words = paragraphs[i].split(" ")
+            for (var j = 0; j < words.length; ++j) {
+              var word = words[j]
+              if (j == words.length - 1) $("#playground").append(`<span class="word invisible">${word}<wbr><br></span>`)
+              else $("#playground").append(`<span class="word invisible">${word}<wbr></span>`)
+            }
+          }
+        }
+        setTimeout(callback, 1000)
+      })
+    }
+
+    function hideNextPage() {
+      $(`.word.inContext`).remove()
+      for (var i = 0; i < $(`.word`).length; ++i) {
+        if ($(`.word:eq(${i})`).position().left < ($('#playground').position().left + $('#playground').width())) {
+          $(`.word:eq(${i})`).addClass("inContext")
+        }
+      }
+    }
+
+
+    var iteration = 0
+    function loop(next = () => { }) {
+      if (!$(`.word:eq(${iteration})`).hasClass("inContext")) {
+        hideNextPage();
+        iteration = 0;
+      }
+      if ($(`.word:eq(${iteration})`).length > 0) {
+        $(".word").addClass("invisible")
+        let positionTop = $(`.word:eq(${iteration})`).position().top
+        while ($(`.word:eq(${iteration})`).position().top == positionTop) {
+          $(`.word:eq(${iteration})`).removeClass("invisible")
+          // $(`.word:eq(${iteration})`).css("background-color", "blue")
+          ++iteration
+          if ($(`.word:eq(${iteration})`).length == 0) break
+        }
+      }
+      else {
+        console.log("Finished")
+        stopCallback()
+      }
+    }
+
+
+
+    $(document).ready(function () {
+
+      $("#start").click(function () {
+        $("nav").addClass("animated fadeOutUp")
+        $("footer").addClass("animated fadeOutDown")
+        $("#background").addClass("animated zoomOut")
+        $(".btn").trigger("blur");
+
+        fillText(hideNextPage)
+
+        setTimeout(() => {
+          $("#background").addClass("nodisplay")
+          $("#playground").removeClass("nodisplay")
+        }, 500);
+
+        setTimeout(() => {
+
+          // prepare
+          iteration = 0
+          if (level == 1) {
+            $("body > .container").css("max-width", "750px")
+            $("#playground").css("column-count", "1")
+          }
+          else if (level == 2) {
+            $("body > .container").css("max-width", "900px")
+            $("#playground").css("column-count", "2")
+          }
+          else {
+            $("body > .container").css("max-width", "1150px")
+            $("#playground").css("column-count", "3")
+          }
+
+          // stopper
+          stopCallback = null
+
+          // esc
+          hotkeys.unbind('esc');
+          hotkeys('esc', function (event, handler) {
+            switch (handler.key) {
+              case 'esc':
+                isFinished = true
+                stopCallback("Finish")
+                break;
+              default: null;
+            }
+          });
+
+          async.series([
+            function (callback) {
+              stopCallback = callback
+              if (!isFirstRun) setTimeout(callback, 500)
+              else {
+                $("#startModalCountdown").text(10)
+                let timer2 = new easytimer.Timer();
+               timer2.start({ precision: 'seconds', countdown: true, startValues: { seconds: 10 } });
+                timer2.addEventListener('secondsUpdated', function (e) {
+                  $("#startModalCountdown").text(timer2.getTimeValues().seconds);
+                });
+                timer2.addEventListener('targetAchieved', function (e) {
+                  $("#startModal").modal("hide")
+                });
+                $("#startModal").modal("show")
+                $('#startModal').off('hidden.bs.modal')
+                $('#startModal').on('hidden.bs.modal', function (e) {
+                  setTimeout(callback,500)
+                  timer2.stop()
+                });
+              }
+            },
+            function (callback) {
+              stopCallback = callback
+              loop()
+              interval = setInterval(loop, duration);
+              timer = new easytimer.Timer();
+              timer.start({ precision: 'seconds' });
+            },
+
+          ],
+            function (err) {
+              clearInterval(interval)
+              if (!err) {
+                isFirstRun = false
+                selectedTextTitle = null
+                totalTime = timer.getTimeValues().minutes * 60 + timer.getTimeValues().seconds
+                let readSpeed = (text.wordCount / totalTime * 60).toFixed(0)
+                let date = new Date()
+                $.post(`/app/stats`,
+                  {
+                    exercise: exerciseId,
+                    date: date.toLocaleDateString("tr-TR").split(".").join("/"),
+                    speedLevel: speedLevel,
+                    level: level,
+                    textTitle: text.title,
+                    readSpeed: readSpeed,
+                  },
+                  res => {
+                    updateScoreTable()
+                    // console.log(res)
+                  })
+                $.get(`/app/collections/counters?textTitle=${text.title}`, res => {
+                  // console.log(res)
+                  var readCount = 0
+                  if (res[0]) readCount = Number(res[0].counter)
+                  $.ajax({
+                    url: `/app/collections/counters?textTitle=${text.title}`,
+                    type: 'PUT',
+                    data: { counter: readCount + 1 },
+                    success: function (res) {
+                      // console.log(res)
+                      updateTextListTable()
+                    }
+                  });
+                })
+
+                $("#scoreModalInfo").text(`Okuma hızınız: ${readSpeed} kelime/dakika`)
+                $("#scoreModal").modal("show")
+              }
+              timer.stop()
+              atTheEnd()
+            }
+          )
+        }, 1000);
+      })
+
+
+    })
+    function atTheEnd() {
+      $("#playground > h3").text("")
+      $("#playground > span").remove()
+
+      $("#playground").addClass("nodisplay")
+
+      $("nav").removeClass("animated fadeOutUp")
+      $("nav").addClass("animated fadeInDown")
+      $("footer").removeClass("animated fadeOutDown")
+      $("footer").addClass("animated fadeInUp")
+
+      $("#background").removeClass("nodisplay")
+      $("#background").removeClass("animated zoomOut")
+      $("#background").addClass("animated zoomIn")
+    }
+
+  </script>
+
+</body>
+
+
+</html>
