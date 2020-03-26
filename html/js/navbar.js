@@ -10,7 +10,7 @@ function navbar(moduleIndex, modulePage = false) {
         <div class="col-sm-4">
           <div class="row justify-content-left">
             <a class="navbar-brand waves-effect waves-light" href="/app"><i class="fas fa-home fa-1x"></i></a>
-            <a class="navbar-brand waves-effect waves-light d-flex " href="${backLocation}">${modulePage ? "" : backIconEl}<span class="mx-2" style="font-size: 1rem;">${modules[moduleIndex - 1]}</span></a>
+            <a class="navbar-brand waves-effect waves-light d-flex " href="${backLocation}">${modulePage ? "" : backIconEl}<span class="mx-2 pt-1" style="font-size: 1rem;">${modules[moduleIndex - 1]}</span></a>
           </div>
         </div>
         <div class="col-sm-4 text-center">
