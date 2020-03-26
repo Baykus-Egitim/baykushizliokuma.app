@@ -1,5 +1,29 @@
 var configs = [
   {
+    exerciseId: "m1e1",
+    startInfo: "",
+    stats: [
+      { id: "date", label: "Tarih" },
+      { id: "speedLevel", label: "Hız" },
+    ],
+  },
+  {
+    exerciseId: "m1e2",
+    startInfo: "",
+    stats: [
+      { id: "date", label: "Tarih" },
+      { id: "speedLevel", label: "Hız" },
+    ],
+  },
+  {
+    exerciseId: "m1e3",
+    startInfo: "",
+    stats: [
+      { id: "date", label: "Tarih" },
+      { id: "speedLevel", label: "Hız" },
+    ],
+  },
+  {
     exerciseId: "m1e4",
     startInfo: "Ortadaki yeşil kısma odaklanarak sağdan ve soldan aynı anda genişleyerek çıkan harf ve rakamları gözümüzü sıçrama yaptırmadan aynı anda görüp okumaya çalışalım.",
     stats: [
