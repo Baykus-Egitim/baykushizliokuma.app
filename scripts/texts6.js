@@ -673,71 +673,71 @@ var texts = [
       { question: "Niçin", answer: "Kaza sonrası bacağını kaybetmemek için" },
     ]
   },
-  {
-    title: "DUA VE BİLİM",
-    wordCount: 325,
-    text: `
-&emsp;Çalışmadan kazanmak, emek vermeden bir şeye sahip olmak isteyenlere: "Terlemeden balık tutulmaz," derler. Gerçekten keklik avlamak isteyen tüfeğini, balık avlamak isteyen oltasını alır çıkar. Sürmeden, ekmeden dua ile harman kaldıran çiftçi duydunuz mu? Okula gitmeden, derslere çalışmadan dua ile sınıf geçen öğrenci gördünüz mü?
-&emsp;Bu söylediklerimin dua ile olmayacağını bilir herkes. Dua ile, akan ırmak kurur mu? Dua ile dağdan su fışkırır mı? Ama insanlar bilgi ile altın terini karıştırıp kanal açarak ırmağın yatağını değiştirebilirler. Yine, yeri delip artezyenle su fışkırtabilirler.
-&emsp;Demek ki, her başarı bilgi ister, emek ister. Aksi düşünülemez. Ama nedense kimi kişiler, bir hastalığın dua ile geçeceğine, ya da dua ile yağmur yağacağına inanırlar. Geçen gün küçük yeğenimin ateşler içinde yandığını gören yengem çocuğu nineme vererek:
-&emsp;Buna bakar mısın? Galiba nazar almış, dedi.
-&emsp;Ninem elini alnına koydu çocuğun:
-&emsp;Evet, nazar almış, dedi. kimbilir hangi göz pek yan bakıp nazar etti!
-&emsp;Başladı okuyup üflemeye. Yapılan işin saçmalığını anlatıp tıp diye bir bilim, doktorluk diye bir meslek olduğunu söyledimse de:
-&emsp;Okulda size dinsizlik mi öğretiyorlar? Diye kızdılar bana.
-&emsp;Peki, ninem okumamış yazmamış; böyle düşünmekte haklı diyelim. Ya her yıl, her zaman halkımızı ayartarak yağmur duasına çıkaran din adamlarımıza ne diyelim! Bizim insanlarımız aptal değil. Dua ile yağmur yağmayacağını bilmez mi? Bilir elbet. Ama bile bile, dinsiz ilan edilmekten korktuğu için, bu gösterilere katılır.
-&emsp;Yağmur duaları Hz. Muhammed'in "Bilim Çin'de bile olsa arayınız." sözüne de aykırıdır. Tanrı her insana akıl vermiş, düşünsün; göz vermiş görsün, incelesin, okusun; el vermiş çalışsın, sonra da el aç yalvar; kendi yapmadığın işi Tanrı'nın yapmasını iste. Olacak şey mi bu!
-&emsp;Terlemeden balık tutulmaz. Yağmur isteyenin de terlemesi gerekir. Bilim Çin'de mi, Japonya'da mı, Sovyetler Birliği'nde, İngiltere'de, Amerika'da mı? Nerede ise arayacaksın, bulacaksın, alacaksın. Yağmur hangi ortamda oluşur? Bunu inceleyip öğrendikten sonra, yağmur isteyince ortamını hazırlayacaksın. Böylece yağmur elinin altında olur.
-&emsp;Atatürk de " Hayatta ne gerçek yol gösterici bilimdir." diyor. Ne yazık ki biz, bilimin aydınlattığı ışıklı yollarda değil, karanlıklarda debelenip duruyoruz.
-    `,
-    questions: [
-      {
-        question: "Yaşlı usta çırağını nereye göndermiş?",
-        options: [
-          "Çarşıya",
-          "Su almaya",
-          "Ekmek almaya",
-          "Tuz almaya",
-        ],
-        answer: 3
-      },
-      {
-        question: "Yaşlı usta nereliymiş?",
-        options: [
-          "Hintli",
-          "Çinli",
-          "Koreli",
-          "Türkiyeli",
-        ],
-        answer: 0
-      },
-      {
-        question: "Tuzlu suyu içen çırak yaşlı ustaya nasıl yanıt vermiş?",
-        options: [
-          "Sevinçle",
-          "Öfkeyle",
-        ],
-        answer: 1
-      },
-      {
-        question: "Parçaya göre yaşamdaki acılar ne gibidir?",
-        options: [
-          "Tuz gibi.",
-          "Şeker gibi.",
-        ],
-        answer: 0
-      },
-    ],
-    keyWords: "Usta, Çırak, Bardak, Göl, Tuz",
-    NK: [
-      { question: "Kim", answer: "Usta, Çırak" },
-      { question: "Ne", answer: "Hintli ustanın çırağına verdiği hayat dersi" },
-      { question: "Ne Zamana", answer: "-" },
-      { question: "Nerede", answer: "Hindistan, Dükkan, Göl" },
-      { question: "Nasıl", answer: "Usta çırağına bazı şeyleri denettirerek örnek verdi." },
-      { question: "Niçin", answer: "Çırağın olgunlaşması ve şikayeti bırakması için" },
-    ]
-  },
+//   {
+//     title: "DUA VE BİLİM",
+//     wordCount: 325,
+//     text: `
+// &emsp;Çalışmadan kazanmak, emek vermeden bir şeye sahip olmak isteyenlere: "Terlemeden balık tutulmaz," derler. Gerçekten keklik avlamak isteyen tüfeğini, balık avlamak isteyen oltasını alır çıkar. Sürmeden, ekmeden dua ile harman kaldıran çiftçi duydunuz mu? Okula gitmeden, derslere çalışmadan dua ile sınıf geçen öğrenci gördünüz mü?
+// &emsp;Bu söylediklerimin dua ile olmayacağını bilir herkes. Dua ile, akan ırmak kurur mu? Dua ile dağdan su fışkırır mı? Ama insanlar bilgi ile altın terini karıştırıp kanal açarak ırmağın yatağını değiştirebilirler. Yine, yeri delip artezyenle su fışkırtabilirler.
+// &emsp;Demek ki, her başarı bilgi ister, emek ister. Aksi düşünülemez. Ama nedense kimi kişiler, bir hastalığın dua ile geçeceğine, ya da dua ile yağmur yağacağına inanırlar. Geçen gün küçük yeğenimin ateşler içinde yandığını gören yengem çocuğu nineme vererek:
+// &emsp;Buna bakar mısın? Galiba nazar almış, dedi.
+// &emsp;Ninem elini alnına koydu çocuğun:
+// &emsp;Evet, nazar almış, dedi. kimbilir hangi göz pek yan bakıp nazar etti!
+// &emsp;Başladı okuyup üflemeye. Yapılan işin saçmalığını anlatıp tıp diye bir bilim, doktorluk diye bir meslek olduğunu söyledimse de:
+// &emsp;Okulda size dinsizlik mi öğretiyorlar? Diye kızdılar bana.
+// &emsp;Peki, ninem okumamış yazmamış; böyle düşünmekte haklı diyelim. Ya her yıl, her zaman halkımızı ayartarak yağmur duasına çıkaran din adamlarımıza ne diyelim! Bizim insanlarımız aptal değil. Dua ile yağmur yağmayacağını bilmez mi? Bilir elbet. Ama bile bile, dinsiz ilan edilmekten korktuğu için, bu gösterilere katılır.
+// &emsp;Yağmur duaları Hz. Muhammed'in "Bilim Çin'de bile olsa arayınız." sözüne de aykırıdır. Tanrı her insana akıl vermiş, düşünsün; göz vermiş görsün, incelesin, okusun; el vermiş çalışsın, sonra da el aç yalvar; kendi yapmadığın işi Tanrı'nın yapmasını iste. Olacak şey mi bu!
+// &emsp;Terlemeden balık tutulmaz. Yağmur isteyenin de terlemesi gerekir. Bilim Çin'de mi, Japonya'da mı, Sovyetler Birliği'nde, İngiltere'de, Amerika'da mı? Nerede ise arayacaksın, bulacaksın, alacaksın. Yağmur hangi ortamda oluşur? Bunu inceleyip öğrendikten sonra, yağmur isteyince ortamını hazırlayacaksın. Böylece yağmur elinin altında olur.
+// &emsp;Atatürk de " Hayatta ne gerçek yol gösterici bilimdir." diyor. Ne yazık ki biz, bilimin aydınlattığı ışıklı yollarda değil, karanlıklarda debelenip duruyoruz.
+//     `,
+//     questions: [
+//       {
+//         question: "Yaşlı usta çırağını nereye göndermiş?",
+//         options: [
+//           "Çarşıya",
+//           "Su almaya",
+//           "Ekmek almaya",
+//           "Tuz almaya",
+//         ],
+//         answer: 3
+//       },
+//       {
+//         question: "Yaşlı usta nereliymiş?",
+//         options: [
+//           "Hintli",
+//           "Çinli",
+//           "Koreli",
+//           "Türkiyeli",
+//         ],
+//         answer: 0
+//       },
+//       {
+//         question: "Tuzlu suyu içen çırak yaşlı ustaya nasıl yanıt vermiş?",
+//         options: [
+//           "Sevinçle",
+//           "Öfkeyle",
+//         ],
+//         answer: 1
+//       },
+//       {
+//         question: "Parçaya göre yaşamdaki acılar ne gibidir?",
+//         options: [
+//           "Tuz gibi.",
+//           "Şeker gibi.",
+//         ],
+//         answer: 0
+//       },
+//     ],
+//     keyWords: "Usta, Çırak, Bardak, Göl, Tuz",
+//     NK: [
+//       { question: "Kim", answer: "Usta, Çırak" },
+//       { question: "Ne", answer: "Hintli ustanın çırağına verdiği hayat dersi" },
+//       { question: "Ne Zamana", answer: "-" },
+//       { question: "Nerede", answer: "Hindistan, Dükkan, Göl" },
+//       { question: "Nasıl", answer: "Usta çırağına bazı şeyleri denettirerek örnek verdi." },
+//       { question: "Niçin", answer: "Çırağın olgunlaşması ve şikayeti bırakması için" },
+//     ]
+//   },
   // {
   //   title: "XXX",
   //   wordCount: 222,

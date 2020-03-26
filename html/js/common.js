@@ -186,6 +186,7 @@ $.get("/app/collections/texts", res => {
 // User info
 //===========================
 let user = null
+$.get("/app/user", res => { user = res })
 
 //===========================
 // Location identify
