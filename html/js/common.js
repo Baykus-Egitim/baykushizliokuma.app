@@ -179,3 +179,27 @@ $.get("/app/collections/texts", res => {
   texts = res
   // console.log(res)
 })
+
+
+
+//===========================
+// Location identify
+//===========================
+const module = Number(window.location.pathname.split("/")[3])
+const exercise = Number(window.location.pathname.split("/")[5])
+document.title = `BHO : Modül ${module} ${(exercise) ? `: Egzersiz ${exercise}` : ""}`
+
+//===========================
+// Demo mode
+//===========================
+const demoExercises = [0, [5], [7], [4], [1, 6], [2, 5], [5]]
+if (module && !exercise) {
+  $.get("/app/user", res => {
+    if (res.username.includes("misafir")) {
+      for (var i = 0; i < Nexercises; ++i) {
+        if (!demoExercises[module].includes(i+1)) $(`#imgEx-${i + 1}`).addClass("disable")
+      }
+    }
+  })
+}
+

@@ -95,10 +95,10 @@ app.get('/app/modules/:module', (req, res) => {
   });
 })
 
-const guestAllowed = [0, 4, 2, 1, 5, 8, 3]
+const demoExercises = [0, [5], [7], [4], [1, 6], [2, 5], [5]]
 app.get('/app/modules/:module/exercises/:exercise', (req, res) => {
   if (req.user.username.includes("misafir")) {
-    if (Number(req.params.exercise) == guestAllowed[Number(req.params.module)]) {
+    if (Number(req.params.exercise) == demoExercises[Number(req.params.module)]) {
       fs.readFile(`html/m${req.params.module}e${req.params.exercise}.html`, (err, data) => {
         if (err) throw err;
         res.send(htmlMinify(`${data}`, minifyOptions))

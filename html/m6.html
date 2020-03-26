@@ -85,20 +85,11 @@
     //==================================
     // generate view
     //==================================
-    var module = 6
     var Nexercises = 6
     $(document).ready(() => {
       navbar(module, true)
       $(".navbar").removeClass("fixed-top")
 
-      const demoExercise = 3
-      $.get("/app/user", res => { 
-        if(res.username.includes("misafir")){
-          for (var i = 0; i < Nexercises; ++i) {
-            if(i+1!=demoExercise) $(`#imgEx-${i+1}`).addClass("disable")
-          }
-        }
-      })
       $("#moduleBanner").append(`
         <img class="mx-auto" src="/app/img/modül/${module}.png">
       `)

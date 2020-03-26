@@ -87,7 +87,6 @@
     //==================================
     // generate view
     //==================================
-    var module = 3
     var Nexercises = 8
     $(document).ready(() => {
       navbar(module, true)
@@ -110,14 +109,6 @@
         }
         else $("#exercises > div:last").removeClass("pr-2").addClass("mx-auto pl-2")
       }
-      const demoExercise = 1
-      $.get("/app/user", res => { 
-        if(res.username.includes("misafir")){
-          for (var i = 0; i < Nexercises; ++i) {
-            if(i+1!=demoExercise) $(`#imgEx-${i+1}`).addClass("disable")
-          }
-        }
-      })
 
       $("#moduleBanner").append(`
         <img class="mx-auto" src="/app/img/modül/${module}.png">
