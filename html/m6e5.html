@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>BHO : Modül 1: Egzersiz 1</title>
+  <title>BHO</title>
   <!-- MDB icon -->
   <link rel="icon" href="/app/img/bho_yazısız.png">
   <!-- Font Awesome -->
@@ -94,15 +94,6 @@
 
 
   <script type="text/javascript">
-    //==================================
-    // exercise specific global variables
-    //==================================
-    const module = Number(window.location.pathname.split("/")[3])
-    const exercise = Number(window.location.pathname.split("/")[5])
-    const exerciseId = `m${module}e${exercise}`
-    document.title = `BHO : Modül ${module}: Egzersiz ${exercise}`
-    let user = null
-    $.get("/app/user", res => { user = res })
 
     //==================================
     // generate view

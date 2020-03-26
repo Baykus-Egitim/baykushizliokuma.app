@@ -183,10 +183,17 @@ $.get("/app/collections/texts", res => {
 
 
 //===========================
+// User info
+//===========================
+let user = null
+
+//===========================
 // Location identify
 //===========================
 const module = Number(window.location.pathname.split("/")[3])
 const exercise = Number(window.location.pathname.split("/")[5])
+const exerciseId = (exercise) ? `m${module}e${exercise}` : ""
+
 document.title = `BHO : Modül ${module} ${(exercise) ? `: Egzersiz ${exercise}` : ""}`
 
 //===========================
@@ -195,11 +202,14 @@ document.title = `BHO : Modül ${module} ${(exercise) ? `: Egzersiz ${exercise}`
 const demoExercises = [0, [5], [7], [4], [1, 6], [2, 5], [5]]
 if (module && !exercise) {
   $.get("/app/user", res => {
-    if (res.username.includes("misafir")) {
+    user = res
+    if (user.username.includes("misafir")) {
       for (var i = 0; i < Nexercises; ++i) {
         if (!demoExercises[module].includes(i+1)) $(`#imgEx-${i + 1}`).addClass("disable")
       }
     }
   })
 }
+
+
 
