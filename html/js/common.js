@@ -202,37 +202,39 @@ document.title = `BHO : Modül ${module} ${(exercise) ? `: Egzersiz ${exercise}`
 //===========================
 // const demoExercises = [0, [5], [7], [4], [1, 6], [2, 5], [5]]
 const demoExercises = [0, [4], [2], [1], [5], [8], [3]]
-if (module && !exercise) {
-  $.get("/app/user", res => {
-    user = res
-    if (user.username.includes("misafir")) {
-      for (var i = 0; i < Nexercises; ++i) {
-        if (!demoExercises[module].includes(i + 1)) $(`#imgEx-${i + 1}`).addClass("disable")
+$(document).ready(() => {
+  if (module && !exercise) {
+    $.get("/app/user", res => {
+      user = res
+      if (user.username.includes("misafir")) {
+        for (var i = 0; i < Nexercises; ++i) {
+          if (!demoExercises[module].includes(i + 1)) $(`#imgEx-${i + 1}`).addClass("disable")
+        }
       }
-    }
-  })
-}
+    })
+  }
+})
 
 //===========================
 // Responsiveness
 //===========================
-if (exercise) {
-  $("html").css("zoom", `${window.innerWidth / 1320}`)
-  window.addEventListener("resize", () => {
+$(document).ready(() => {
+  if (exercise) {
     $("html").css("zoom", `${window.innerWidth / 1320}`)
+    window.addEventListener("resize", () => {
+      $("html").css("zoom", `${window.innerWidth / 1320}`)
+      if (window.innerWidth < window.innerHeight) {
+        setTimeout(() => { $("#rotateScreenWarningModal").modal("show") }, 1000)
+      }
+      else {
+        $("#rotateScreenWarningModal").modal("hide")
+      }
+    })
     if (window.innerWidth < window.innerHeight) {
       setTimeout(() => { $("#rotateScreenWarningModal").modal("show") }, 1000)
     }
-    else {
-      $("#rotateScreenWarningModal").modal("hide")
-    }
-  })
-  $(document).ready(() => {
-    if (window.innerWidth < window.innerHeight) {
-      setTimeout(() => { $("#rotateScreenWarningModal").modal("show") }, 1000)
-    }
-  })
-}
+  }
+})
 
 
 

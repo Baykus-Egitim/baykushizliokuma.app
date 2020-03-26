@@ -90,7 +90,8 @@ app.get('/app/', (req, res) => {
 app.get('/app/modules/:module', (req, res) => {
   fs.readFile(`html/m${req.params.module}.html`, (err, data) => {
     if (err) throw err;
-    if (req.user) res.send(htmlMinify(`${data}`, minifyOptions))
+      if (req.user) res.sendFile(__dirname + `/html/m${req.params.module}.html`)
+      // if (req.user) res.send(htmlMinify(`${data}`, minifyOptions))
     else res.redirect("/app/login?returnCode=2")
   });
 })
