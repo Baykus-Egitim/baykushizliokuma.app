@@ -205,21 +205,21 @@ if (module && !exercise) {
     user = res
     if (user.username.includes("misafir")) {
       for (var i = 0; i < Nexercises; ++i) {
-        if (!demoExercises[module].includes(i+1)) $(`#imgEx-${i + 1}`).addClass("disable")
+        if (!demoExercises[module].includes(i + 1)) $(`#imgEx-${i + 1}`).addClass("disable")
       }
     }
   })
 }
 
 //===========================
-// Zoom out and rotate screen indication
+// Responsiveness
 //===========================
-if(exercise){
+if (exercise) {
   $("html").css("zoom", `${window.innerWidth / 1320}`)
   window.addEventListener("resize", () => {
     $("html").css("zoom", `${window.innerWidth / 1320}`)
     if (window.innerWidth < window.innerHeight) {
-      $("#rotateScreenWarningModal").modal("show")
+      setTimeout(() => { $("#rotateScreenWarningModal").modal("show") }, 1000)
     }
     else {
       $("#rotateScreenWarningModal").modal("hide")
@@ -227,7 +227,7 @@ if(exercise){
   })
   $(document).ready(() => {
     if (window.innerWidth < window.innerHeight) {
-      $("#rotateScreenWarningModal").modal("show")
+      setTimeout(() => { $("#rotateScreenWarningModal").modal("show") }, 1000)
     }
   })
 }
