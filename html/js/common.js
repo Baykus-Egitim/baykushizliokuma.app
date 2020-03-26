@@ -211,5 +211,27 @@ if (module && !exercise) {
   })
 }
 
+//===========================
+// Zoom out and rotate screen indication
+//===========================
+if(exercise){
+  $("html").css("zoom", `${window.innerWidth / 1320}`)
+  window.addEventListener("resize", () => {
+    $("html").css("zoom", `${window.innerWidth / 1320}`)
+    if (window.innerWidth < window.innerHeight) {
+      $("#rotateScreenWarningModal").modal("show")
+    }
+    else {
+      $("#rotateScreenWarningModal").modal("hide")
+    }
+  })
+  $(document).ready(() => {
+    if (window.innerWidth < window.innerHeight) {
+      $("#rotateScreenWarningModal").modal("show")
+    }
+  })
+}
+
+
 
 

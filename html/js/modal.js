@@ -258,7 +258,7 @@ function addStartModal2(largeModal = false) {
     $.get(`/app/collections/configs?exerciseId=${exerciseId}`, res => {
       $("#startModalInfo").html(res[0].startInfo)
       $.get("/app/user", res => {
-        $("#startModalHeader").text(`Merhaba ${user.name}, Bu Egzersizde:`)
+        $("#startModalHeader").text(`Merhaba ${res.name}, Bu Egzersizde:`)
       })
     })
 
