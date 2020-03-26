@@ -131,6 +131,7 @@ function addScoreModal2(isLarge = true) {
           }
         }
       })
+      updateExerciseStatisticsTable()
     }
   })
 }
@@ -204,6 +205,7 @@ function addScoreModal3(isLarge = true) {
           }
         }
       })
+      updateExerciseStatisticsTable()
     }
   })
 }
@@ -659,4 +661,72 @@ $(document).ready(() => {
       </div>
     </div>
   `)
+})
+
+
+//===========================
+// Exercise statistics
+//===========================
+$(document).ready(() => {
+  if (module && exercise) {
+    console.log("Here")
+    $("body").append(`
+      <div id="exerciseStatistics" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content text-center">
+            <div class="modal-header d-flex justify-content-center default">
+              <h4 id="exerciseStatisticsHeader" class="heading" style="font-weight: bold; color: #f5ad1b;">Bu Egzersizdeki Performansın:</h4>
+            </div>
+            <div class="modal-body text-center">
+              <i id="exerciseStatisticsIconWarning" class="exerciseStatisticsIcon fas fa-exclamation fa-4x animated jackInTheBox mb-4 nodisplay" style="color: #f5ad1b"><span class="mx-2"></span></i>
+              <h4 id="exerciseStatisticsInfo" class="resultInfo text-weight-bold text-center d-none">Egzersizi tamamladınız.</h4>
+              <div class="row mt-3 text-center">
+                <div class="col-md-6 mx-auto">
+                  <div class="table-wrap-mid scrollbar-secondary w-100">
+                    <table class="table table-sm table-hover w-100">
+                      <thead id="exerciseStatisticsTableHead">
+                        <tr>
+                          <th scope="col">Sıra</th>
+                        </tr>
+                      </thead>
+                      <tbody id="exerciseStatisticsTableRows">
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer flex-center">
+              <div id="exerciseStatisticsOkay" class="btn btn-sm btn-outline-default btn-rounded waves-effect waves-light" data-dismiss="modal">Tamam</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `)
+
+    // fill tables
+    let statProps = []
+    $.get(`/app/collections/configs?exerciseId=${exerciseId}`, res => {
+      statProps = res[0].stats
+      for (var i = 0; i < res[0].stats.length; ++i) {
+        $(`#exerciseStatisticsTableHead > tr`).append(`<th scope="col">${statProps[i].label}</th>`)
+      }
+      updateExerciseStatisticsTable()
+    })
+    updateExerciseStatisticsTable = function () {
+      $(`#exerciseStatisticsTableRows`).empty()
+      $.get(`/app/stats?exercise=${exerciseId}`, stats => {
+        for (var i = 0; i < stats.length; ++i) {
+          $("#exerciseStatisticsTableRows").prepend(`<tr><td>${i + 1}</td></tr>`)
+          for (var j = 0; j < statProps.length; ++j) {
+            $("#exerciseStatisticsTableRows > tr:first").append(`<td>${stats[i][statProps[j].id]}</td>`)
+          }
+        }
+      })
+    }
+    
+    // $("#exerciseStatistics").on("shown.bs.modal", () => {
+    //   updateExerciseStatisticsTable()
+    // })
+  }
 })
