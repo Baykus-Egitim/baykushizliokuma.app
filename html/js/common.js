@@ -200,7 +200,8 @@ document.title = `BHO : Modül ${module} ${(exercise) ? `: Egzersiz ${exercise}`
 //===========================
 // Demo mode
 //===========================
-const demoExercises = [0, [5], [7], [4], [1, 6], [2, 5], [5]]
+// const demoExercises = [0, [5], [7], [4], [1, 6], [2, 5], [5]]
+const demoExercises = [0, [4], [2], [1], [5], [8], [3]]
 if (module && !exercise) {
   $.get("/app/user", res => {
     user = res
