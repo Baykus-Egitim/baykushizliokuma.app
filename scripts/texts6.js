@@ -673,189 +673,193 @@ var texts = [
       { question: "Niçin", answer: "Kaza sonrası bacağını kaybetmemek için" },
     ]
   },
-//   {
-//     title: "DUA VE BİLİM",
-//     wordCount: 325,
-//     text: `
-// &emsp;Çalışmadan kazanmak, emek vermeden bir şeye sahip olmak isteyenlere: "Terlemeden balık tutulmaz," derler. Gerçekten keklik avlamak isteyen tüfeğini, balık avlamak isteyen oltasını alır çıkar. Sürmeden, ekmeden dua ile harman kaldıran çiftçi duydunuz mu? Okula gitmeden, derslere çalışmadan dua ile sınıf geçen öğrenci gördünüz mü?
-// &emsp;Bu söylediklerimin dua ile olmayacağını bilir herkes. Dua ile, akan ırmak kurur mu? Dua ile dağdan su fışkırır mı? Ama insanlar bilgi ile altın terini karıştırıp kanal açarak ırmağın yatağını değiştirebilirler. Yine, yeri delip artezyenle su fışkırtabilirler.
-// &emsp;Demek ki, her başarı bilgi ister, emek ister. Aksi düşünülemez. Ama nedense kimi kişiler, bir hastalığın dua ile geçeceğine, ya da dua ile yağmur yağacağına inanırlar. Geçen gün küçük yeğenimin ateşler içinde yandığını gören yengem çocuğu nineme vererek:
-// &emsp;Buna bakar mısın? Galiba nazar almış, dedi.
-// &emsp;Ninem elini alnına koydu çocuğun:
-// &emsp;Evet, nazar almış, dedi. kimbilir hangi göz pek yan bakıp nazar etti!
-// &emsp;Başladı okuyup üflemeye. Yapılan işin saçmalığını anlatıp tıp diye bir bilim, doktorluk diye bir meslek olduğunu söyledimse de:
-// &emsp;Okulda size dinsizlik mi öğretiyorlar? Diye kızdılar bana.
-// &emsp;Peki, ninem okumamış yazmamış; böyle düşünmekte haklı diyelim. Ya her yıl, her zaman halkımızı ayartarak yağmur duasına çıkaran din adamlarımıza ne diyelim! Bizim insanlarımız aptal değil. Dua ile yağmur yağmayacağını bilmez mi? Bilir elbet. Ama bile bile, dinsiz ilan edilmekten korktuğu için, bu gösterilere katılır.
-// &emsp;Yağmur duaları Hz. Muhammed'in "Bilim Çin'de bile olsa arayınız." sözüne de aykırıdır. Tanrı her insana akıl vermiş, düşünsün; göz vermiş görsün, incelesin, okusun; el vermiş çalışsın, sonra da el aç yalvar; kendi yapmadığın işi Tanrı'nın yapmasını iste. Olacak şey mi bu!
-// &emsp;Terlemeden balık tutulmaz. Yağmur isteyenin de terlemesi gerekir. Bilim Çin'de mi, Japonya'da mı, Sovyetler Birliği'nde, İngiltere'de, Amerika'da mı? Nerede ise arayacaksın, bulacaksın, alacaksın. Yağmur hangi ortamda oluşur? Bunu inceleyip öğrendikten sonra, yağmur isteyince ortamını hazırlayacaksın. Böylece yağmur elinin altında olur.
-// &emsp;Atatürk de " Hayatta ne gerçek yol gösterici bilimdir." diyor. Ne yazık ki biz, bilimin aydınlattığı ışıklı yollarda değil, karanlıklarda debelenip duruyoruz.
-//     `,
-//     questions: [
-//       {
-//         question: "Yaşlı usta çırağını nereye göndermiş?",
-//         options: [
-//           "Çarşıya",
-//           "Su almaya",
-//           "Ekmek almaya",
-//           "Tuz almaya",
-//         ],
-//         answer: 3
-//       },
-//       {
-//         question: "Yaşlı usta nereliymiş?",
-//         options: [
-//           "Hintli",
-//           "Çinli",
-//           "Koreli",
-//           "Türkiyeli",
-//         ],
-//         answer: 0
-//       },
-//       {
-//         question: "Tuzlu suyu içen çırak yaşlı ustaya nasıl yanıt vermiş?",
-//         options: [
-//           "Sevinçle",
-//           "Öfkeyle",
-//         ],
-//         answer: 1
-//       },
-//       {
-//         question: "Parçaya göre yaşamdaki acılar ne gibidir?",
-//         options: [
-//           "Tuz gibi.",
-//           "Şeker gibi.",
-//         ],
-//         answer: 0
-//       },
-//     ],
-//     keyWords: "Usta, Çırak, Bardak, Göl, Tuz",
-//     NK: [
-//       { question: "Kim", answer: "Usta, Çırak" },
-//       { question: "Ne", answer: "Hintli ustanın çırağına verdiği hayat dersi" },
-//       { question: "Ne Zamana", answer: "-" },
-//       { question: "Nerede", answer: "Hindistan, Dükkan, Göl" },
-//       { question: "Nasıl", answer: "Usta çırağına bazı şeyleri denettirerek örnek verdi." },
-//       { question: "Niçin", answer: "Çırağın olgunlaşması ve şikayeti bırakması için" },
-//     ]
-//   },
-  // {
-  //   title: "XXX",
-  //   wordCount: 222,
-  //   text: `
-  //   
-  //   `,
-  //   questions: [
-  //     {
-  //       question: "XXXX",
-  //       options: [
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //       ],
-  //       answer: 1
-  //     },
-  //     {
-  //       question: "XXXX",
-  //       options: [
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //       ],
-  //       answer: 1
-  //     },
-  //     {
-  //       question: "XXXX",
-  //       options: [
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //       ],
-  //       answer: 1
-  //     },
-  //     {
-  //       question: "XXXX",
-  //       options: [
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //       ],
-  //       answer: 1
-  //     },
-  //   ],
-  //   keyWords: "XXXX",
-  //   NK:[
-  // {question: "Kim", answer: "XXX"},
-  // {question: "Ne", answer: "XXX"},
-  // {question: "Ne Zamana", answer: "XXX"},
-  // {question: "Nerede", answer: "XXX"},
-  // {question: "Nasıl", answer: "XXX"},
-  // {question: "Niçin", answer: "XXX"},
-  //   ]
-
-  // },
-  // {
-  //   title: "XXX",
-  //   wordCount: 222,
-  //   text: `
-  //   
-  //   `,
-  //   questions: [
-  //     {
-  //       question: "XXXX",
-  //       options: [
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //       ],
-  //       answer: 1
-  //     },
-  //     {
-  //       question: "XXXX",
-  //       options: [
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //       ],
-  //       answer: 1
-  //     },
-  //     {
-  //       question: "XXXX",
-  //       options: [
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //       ],
-  //       answer: 1
-  //     },
-  //     {
-  //       question: "XXXX",
-  //       options: [
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //       ],
-  //       answer: 1
-  //     },
-  //   ],
-  //   keyWords: "XXXX",
-  //   NK:[
-  // {question: "Kim", answer: "XXX"},
-  // {question: "Ne", answer: "XXX"},
-  // {question: "Ne Zamana", answer: "XXX"},
-  // {question: "Nerede", answer: "XXX"},
-  // {question: "Nasıl", answer: "XXX"},
-  // {question: "Niçin", answer: "XXX"},
-  //   ]
-
-  // },
+  {
+    title: "ÇİÇEK İLE SU",
+    wordCount: 292,
+    text: `
+&emsp;Günün birinde bir çiçekle su karşılaşır ve arkadaş olurlar. İlk önceleri güzel bir arkadaşlık olarak devam eder birliktelikleri, tabii zaman lâzımdır birbirlerini tanımak için. Gel zaman, git zaman çiçek o kadar mutlu olur ki, mutluluktan içi içine sığmaz artık ve anlar ki, Su’ya âşık olmuştur.
+&emsp;İlk kez âşık olan çiçek, etrafa kokular saçar, “Sırf senin hatırın için ey su” diye…
+&emsp;Öyle zaman gelir ki, artık su da içinde çiçeğe karşı bir şeyler hissetmeye başlamıştır. Zanneder ki, çiçeğe âşıktır ama su da ilk defa âşık oluyordur.
+&emsp;Günler ve aylar birbirini kovalar ve çiçek acaba “Su beni seviyor mu?” diye düşünmeye başlar.
+&emsp;Çünkü su, pek ilgilenmez çiçekle… Hâlbuki çiçek, alışkın değildir böyle bir sevgiye ve dayanamaz.
+&emsp;Çiçek, suya “Seni seviyorum der. Su, “Ben de seni seviyorum” der. Aradan zaman geçer ve çiçek yine “Seni seviyorum” der. Su, yine “Ben de” der. Çiçek, sabırlıdır. Bekler, bekler, bekler…
+&emsp;Artık öyle bir duruma gelir ki, çiçek koku saçamaz etrafa ve son kez suya “Seni seviyorum.” der.
+&emsp;Su da ona “Söyledim ya ben de seni seviyorum.” der ve gün gelir çiçek yataklara düşer. Hastalanmıştır çiçek artık. Rengi solmuş, çehresi sararmıştır çiçeğin. Yataklardadır artık çiçek. Su da başında bekler çiçeğin, yardımcı olmak için sevdiğine…
+&emsp;Bellidir ki artık çiçek ölecektir ve son kez zorlukla başını döndürerek çiçek, suya der ki; “Seni ben, gerçekten seviyorum.” Çok hüzünlenir su bu durum karşısında ve son çare olarak bir doktor çağırır nedir sorun diye… Doktor gelir ve muayene eder çiçeği. Sonra şöyle der Doktor: “Hastanın durumu ümitsiz artık elimizden bir şey gelmez.”
+&emsp;Su, merak eder, sevgilisinin ölümüne sebep olan hastalık nedir diye ve sorar doktora. Doktor, şöyle bir bakar suya ve der ki: “Çiçeğin bir hastalığı yok dostum… Bu çiçek sadece susuz kalmış, ölümü onun için” der. Ve anlamıştır artık su, sevgiliye sadece “Seni seviyorum” demek yetmemektedir…
+    `,
+    questions: [
+      {
+        question: "Çiçek ilk kim kime âşık olmuştur?",
+        options: [
+          "İlk çiçek suya aşık olmuş.",
+          "İlk su çiçeğe aşık olmuş",
+        ],
+        answer: 0
+      },
+      {
+        question: "Hasta olan ve ölecek olan kimdir?",
+        options: [
+          "Su",
+          "Çiçek",
+        ],
+        answer: 1
+      },
+      {
+        question: "Parçadaki ana unsur nedir?",
+        options: [
+          "Fedakarlık önemlidir.",
+          "Yardımlaşmak iyi bir şeydir.",
+          "Seni Seviyorum tek başına önemli değildir."
+        ],
+        answer: 2
+      },
+      {
+        question: "Çiçek âşık olunca neler yapmış?",
+        options: [
+          "Aşktan sersem olmuş.",
+          "Etrafa kokular saçmış",
+          "Mutluluktan havalara uçmuş.",
+        ],
+        answer: 1
+      },
+    ],
+    keyWords: "Çiçek, Su, Susuzluk, Hastalık, Aşk, Ölüm",
+    NK: [
+      { question: "Kim", answer: "Çiçek, Su, Doktor" },
+      { question: "Ne", answer: "Çiçeğin susuzluktan ölmesi" },
+      { question: "Ne Zamana", answer: "-" },
+      { question: "Nerede", answer: "Belirsiz..." },
+      { question: "Nasıl", answer: "Çiçek suyu çok sevmesine ve onu çok beklemesine rağmen su çiçeğin bu durumunu geç farketmesi" },
+      { question: "Niçin", answer: "Çiçeğin suya ilgisizliği yani susuzluk yüzünden ölmesi" },
+    ]
+  },
+  {
+    title: "GEÇ KALMAYIN",
+    wordCount: 338,
+    text: `
+&emsp;Daha henüz 18 yaşındaydı ama hayatının sonundaydı. Tedavisi mümkün olmayan ölümcül bir kansere yakalanmıştı. Kahır içinde eve kapatmıştı kendini… Sokağa çıkmıyordu. Annesi, bir de kendisi. O kadardı bütün hayatı… Bir gün fena halde sıkıldı, dayanamadı, attı kendini sokağa… Bir yığın vitrin önünden geçti, tam bir CD satan dükkânı da geride bırakmıştı ki, bir an durdu, geri döndü, kapıdan içeri, gözüne hayal meyal takılan genç kıza bir daha baktı. Kendi yaşlarında harika bir genç kızdı tezgâhtar… Hani, ilk bakışta aşk derler ya, öyle takılıp kalmıştı işte… 
+&emsp;İçeri girdi. Kız, gülümseyerek koştu ona; “Size nasıl yardım edebilirim?” diye. Nasıl bir gülümsemeydi o…Hemen oracıkta sarılıp öpmek istedi kızı… Kekeledi, geveledi, sonra “Evet!” diyebildi. Rastgele birini işaret ederek; “Evet, şu CD’yi bana sarar mısınız?” dedi. Kız CD’yi aldı, içeri gitti, az sonra paketle geri geldi. Genç kızdan aldı paketi, çıktı dükkândan, evine döndü. Paketi açmadan dolabına attı… Ertesi sabah gene gitti aynı dükkâna… Gene bir CD gösterdi kıza, sardırdı, aldı eve getirdi, attı paketi dolaba gene açmadan… Günler hep alınıp, sardırılan CD’lerle geçti. Kıza açılmaya bir türlü cesaret edemiyordu. Annesine açıldı sonunda… Annesi; “Git konuş oğlum, ne var bunda?” dedi. Ertesi sabah, bütün cesaretini topladı, erkenden dükkâna gitti. bir CD seçti. Kız gülerek aldı CD’yi, arkaya gitti paketlemeye. Kız içerdeyken bir kâğıda “Sizinle bir gece çıkabilir miyiz?” diye yazdı, altına telefon numarasını ekledi, notu kasanın yanına koydu gizlice. Sonra, paketini alıp kaçtı gene dükkândan… İki gün sonra evin telefonu çaldı… Anne açtı telefonu. Dükkândaki tezgâhtar kızdı arayan. Delikanlıyı istedi, notunu yeni bulmuştu da… Anne ağlıyordu… 
+&emsp;“Duymadınız mı?” dedi. “Dün kaybettik oğlumu.” Cenazeden birkaç gün sonra anne, oğlunun odasına girebildi sonunda. Ortalığa çeki düzen vermeliydi. Dolabı açtı, oraya atılmış bir yığın açılmamış paket gördü. Paketleri aldı, oğlunun yatağına oturdu ve bir tanesini açtı. İçinde bir CD vardı, bir de minik not… “Merhaba, sizi öyle tatlı buldum ki, daha yakından tanımak istiyorum. Bir akşam birlikte çıkalım mı? Sevgiler… Emma ” Anne, bir paketi daha açtı, onda da bir CD ve bir not vardı: “Siz gerçekten çok tatlı birisiniz, hadi beni bu gece davet edin, artık. Sevgiler… Emma ’’
+    `,
+    questions: [
+      {
+        question: "Çocuk kıza olan duygularını nasıl belli etmiş?",
+        options: [
+          "Annesini göndererek.",
+          "Bir kağıda not yazarak.",
+          "Belli etmemiş platonik kalmış.",
+        ],
+        answer: 1
+      },
+      {
+        question: "Çocuk CD dükkânına neden hep gidiyormuş?",
+        options: [
+          "Çalışan kızı beğendiği için.",
+          "CD koleksiyonu yaptığı için.",
+          "Annesi gönderdiği için.",
+        ],
+        answer: 0
+      },
+      {
+        question: "Kız en sonunda çocuğa cevabını nasıl vermiş?",
+        options: [
+          "Annesine telefon açarak.",
+          "Paketlerin içine not yazarak.",
+          "Hiçbir şey söylemeyerek.",
+        ],
+        answer: 0
+      },
+      {
+        question: "Çocuğa yakalandığı hastalığın sonunda ne olmuş?",
+        options: [
+          "İyileşmiş eskisi gibi olmuş.",
+          "Yatalak kalmış.",
+          "Genç yaşta ölmüş.",
+        ],
+        answer: 2
+      },
+    ],
+    keyWords: "Hasta genç, CD satan kız, Aşk, Söyleyememek, Davet, Ölüm",
+    NK: [
+      { question: "Kim", answer: "Emma, 18 yaşındaki genç, Anne" },
+      { question: "Ne", answer: "Birbirlerine aşklarını söyleyememeleri" },
+      { question: "Ne Zamana", answer: "Çocuk 18 yaşında iken" },
+      { question: "Nerede", answer: "Kızın CD satan dükkanında" },
+      { question: "Nasıl", answer: "Dükkana sürekli gitmesine rağmen konuşamayarak" },
+      { question: "Niçin", answer: "CD leri açıp bakmadığı için" },
+    ]
+  },
+  {
+    title: "KÖR NİŞANCILAR",
+    wordCount: 295,
+    text: `
+&emsp;Sıcak bir bahar günüydü. Çetin, annesinden dışarıda oynamak için izin aldı. Yanlarındaki komşu bina ile evleri arasında boş bir arsa vardı. Burası güvenli olduğundan arkadaşları da oyun oynamaya buraya gelirdi. Çetin, mahalle arkadaşlarının söz verdikleri saatte gelmelerini bekliyordu. Canı sıkılmaması için kendi kendine bir oyun bulmuştu. Birkaç adım ötesine koyduğu boş bir kola tenekesini, küçük taşlar atarak vurmaya çalışıyordu. Vurduğunda da 'İsabet!' diye bağırarak seviniyordu.
+&emsp;Kısa bir zaman sonra arkadaşları Fuat, Aykut ve Tuğrul geldiler. Çetin'in oyunu onların da hoşuna gitti. Aykut:
+&emsp;- Biz de oynayabilir miyiz? Diye sordu. 
+&emsp;Çetin de kabul etti. Kutuyu ortaya koydular. Kutunun on adım gerisine çizgi çektiler. Taşları ellerinde biriktirip sırayla atmaya başladılar. Bu oyun pek eğlenceli gelmişti. Bir ara kendilerini kaybedip ellerindeki taşların hepsini attılar. O esnada karşı evin bodrum katından 'Şangırt!' diye ses geldi. Evlerine bakan tozlu, küçük cam kırılmıştı. Üç arkadaş suçlu suçlu birbirlerinin yüzüne baktılar. Hepsi bir ağızdan:
+&emsp;- Ben kırmadım, dedi.
+&emsp;Bir anlık sessizlikten sonra Tuğrul:
+&emsp;- Engin Amca gelmeden kaçalım, dedi.
+&emsp;Üç arkadaş koşarak parka geldiler. Hiçbir şey olmamış gibi salıncağa bindiler, kaydıraktan kaydılar. Ancak eğlencenin tadı kaçmıştı bir kere. Kırdıkları cam, bir türlü akıllarından çıkmıyordu. Fuat, üzüntülü bir ses tonuyla:
+&emsp;- Acaba, kırılan camı harçlıklarımızla ödeyebilir miyiz, diye sordu.
+&emsp;Çetin:
+&emsp;- Benim de içimden o geçiyordu. Gelin arkadaşlar, gidip Engin Amcayla konuşalım, dedi.
+&emsp;Engin amca önce camının kırıldığına kızmıştı. Fakat dört afacan, harçlıklarını biriktirerek yeni cam taktıracaklarını söyleyince onların masum ve dürüst tavırları hoşuna gitti. Bu olay, kulaklarına küpe olsun diye camın parasını ödemelerine müsaade etti. Onları sevindirecek bir fikir sundu:
+&emsp;Ailelerinizden izin alın, hafta sonu sizi çiftliğime götüreyim. Torunlarım gelecek. Onlarla ata binersiniz. Piknik yaparsınız. Haaa, unutmadan söyleyeyim. Yanınıza boş teneke almayı unutmayın. Taşlar da benden. Çiftlikte kimseye zarar vermeden nişancılık oynarsınız. Çetin ve arkadaşları, o hafta eğlence dolu bir pazar geçirdiler. Hem de yeni arkadaşlar edindiler.
+    `,
+    questions: [
+      {
+        question: "Çetin dışarı çıkarken kimden izin aldı?",
+        options: [
+          "Babasından",
+          "Annesinden",
+          "Abisinden",
+          "Hiç kimseden",
+        ],
+        answer: 1
+      },
+      {
+        question: "Çetin nerede oyun oynardı?",
+        options: [
+          "Stadyumda",
+          "Bahçede",
+          "Spor salonunda",
+          "Boş arsada",
+        ],
+        answer: 3
+      },
+      {
+        question: "Hangisi Çetin’in arkadaşlarından değildir?",
+        options: [
+          "Emre",
+          "Aykut",
+          "Tuğrul",
+          "Fuat",
+        ],
+        answer: 0
+      },
+      {
+        question: "Kimin evinin camı kırılmıştı?",
+        options: [
+          "Semra teyzenin",
+          "Ali amcanın",
+          "Engin amcanın",
+          "Bakkalın",
+        ],
+        answer: 2
+      },
+    ],
+    keyWords: "Dürüstlük. Cam, Taş, Harçlık, Arsa, Çiftlik",
+    NK: [
+      { question: "Kim", answer: "Çetin, Tuğrul, Anne, Aykut Engin, Amca, Fuat" },
+      { question: "Ne", answer: "Nişancılık oynarken evin camının kırılması ve kırılan camın telafisi" },
+      { question: "Ne Zamana", answer: "Sıcak bir bahar günü" },
+      { question: "Nerede", answer: "Boş arsa, Çiftlik, Park" },
+      { question: "Nasıl", answer: "Kırılan camı harçlıkları ile ödemeyi teklif ediyorlar, karşılşığında da iyilik alıyorlar." },
+      { question: "Niçin", answer: "Oynarken camı kırdıkları için üzülüp dürüst davrandıkları için çiftliğe gitmeyi ve arkadaş edinmeyi kazandılar" },
+    ]
+  },
   // {
   //   title: "XXX",
   //   wordCount: 222,
