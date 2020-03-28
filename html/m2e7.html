@@ -56,7 +56,7 @@
 
 
   <!-- Start your project here-->
-  <div class="container-fluid" style="height: 100vh">
+  <div class="container-fluid" style="height: 100%">
     <div id="playground" class="row h-100 w-100 nodisplay mx-auto border">
       <span class="kk text-center" style="z-index: 0; position: absolute; top: 50%; left:50%; 
           transform: translate( calc(-50% + 0px), calc(-50% + 0px)) rotate(0deg);">
@@ -64,9 +64,12 @@
     </div>
 
     <div class="row d-flex justify-content-center h-100 align-items-center odisplay">
-      <div id="logo" class="col-12 text-center invisible">
-        <div id="frames" style="position: relative;">
-          <img id="frame" class="visible" src="/app/img/bho_dunya_transparent.png" alt="" srcset="" style="opacity: 0.3;" height=450>
+      <div id="logo" class="col-12 text-center invisible h-100">
+        <div id="frames" class="h-100" style="position: relative;">
+          <div id="frame" class="h-100 flex-column flex-center odisplay visible">
+            <img src="/app/img/bho_dunya_transparent.png" style="opacity: 0.3; height: 80%">
+          </div>
+          <!-- <img id="frame" class="visible" src="/app/img/bho_dunya_transparent.png" alt="" srcset="" style="opacity: 0.3;" height=450> -->
         </div>
       </div>
     </div>
