@@ -8,3 +8,4 @@
 - m3e2: isFirstRun
 - m4e3 algrotihm check
 - m4e6: gölgeleme önce gölgele sonra göster
+- scrollable score modal on mobile
