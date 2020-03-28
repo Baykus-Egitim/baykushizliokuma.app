@@ -153,16 +153,12 @@
 <body>
 
   <!-- Start your project here-->
-  <div class="container-fluid" style="height: 100vh;">
+  <div class="container-fluid" style="height: 100%;">
     <div id="playground" class="playground row w-100 h-100 justify-content-center border nodisplay m-auto">
       <div id="word" class="col-12 text-center my-auto"></div>
     </div>
-    <div id="background" class="row d-flex justify-content-center h-100 align-items-center odisplay">
-      <div id="logo" class="col-12 text-center">
-        <div id="frames" style="position: relative;">
-          <img id="frame" class="visible" src="/app/img/bho_dunya_transparent.png" alt="" srcset="" style="opacity: 0.3;" height=450>
-        </div>
-      </div>
+    <div id="background" class="h-100 flex-column flex-center odisplay">
+      <img src="/app/img/bho_dunya_transparent.png" style="opacity: 0.3; height: 80%">
     </div>
   </div>
 
@@ -171,7 +167,6 @@
     // generate view
     //==================================
     navbar(module)
-
 
     footer()
     const durations = [750, 650, 550, 450, 350, 250]
