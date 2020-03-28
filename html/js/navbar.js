@@ -21,12 +21,12 @@ function navbar(moduleIndex, modulePage = false) {
           <ul class="navbar-nav ml-auto nav-flex-icons">
               <li class="nav-item dropdown mr-5 ${(!exercise) ? `d-none` : ""}">
                 <a class="nav-link " id="" data-toggle="modal" data-target="#exerciseStatistics">
-                  <span><i class="fas fa-chart-pie fa-1x"> Raporlar</i></span>
+                  <span><i class="fas fa-chart-pie fa-1x"></i> Raporlar</span>
                 </a>
               </li>
               <li class="nav-item dropdown mr-5 ${(!exercise) ? `d-none` : ""}">
                 <a class="nav-link " id="" href="/app/modules/6/exercises/1">
-                  <span><i class="fas fa-book-reader fa-1x"> Okuma Hızını Ölç</i></span>
+                  <span><i class="fas fa-book-reader fa-1x"></i> Okuma Hızını Ölç</span>
                 </a>
               </li>
               <li class="nav-item dropdown">
