@@ -140,7 +140,7 @@ function addScoreModal3(isLarge = true) {
   $(document).ready(() => {
     $("body").append(`
       <div id="scoreModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog ${isLarge ? "modal-xl" : ""}" role="document">
+        <div class="modal-dialog modal-dialog-scrollable ${isLarge ? "modal-xl" : ""}" role="document">
           <div class="modal-content text-center">
             <div class="modal-header d-flex justify-content-center default">
               <h4 id="scoreModalHeader" class="heading" style="font-weight: bold; color: #2bbbad;">Tebrikler!</h4>
