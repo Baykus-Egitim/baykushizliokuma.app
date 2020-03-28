@@ -202,7 +202,7 @@ document.title = `BHO : Modül ${module} ${(exercise) ? `: Egzersiz ${exercise}`
 //===========================
 // const demoExercises = [0, [5], [7], [4], [1, 6], [2, 5], [5]]
 // const demoExercises = [0, [4], [2], [1], [5], [8], [3]]
-const demoExercises = [0, [5], [7], [4], [1, 6], [2, 5], [3]]
+const demoExercises = [0, [5], [7], [4], [1, 6], [2, 5], [5]]
 $(document).ready(() => {
   if (module && !exercise) {
     $.get("/app/user", res => {
