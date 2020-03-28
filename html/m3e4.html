@@ -59,14 +59,17 @@
 <body>
 
   <!-- Start your project here-->
-  <div class="container" style="height: 100vh;">
+  <div class="container" style="height: 100%;">
     <div id="playground" class="w-100 h-100 border nodisplay mx-auto">
 
     </div>
     <div id="background" class="row d-flex justify-content-center h-100 align-items-center odisplay">
-      <div id="logo" class="col-auto text-center ">
-        <div id="frames" style="position: relative;">
-          <img id="frame" class="visible" src="/app/img/bho_dunya_transparent.png" alt="" srcset="" style="opacity: 0.3;" height=450>
+      <div id="logo" class="col-auto text-center h-100">
+        <div id="frames" class="h-100" style="position: relative;">
+          <div id="frame" class="h-100 flex-column flex-center odisplay visible">
+            <img src="/app/img/bho_dunya_transparent.png" style="opacity: 0.3; height: 80%">
+          </div>
+          <!-- <img id="frame" class="visible" src="/app/img/bho_dunya_transparent.png" alt="" srcset="" style="opacity: 0.3;" height=450> -->
         </div>
       </div>
     </div>
