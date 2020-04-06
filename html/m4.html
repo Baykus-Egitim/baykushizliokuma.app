@@ -117,7 +117,8 @@
       $(".video-link").click(() => {
         const id = Number($(event.target).parent().parent().attr("id").replace("video", ""))
         // console.log(id)
-        const video = `/videolar/Modül-${module}/small_${id + 1}.mp4`
+        // const video = `/videolar/Modül-${module}/small_${id + 1}.mp4`
+        const video = `/videolar/Modül-${module}/${id + 1}.mp4`
         // console.log(video)
         $("video > source").attr("src", video)
         $(".modal-header > .heading").text(`Modül ${module} : Egzersiz ${id + 1}`)
