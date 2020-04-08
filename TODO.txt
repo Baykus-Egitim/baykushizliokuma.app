@@ -49,3 +49,4 @@
 - m5e8: ncesi fast paging implement edil
 - m3e8: start modal make it standart
 - Kullanıcı bilgileri
+- 5-1 video
