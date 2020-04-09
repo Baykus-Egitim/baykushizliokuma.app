@@ -319,6 +319,10 @@
             else if (level == 2) chars = twoDigitNumbersInStr
             else chars = threeDigitNumbersInStr
           }
+          $(".score > div:eq(0)").text(`Doğru: 0`)
+          $(".score > div:eq(1)").text(`Yanlış: 0`)
+          trueCount = 0
+          wrongCount = 0
 
 
           createGrid()
@@ -382,6 +386,7 @@
                   },
                   res => {
                     // console.log(res)
+                    updataScoreTable()
                   })
                 // $("#scoreModalInfo").text(`Okuma hızınız: ${readSpeed} kelime/dakika`)
                 $("#scoreModal").modal("show")

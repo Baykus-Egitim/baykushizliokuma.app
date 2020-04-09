@@ -175,7 +175,7 @@ var configs = [
   },
   {
     exerciseId: "m3e4",
-    startInfo: "Hız ve seviye seçerek ekranda hızla çıkan kelime ve sayıları doğru bir şekilde okumaya çalışalım ve aşağıdaki kutuya yazalım.",
+    startInfo: "Hız ve seviye seçerek ekranda hızla çıkan kelime ve sayıları doğru bir şekilde okumaya çalışalım ve aşağıdaki kutuya yazalım. Doğru sayısı 10'u bulduğunda egzersiz tamamlanmış olacaktır.",
     stats: [
       { id: "date", label: "Tarih" },
       { id: "speedLevel", label: "Süre" },
