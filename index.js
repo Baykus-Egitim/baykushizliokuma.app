@@ -90,8 +90,8 @@ app.get('/app/', (req, res) => {
 app.get('/app/modules/:module', (req, res) => {
   fs.readFile(`html/m${req.params.module}.html`, (err, data) => {
     if (err) throw err;
-      if (req.user) res.sendFile(__dirname + `/html/m${req.params.module}.html`)
-      // if (req.user) res.send(htmlMinify(`${data}`, minifyOptions))
+    if (req.user) res.sendFile(__dirname + `/html/m${req.params.module}.html`)
+    // if (req.user) res.send(htmlMinify(`${data}`, minifyOptions))
     else res.redirect("/app/login?returnCode=2")
   });
 })
@@ -329,12 +329,9 @@ app.delete('/app/users', (req, res) => {
 // payments
 //-------------------------------------
 app.post('/app/payments', (req, res) => {
-  if (!authorizedUsers.includes(req.user.username)) res.sendStatus(403)
-  else {
-    db.collection("payments").insertOne(req.body, function (err, r) {
-      res.send(r)
-    })
-  }
+  db.collection("payments").insertOne(req.body, function (err, r) {
+    res.send(r)
+  })
 })
 app.get('/app/payments', (req, res) => {
   if (!authorizedUsers.includes(req.user.username)) res.sendStatus(403)
