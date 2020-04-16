@@ -860,65 +860,205 @@ var texts = [
       { question: "Niçin", answer: "Oynarken camı kırdıkları için üzülüp dürüst davrandıkları için çiftliğe gitmeyi ve arkadaş edinmeyi kazandılar" },
     ]
   },
-  // {
-  //   title: "XXX",
-  //   wordCount: 222,
-  //   text: `
-  //   
-  //   `,
-  //   questions: [
-  //     {
-  //       question: "XXXX",
-  //       options: [
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //       ],
-  //       answer: 1
-  //     },
-  //     {
-  //       question: "XXXX",
-  //       options: [
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //       ],
-  //       answer: 1
-  //     },
-  //     {
-  //       question: "XXXX",
-  //       options: [
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //       ],
-  //       answer: 1
-  //     },
-  //     {
-  //       question: "XXXX",
-  //       options: [
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //         "XXX",
-  //       ],
-  //       answer: 1
-  //     },
-  //   ],
-  //   keyWords: "XXXX",
-  //   NK:[
-  // {question: "Kim", answer: "XXX"},
-  // {question: "Ne", answer: "XXX"},
-  // {question: "Ne Zamana", answer: "XXX"},
-  // {question: "Nerede", answer: "XXX"},
-  // {question: "Nasıl", answer: "XXX"},
-  // {question: "Niçin", answer: "XXX"},
-  //   ]
+  {
+    title: "BİR ÖYKÜ",
+    wordCount: 313,
+    text: `
+&emsp;Kaba saba, soluk, yıpranmış giysiler içindeki yaşlı çift, Boston treninden inip utangaç bir tavırla Rektör’ün bürosundan içeri girer girmez, sekreter masasından fırlayarak önlerini kesti… Öyle ya, bunlar gibi ne idüğü belirsiz taşralıların Harvard gibi üniversitede ne işleri olabilirdi?
+&emsp;Adam, yavaşça rektörü görmek istediklerini söyledi. İşte bu imkansızdı.. Rektörün o gün onlara ayıracak saniyesi yoktu. Yaşlı kadın, çekingen bir tavırla; “Bekleriz” diye mırıldandı… Nasıl olsa bir süre sonra sıkılıp gideceklerdi. Sekreter sesini çıkarmadan masasına döndü. Saatler geçti, yaşlı çift pes etmedi.. Sonunda sekreter, dayanamayarak yerinden kalktı. “Sadece birkaç dakika görüşseniz, yoksa gidecekleri yok” diyerek rektörü iknaya çalıştı. Anlaşılan çare yoktu.
+&emsp;Genç rektör, isteksiz bir biçimde kapıyı açtı. Sekreterin anlattığı tablo içini bulandırmıştı. Zaten taşralılardan, kaba saba köylülerden nefret ederdi. Onun gibi bir adamın ofisine gelmeye cesaret etmek, olacak şey miydi bu? Suratı asılmış, sinirleri gerilmişti.
+&emsp;Yaşlı kadın hemen söze başladı. Harvard’da okuyan oğullarını bir yıl önce bir kazada kaybetmişlerdi. Oğulları, burada öyle mutlu olmuştu ki, onun anısına okul sınırları içinde bir yere, bir anıt dikmek istiyorlardı. Rektör, bu dokunaklı öyküden duygulanmak yerine öfkelendi. “Madam” dedi, sert bir sesle, “Biz Harvard’da okuyan ve sonra ölen herkes için bir anıt dikecek olsak, burası mezarlığa döner…”“Hayır, hayır” diyerek haykırdı yaşlı kadın. “Anıt değil… Belki, Harvard’a bir bina yaptırabiliriz”. Rektör, yıpranmış giysilere nefret dolu bir nazar fırlatarak, “Bina mı?” diyerek tekrarladı, “Siz bir binanın kaça mal olduğunu biliyor musunuz? Sadece son yaptığımız bölüm yedi buçuk milyon dolardan fazlasına çıktı…”
+&emsp;Tartışmayı noktaladığını düşünüyordu. Artık bu ihtiyar bunaklardan kurtulabilirdi.. Yaşlı kadın, sessizce kocasına döndü: “Üniversite inşaatına başlamak için gereken para bu muymuş? Peki, biz niçin kendi üniversitemizi kurmuyoruz, o halde? ”Rektör’ün yüzü karmakarışıktı. Yaşlı adam başıyla onayladı. Bay ve bayan Leland Stanford dışarı çıktılar. Doğu California’ya, Palo Alto’ya geldiler. Ve Harvard’ın artık umursamadığı oğulları için onun adını ebediyyen yaşatacak üniversiteyi kurdular.
+&emsp;Amerika’nın en önemli üniversitelerinden birini STANFORD’u.
+&emsp;Ayağınıza kadar gelip, sizinle görüşmek isteyen insanlara, yaklaşmadan önce bir kez daha düşünmeniz dileğiyle…
+    `,
+    questions: [
+      {
+        question: "Yaşlı çifti üniversitede kiminle konuşmuş?",
+        options: [
+          "Öğrencilerle",
+          "Öğretim Görevlileriyle",
+          "Genç Rektör İle",
+          "Herkes ile"
+        ],
+        answer: 2
+      },
+      {
+        question: "Yaşlı çift kurdukları üniversiteye kimin adını vermiş?",
+        options: [
+          "En Sevdikleri Sanatçının",
+          "Kendi Adlarını",
+          "Devlet Başkanlarının",
+          "Ölen Oğullarının"
+        ],
+        answer: 3
+      },
+      {
+        question: "Üniversitede yaşlı çifte nasıl davranmışlar?",
+        options: [
+          "İyi Davranmışlar Hürmet Etmişler",
+          "Kötü Davranmışlar Kale Almamışlar",
+        ],
+        answer: 1
+      },
+      {
+        question: "Yaşlı çiftin oğulları nasıl ölmüş?",
+        options: [
+          "Kazada Ölmüş.",
+          "Hastalıktan Ölmüş."
+        ],
+        answer: 0
+      },
+    ],
+    keyWords: "Yaşlı Çift, Gurur, Önyargı, Ölen Çocukları, Bina Yaptırmak, Rededilmek, Stanford Üniversitesi",
+    NK: [
+      { question: "Kim", answer: "Yaşlı çift, Genç Rektör, Sekreter" },
+      { question: "Ne", answer: "Üniversiteye ek bina yapmak" },
+      { question: "Ne Zamana", answer: "-" },
+      { question: "Nerede", answer: "Boston, Harward Üniversitesi" },
+      { question: "Nasıl", answer: "Bir anıt bina yaparak" },
+      { question: "Niçin", answer: "Çocuklarının anısını yaşatmak için" },
+    ]
+  },
+  {
+    title: "BIRAKIP GİTME",
+    wordCount: 373,
+    text: `
+&emsp;Burnu bir karış havada, gözü yükseklerdeydi ben onu sevdiğimde. Hele hele benim aşkımı yerden yere vurup, nasıl kırmıştı kalbimi zalim. Dudaklarından dökülen acı sözleri; öyle ki, bugün bile unutamadım. Ne tebessümdü o, zehirden beter. Her olayda içim paramparça, gözlerim ağlamaktan kıpkırmızı olurdu. Yorgun düşerdim onsuz geçen, onunla dolu, koyu siyah gecelerden. Pişmanlıktan kendime lanetler eder, sevgimi söylediğim günü düşündükçe, kaleme sarılıp yazardım ona nefretin aşkla kucaklaştığı o uzun mısralarımı. Derdim ki; alın yazımdı, on beşimin çocuksu aşkıydı. Nasıl da gülerdi canı istedi mi? 
+&emsp;En anlamlı bakışlarıyla önce ümitlendirir, ardından bir uçurumun kenarına yapayalnız bırakır giderdi. Ben çaresiz, ben yorgun, ben bıkkın bu sevdadan. Ah bilirdi o insafsız, diri diri yanardım o böyle yaptıkça… Şubatın buz gibi kasvetli soğuğunda; onda ne bulduğumu bugün bile bilemem. Ama o günlerde hayatımın amacı, var olma gibi gelirdi bana. Çocukluk mu, yoksa gençliğimin safça tutkusu muydu bu ölesiye bağlanış, içten içe kopan fırtınalar, bu delice yakarış? Kim bilir, belki de sevilmeye muhtaç bir kalbin bitmek bilmeyen kaprisi… Ondan hiçbir şey istememiştim. Sadece sevgi… 
+&emsp;Evet, şimdi yıllar sonra ben, onu düşünüyorum ilk defa kucağımda resimler, hatıralarla. Hava yine soğuk, yine kasvetli gözleri gözlerimde yine sevgi, derin yüreğimde. Unuttum sanırdım, meğer aldanmışım, ağladım saatlerce. Bu onun “ölüm yıldönümü ”dür. 17’sinde toprakla kucaklaşan, o zalimin hikâyesidir anlatılan. Bir melodidir kırık, umutsuz… Doldururken sensizlik o an odayı gönlüm hala boş, kafam yine dumanlı. Bir feryat yankılanmıştı acı dolu tam 15 yıl önce bugün bomboş kırlarda. Deli gibi koştum sınıfa, sırası boştu. Benim kadar çaresizdi her köşe. Kendi kendime konuşarak yaklaştım sırasına; “Sen ölemezsin; canımsın, sevgimsin, emelimsin dileğince nefret et, alay et duygularımla kızmam sana Ama ne olur bir yalan olsun, acı bir şaka. Evet, evet beni üzmek için yapıyorsun. Her şeyini özledim… Allah’ım son defa göreyim yeter bana” Bu sensiz yakarış defalarca sürmüştü ta ki, ölümün o sinsi kokusunu içimde duyana kadar. Hıçkıra hıçkıra ağladım, sıraya kazıdığım ismini öptüm. Sonra, ona ait bir şeyler bulmak için aradım her köşeyi… 
+&emsp;Yalnızca buruşturulmuş bir sayfa, rengi solmuş. Yazı, onun yazısı. Bir mektuptu, özenilerek yazılmış, belki de çok emek verilmiş her satırına… Çok şaşırdım, mektup bana hitabendi. Korkakça, kaybolmasından korkarak, acıyla okudum her cümleyi kalbimde büyüyen bir özlemle… Hele hele o ilk satırı… Öyle ki, bugün bile unutamam, okudukça ağlarım. “İnsan sevdiğini yerden yere vururmuş bir tanem, AFFET BENİ !”
+    `,
+    questions: [
+      {
+        question: "Yazar sevgilisinin ismini nereye kazımış?",
+        options: [
+          "Duvara",
+          "Kalbine",
+          "Sıraya",
+          "Ağaca"
+        ],
+        answer: 2
+      },
+      {
+        question: "Yazarın sevgilisi kaç yaşında ölmüş?",
+        options: [
+          "15",
+          "17",
+          "20",
+          "22",
+        ],
+        answer: 1
+      },
+      {
+        question: "Yazarın unutamadığı sevgilisi öleli kaç yıl olmuş?",
+        options: [
+          "15",
+          "10",
+          "17",
+          "20",
+        ],
+        answer: 0
+      },
+      {
+        question: "Yazar yıllar sonra sevgilisinden kalan neyi buluyor?",
+        options: [
+          "Mektup",
+          "Kolye",
+          "Resim",
+          "Hediye"
+        ],
+        answer: 0
+      },
+    ],
+    keyWords: "Sevmek, Aşk, Acı, Ölüm, Mektup",
+    NK: [
+      { question: "Kim", answer: "İki Aşık" },
+      { question: "Ne", answer: "Birbirine seven iki aşığın hüzünlü hikayesi" },
+      { question: "Ne Zamana", answer: "Şubat ayı, 15 yıl önce" },
+      { question: "Nerede", answer: "Okul" },
+      { question: "Nasıl", answer: "Bütün gerçekler çocuk ölünce ortaya çıktı" },
+      { question: "Niçin", answer: "Ölen çocuğu hasta olduğunu söyleyerek sevgilisini kendisine bağlamaktan korktuğu için" },
+    ]
+  },
+  {
+    title: "SİHİRLİ DOLAP",
+    wordCount: 380,
+    text: `
+  &emsp;Saklambaç hala devam ettiğinden, diğer çocukları bulmak biraz zaman aldı. Sonunda, şövalye zırhının bulunduğu odada buluştular. Herkes bir araya toplanınca Lusi atıldı.
+  &emsp;Peter! Susan! Hepsi doğru. Edmun da gördü. Gardıroptan girilen bir ülke var ya, Edmun ile ben, ikimiz de gittik oraya. Ormanda rastladık birbirimize. Hepsini anlatsana Edmun.   
+  &emsp;Peter, Neymiş bu, Ed? Diye sordu. İşte, sevgili okuyucularımız, şimdi bu öykünün en kötü olaylarından biri ile yüz yüze gelmiş bulunuyoruz. Edmun o ana değin, kendisini hasta ve küskün hissediyor, haklı çıktığı için de Lusi'ye güceniyordu. Ancak henüz ne yapacağına karar vermemişti. Peter soruyu kendisine yönelttiği zaman, Edmun, Lusi'yi hiçe sayarak, akla gelebilecek en aşağılık, en iğrenç davranışı seçti. Lusi ile arasında yalnızca bir yaş fark olduğu halde, ondan çok daha büyükmüş gibi çevresine kibirle baktı. Hafifçe gülerek, “Evet çocuklar,  Lusi ile ben gardırobun içinde bir ülke varmış gibi oynuyorduk. Eğlence için tabii. Ama orada gerçekten hiçbir şey yok”. Zavallı Lusi'nin dünyası başına yıkıldı. Edmun'a baktı ve odadan dışarı fırladı.
+  &emsp;Gittikçe acımasızlaşan Edmun, bu işi başardığını sanıyordu: Gene mi ağlıyor? Onun derdi ne? Küçüklerin kötü tarafı da bu, değil mi? Onlar hep… Peter öfkeyle Edmun'un sözünü kesti: “Kapa çeneni! Gardıroba ilişkin bu saçmalık başladığından beri, Lusi'ye karşı son derece kaba davranıyorsun. Hala onunla alay edip ağlatıyorsun. Bütün bunları hep o iğneleyici hainliğinden yaptın, değil mi?”
+  &emsp;Edmun, şaşırarak, “Ama anlattıklarının hepsi uydurma!” dedi. Olsun! Önemli olan o değil. Kentten ayrıldığımızda, Lu' nun hiçbir şeyi yoktu. Ama şimdi, ya aklını oynattı, ya da korkunç bir yalancı oldu. Ama her şey bir yana, sen ne yapıyorsun? Bir gün dudak büküp alay ederek, ertesi gün kışkırtarak ne yaptığını sanıyorsun? 
+  &emsp;“Ben sanıyordum ki…”diye kekeledi Edmun, fakat aklına söyleyecek bir şey gelmedi.
+  &emsp;“Dürüst ol! Aslında hiçbir şey düşünmüyordun. Salt kötülük olsun diye yaptın. Okuldayken, küçüklere karşı her zaman kaba davranmaktan zevk aldığını hepimiz gördük.” 
+  &emsp;Susan Peter'in sözünü kesti: Bırak artık. Boş yere tartışıyorsunuz. Haydi, gidip Lusi’yi bulalım.” Lusi’yi bulduklarında, onun ağlamış olduğunu gördüler. Ne söyledilerse yararı olmadı. Lusi öyküsüne bağlı kaldı.
+  &emsp;O akşam pekiyi Lusi yine kederliydi. Edmun ise, planının beklediği kadar başarılı olmadığını seziyordu.  İki büyük çocuk, Susan ile Peter, Lusi'nin aklından zoru olduğuna inanmaya başlamışlardı. Lusi yattıktan sonra koridorda fısır fısır konuştular.
+  &emsp;Sonuç olarak ertesi sabah olan biteni öğretmenlerine anlatmaya karar verdiler. “Lusi hastaysa, babamıza yazar. Biz bu işin altından kalkamayız.” dedi Peter.
+    `,
+    questions: [
+      {
+        question: "Çocuklar hangi odada buluştular?",
+        options: [
+          "Yemek odasında",
+          "Zırhın bulunduğu odada",
+          "Kitap odasında",
+          "Legonun bulunduğu odada",
+        ],
+        answer: 1
+      },
+      {
+        question: "Lusi’yi üzen olay nedir?",
+        options: [
+          "Gardırobun içinde farklı bir dünya var ve bu dünyayı hiç kimse bilmiyor.",
+          "Kardeşleri ona inanmıyor.",
+          "Kardeşi Edmun ona iftira ediyor ve onu küçük düşürücü konuşuyor.",
+          "Kardeşleri onu azarlıyor.",
+        ],
+        answer: 2
+      },
+      {
+        question: "Peter ve Suzan neden Lusi’den endişe ediyorlar?",
+        options: [
+          "Lusi’nin aklını oynattığını zannediyorlar.",
+          "Lusi’nin  onları sevmediğini ve bu yüzden de onlara yalan söylediğini zannediyorlar.",
+          "Lusi’nin kendisine yeni arkadaşlar bulduğunu ve artık onlarla oynamayacağını düşünüyorlar.",
+          "Peter ve Susan Lusi’den endişe duymuyorlar.",
+        ],
+        answer: 0
+      },
+      {
+        question: "Edmun ve Peter ne için kavga ediyorlar?",
+        options: [
+          "Edmun ve Peter  hiçbir zaman anlaşamadıkları için zaten sürekli kavga ediyorlar.",
+          "Peter, Edmun’a  Lusi’ye kötü davrandığı için kızıyor.",
+          "Peter, Edmun’un abisi olduğu için, Edmun’a sürekli çocukluk yaptığı için kızıyor.",
+          "Peter ve Edmun aslında kavga etmiyorlar, eğlenmek için öyleymiş gibi davranıyorlar.",
+        ],
+        answer: 1
+      },
+      {
+        question: "Lusi’nin durumuna çözüm olarak ne düşünüyorlar? ",
+        options: [
+          "Lusi’yle konuşarak sorununu çözmeye karar veriyorlar.",
+          "Edmun’la Lusi’yi barıştırmak için Edmun’u özür dilemeye ikna ediyorlar.",
+          "Öğretmenlerine haber vererek onun babalarıyla temasa geçip bu sorunu çözmesine karar veriyorlar.",
+          "Lusi’yi eve geri göndermeye karar veriyorlar",
+        ],
+        answer: 2
+      },
+    ],
+    keyWords: "Yalan, Gardırop, Kötülük, Hastalık",
+    NK: [
+      { question: "Kim", answer: "Lusi Edmun, Peter, Susan" },
+      { question: "Ne", answer: "Edmund'un Lusi'ye attığı iftira, Lusi'yi yalancı duruma düşürmesi" },
+      { question: "Ne Zamana", answer: "Oyun oynarken ertesi gün" },
+      { question: "Nerede", answer: "Orman, Gardırop" },
+      { question: "Nasıl", answer: "Yalan söyleyerek" },
+      { question: "Niçin", answer: "Edmund haklı çıkmadığı için Lusiyle alay etmiş onu küçük düşürmüş üzmüş" },
+    ]
 
-  // },
+  },
   // {
   //   title: "XXX",
   //   wordCount: 222,
