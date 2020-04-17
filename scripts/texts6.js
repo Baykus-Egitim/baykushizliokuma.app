@@ -1050,7 +1050,7 @@ var texts = [
     ],
     keyWords: "Yalan, Gardırop, Kötülük, Hastalık",
     NK: [
-      { question: "Kim", answer: "Lusi Edmun, Peter, Susan" },
+      { question: "Kim", answer: "Lusi, Edmun, Peter, Susan" },
       { question: "Ne", answer: "Edmund'un Lusi'ye attığı iftira, Lusi'yi yalancı duruma düşürmesi" },
       { question: "Ne Zamana", answer: "Oyun oynarken ertesi gün" },
       { question: "Nerede", answer: "Orman, Gardırop" },
@@ -1058,6 +1058,367 @@ var texts = [
       { question: "Niçin", answer: "Edmund haklı çıkmadığı için Lusiyle alay etmiş onu küçük düşürmüş üzmüş" },
     ]
 
+  },
+  {
+    title: "ÖNCE BEN",
+    wordCount: 396,
+    text: `
+&emsp;İnsanlar! Her tarafımda insanlar. Sarmışlar etrafımı. Her taraf karanlıktı. Birkaç ışık görünse de çaresizlik içinde hıçkıran çocuğun çığlıkları kadar hafif, yetersiz, acı... Bir kalabalığın ortasında sürükleniyorum. Nereye gidiyorum? Neredeyim? Ben kimim? Ben, ben, ben?
+&emsp;Tek hissettiğim tehlikede olduğum. Sanki o kasvetli karanlık bütün benliğimi, ruhumu, özümü ele geçirmiş. Kurtulmak istiyorum. Başaramıyorum. İçim sıkılıyor. Hiç bir şey göremiyorum. Işık istiyorum. Aydınlık istiyorum ve isteğime kavuşuyorum; ancak sevincim kursağımda kalıyor.
+&emsp;Aniden etraf apaydınlık oluyor. Fakat bu tehlikeli bir aydınlıktı. İnsanlar korkuyla alev denilen ışıktan kaçıyorlar. Islaklığa yöneliyorlar. Buna da su diyorlar. Alevin ölüm, suyun kurtuluş olduğunu anlıyorum. Tehlikedeyim! Aydınlıktan uzaklaşmalıyım; suya ulaşmalıyım. Zaten ister istemez topluluk beni suya doğru sürüklüyor. Etrafımda ne kadar çok insan olduğunu şeytani ışığın üzerimize vurmasıyla fark ediyorum. 
+&emsp;Binlerce belki milyonlarca insan! Hepsinin suratlarında da aynı ifade vardı. Dehşetli bir korku. Kızgın alevler karanlık meydanın derin sessizliğine de son veriyor. İnsanların korkuyla titreyen vahşi çığlıkları içime işliyor. Alev kötülük ve acı. İnsancıkları amansızca kovalıyor ve gittikçe yaklaşıyor. Ara sıra dönüp arkama bakıyorum. Ateşin ortasında cehennem zebanileri şeytani gözleriyle bana bakıyorlar. Ve gülümsüyorlar. Sivri dişlerinin üzerindeki kanları görebiliyorum artık. Korkuyorum. Uzaklaşmalıyım, kaçmalıyım, kurtulmalıyım. Suya doğru can havliyle koşuyorum. Amansız bir kovalamaca. Ölüm yarışı!
+&emsp;Ara sıra topluluktan yere düşenler oluyor. Kimse aldırmıyor; Ben de aldırmıyorum. Onlar önemli değil. BEN önemliyim. Alev artık çok yakınımdaydı. Cehennem zebanilerinin sıcak nefeslerini hissediyorum, ürperiyorum. Suya ulaşmaya çok az kaldı. Fakat önümde bir engel var. Bir insan. Ya ben ya o! ÖNCE BEN, sonra onlar. Ayağımı ona doğru savuruyorum. Takılıyor, bir an sendeliyor. Düşmemek için büyük bir gayret sarf ediyor. Yere düşmenin ona neye mal olacağını biliyor. Fakat ikinci bir çelmeyle yüzün koyu yere uzanıyor. Üstüne basıp geçiyorum. Adam çığlıklar içinde yardım dileniyor. Aldırmıyorum. Bir süre sonra adamın sesi aniden kesiliyor. Şeytani yaratıklar üzerine çullanıp işini bitiriyorlar.
+&emsp;İşte su! Hemen şuracıkta. Vardım sayılır. İşte kurtuluş. Başardım! Fakat hayır. Hayır! Ayağım bir tümseğe takılıyor ve yere kapaklanıyorum. Tekrar ayağa kalkmaya çalışıyorum. Tam doğrulurken şiddetli bir omuz darbesiyle savruluyorum. İnsanlar üzerime basarak basarak, beni çiğneyerek geçiyorlar ve kurtuluşa, yani suya ulaşıyorlar. Yardım! Yalvarıyorum, yardım dileniyorum bunun yerine tekmeler yiyorum. Her tarafım kana bulanıyor. Alev şimdi yanı başımda aç zebaniler üzerime atlamaya hazırlanıyorlar. "Tanrım, lütfen beni alma! Herkesi al; ama beni bırak"
+&emsp;Cevap korkunç bir sıcak, alevler ve ateş. Her taraf aydınlık... Hiçbir şey anlamıyorum... Neden ben?  Acı, aydınlık. Ve sonsuz karanlık... Son! Yooo. Yine aydınlık. Ve yine acı. Yataktan düşmenin verdiği sızı! UYANIŞ...
+    `,
+    questions: [
+      {
+        question: "Bu metnin konusu ne?",
+        options: [
+          "İnsanlar ve içlerindeki  “ Önce Ben” duygusu",
+          "Alevin ölüm, suyun kurtuluş olduğu",
+          "Ateşin kötülüklerle eşdeğer oluşu",
+          "Bir topluluğun içinde sürüklenmek",
+        ],
+        answer: 0
+      },
+      {
+        question: "Genç adamın tehlikede olduğunu hissetmesine ve korkmasına yol açan şey ne?",
+        options: [
+          "Su",
+          "Alev",
+          "İnsanlar",
+          "Silah",
+        ],
+        answer: 1
+      },
+      {
+        question: "Yazar bu kaçışı neye benzetiyor?",
+        options: [
+          "Ölüm yarışına",
+          "Ateşten kaçmaya",
+          "Cehennem zebanilerinden kaçmaya",
+          "Acı, yetersizlik ve sıkıntı",
+        ],
+        answer: 0
+      },
+      {
+        question: "Yazar suya neden ulaşamıyor? ",
+        options: [
+          "Yere düşen adam onu da düşürüyor",
+          "Ayağı bir tümseğe takılıyor ve düşüyor",
+          "Yazar düşmesine rağmen suya ulaşıyor",
+          "İnsanlar üzerine basıyorlar",
+        ],
+        answer: 1
+      },
+      {
+        question: "Hikâyenin sonunda ne oluyor?",
+        options: [
+          "Alevin içinde kayboluyor",
+          "Suya ulaşıp kurtuluyor",
+          "Uyanıyor",
+          "Ölüyor",
+        ],
+        answer: 2
+      },
+    ],
+    keyWords: "Işık, Karanlık, Ben, O, Son",
+    NK: [
+      { question: "Kim", answer: "Ben, Zebaniler, İki insan" },
+      { question: "Ne", answer: "Korku dolu bir rüya, Kabus" },
+      { question: "Ne Zamana", answer: "Bir yangın esnasında, Uyurken" },
+      { question: "Nerede", answer: "Yatakta, Kalabalık insanlar arasında" },
+      { question: "Nasıl", answer: "Kalabalıklar arasında bencil düşünceyle alevlerden kaçış" },
+      { question: "Niçin", answer: "Bencil düşünüldüğü için yine bencil düşünceye kurban gidildi" },
+    ]
+  },
+  {
+    title: "EMPATİK DİNLEMEK",
+    wordCount: 472,
+    text: `
+&emsp;"İnsanların çoğu anlamaktan ziyade, anlaşılmak ister. Başkası konuşurken onları anlamaya çalışmaktan ziyade, onun söylediklerine nasıl yanıt vereceğini düşünür. Bu kimseler ya konuşur, ya da konuşmaya hazırlanıyorlardır.
+&emsp;Bir baba düşünün; oğlunun sözünü dinlemediğinden şikâyetçi olsun. Çocuğundan şikâyet ederken şöyle diyor. "Oğlumu hiç anlamıyorum; hiç sözümü dinlemiyor." Burada anlamak isteyen baba olduğuna göre, oğlunu dinleyecek olanın da baba olması gerekmez mi? Oysa baba, oğluna ne olup bittiğini iyi bildiği kanısında, bu nedenle, onu dinlemeye gerek duymuyor. Oğlunun ne yapması gerektiğini ona defalarca söylediği halde, oğlunun onun sözünü dinlemediğinden şikâyet ediyor. "Bu tutumdaki baba, oğlunu dinlemediğinin farkında bile değildir. Bu bilinç düzeyinde oğluyla ilişkilerini sürdürdüğü zaman aralarında belirmeye başlayan sorunu çözemeyecektir.
+&emsp;İnsanlar dinlerken genellikle şu dört düzeyden birini kullanırlar:
+&emsp;1- Önemsememe: Kişinin söylediğini dinler gibi görünebilir, fakat dinlemiyordur. 
+&emsp;2- Seçici dinleme: Söylenenin ancak bazı kısımlarını duyar, diğerlerine ilgi göstermez.
+&emsp;3- Dikkatle dinleme: Söylenen sözlere dikkat eder, hangi kelimelerin kullanıldığını iyi bilir.
+&emsp;4- Empatik dinleme: Empati dinleme, kişiyi anlamak amacıyla kullanılan aktif dinlemedir. Aktif dinleme, kişiyi kullanma amacıyla kullanılırsa sadece bir teknik olur ve olumlu sonuç alınamaz. Empatik dinleme kişiyi anlamayı birinci plana koyar. Kişinin söylediği sözler hangi deneyimleri, öğrenimleri dile getiriyor, kişi nasıl hissediyor, dünyayı ve kendini nasıl görüyor? Karşıdakinin yaşantısı ve gözüyle dünyayı görmek; işte empati budur.
+&emsp;"Sempati ve empati aynı şeyler değildir”. Sempati, anlayış gösterme, kişinin hangi durumda olduğunu anlama gibi bir durumdur. Bir tür yargılama, olumlu bir değerlendirmedir. Empatide ise hemfikir olma ya da olmama diye bir şey yoktur, yaşantı olarak, hem entelektüel hem de duygusal ve yaşantısal yönden sanki bir anlamda o kişi olursunuz.
+&emsp;"Empatik dinleme" kişinin duygusal banka hesabında olumlu yatırımlara yol açar. O kişiyle iyi ilişkiler geliştirebilmek için en sağlam temeli atar. Empatik dinlemenin kendi dışında bir amacı yoktur; psikolojik anlamda o kişi olursunuz; böylece onun geçerliğini kanıtlamış olursunuz. Bu nedenle psikolojik bakımından son derece iyileştirici, terapik bir etkisi vardır.
+&emsp;"Bedensel olarak var olmanın yanı sıra, kişiler psikolojik olarak da var olmaya çabalarlar. Psikolojik anlamda var olma, anlaşılma, olduğu gibi kabul edilip tasvip edilme, onarma, geçerli kılınma ve değerinin bilinmesiyle gerçekleşir. Ancak bu zemin sağlandıktan sonra, sorunlar üzerinde beraber çalışma olanağı doğar.
+&emsp;"Karşımızdakini anlamadan kendi gözlüklerimizle onun dünyasını görmek ve ona hemen tavsiyelerde bulunmaya başlamak kolaydır. Kişiyi anlayarak, dünyayı onun gözüyle görmek ise oldukça zordur. Ama bu zor iş, insan ilişkileri için esas temeldir. İşte duygusal yatırım bu noktada başlar. "Empati duyarak iletişim kurmanın niçin o kadar zor olduğunu sordum. Yakup Bey bunun yerinde ve anlamlı bir soru olduğunu belirterek açıklamasına başladı.
+&emsp;"Kişilerin empatik dinlemeyi kolaylıkla gerçekleştirmemelerinin temelinde yatan esas nedenlerden biri şudur: Empatik dinleyen kişi, öbür kişinin dünyasına girdikçe, ister istemez kendi dünyasını, hem o kişiye hem de kendine açmaktadır. Eğer kişinin kendi dünyasında hoşlanmadığı, bilmediği, korktuğu yönleri varsa, bunu yapmak istemeyecektir. Bu nedenle, "kalıplanmış" insanların empatik dinleyici olmaları olanaksız denecek derecede zordur. "Kalıplanmış" insan paradigması içinde yaşayan kişilerin empatik dinleyici olmaları çok zor ya da olanaksızdır.
+    `,
+    questions: [
+      {
+        question: "Empatik dinleme aşağıdakilerden hangisi ile açıklanabilir?",
+        options: [
+          "Kişinin söylediğini dinler gibi görünme, fakat dinlememe",
+          "Söylenen sözlere dikkat etme, hangi kelimelerin kullanıldığını iyi bilme",
+          "Söylenenin ancak bazı kısımlarını duyma, diğerlerine ilgi göstermeme",
+          "Kişiyi anlamak amacıyla dinleme",
+        ],
+        answer: 3
+      },
+      {
+        question: "Yazıda empati nasıl tanımlanıyor? ",
+        options: [
+          "Karşıdakinin yaşantısı ve gözüyle dünyayı görmek",
+          "Anlayış gösterme, kişinin hangi durumda olduğunu anlama",
+          "Olumlu değerlendirme",
+          "Bir tür yargılama",
+        ],
+        answer: 0
+      },
+      {
+        question: "Yazıda, 'kalıplanmış' insanların empatik dinleyici olmalarının zor olmasına nasıl bir neden gösterilmiş?",
+        options: [
+          "Kendi dünyalarına girmek istemeyen, bundan korkan insanlar başkalarının dünyasına da girmek istemeyecektir.",
+          "Kalıplanmış insanlar seçici dinlerler.",
+          "Kalıplanmış insanlar başkalarının sorunları ile ilgilenmezler.",
+          "Kalıplanmış insanlar diğerlerinin söylediklerini önemsemezler.",
+        ],
+        answer: 0
+      },
+      {
+        question: "Yazara göre, iyileştirici, terapik bir etkisi olan dinleme hangisidir?",
+        options: [
+          "Seçici dinleme",
+          "Empatik dinleme",
+          "Önemsememe",
+          "Dikkatle dinleme",
+        ],
+        answer: 1
+      },
+      {
+        question: "Yazara göre, insan ilişkileri için temel olan nedir?",
+        options: [
+          "Karşısındaki kişiyi anlayarak, dünyayı onun gözüyle görmek",
+          "Karşısındakine anlayış gösterme",
+          "Yardımsever olmak",
+          "Karşısındaki kişiyi dikkatle dinlemek",
+        ],
+        answer: 0
+      },
+    ],
+    keyWords: "Empati, Dinleme, Empatik dinleme, Kalıplaşmış insan, Anlama, Şikayet",
+    NK: [
+      { question: "Kim", answer: "Yazar, Yakup bey" },
+      { question: "Ne", answer: "Kişiyi anlayarak dünyayı onun gözüyle görmek ve insan ilişkilerinin olumlu olmasını sağlamak." },
+      { question: "Ne Zamana", answer: "-" },
+      { question: "Nerede", answer: "-" },
+      { question: "Nasıl", answer: "Empati kavramını derinlemesine açıklamak, örnekler vererek empatik dinlemeyi anlatmak" },
+      { question: "Niçin", answer: "Olumlu iletişimde empatik dinlemenin önemli yeri olduğu için" },
+    ]
+
+  },
+  {
+    title: "ÇEVREYİ KORUMA YÖNTEMLERİ",
+    wordCount: 482,
+    text: `
+&emsp;Tencerelerinizin dip çapı, ocağınızla uyum sağlamalı ve ocağınıza oturmalı. Düz olmayan, ateşe göre çok büyük, çok küçük tencere dipleri  %40 enerji kaybına sebep oluyor. Ayrıca çelik tencereler, emaye tencerelere oranla, yemeği daha çabuk pişirir. Çünkü ısıyı yüzde 35 oranındaki azınlıkta dışarı verir. Düdüklü tencereler daha da marifetlidir.
+&emsp;Her tencerenin bir kapağı vardır ve mutlaka kullanılmalıdır. Kapaklı tencere, aynı büyüklükteki kapaksız tencerenin harcadığı enerjinin dörtte biriyle yetinir. 
+&emsp;Elektrikli ocakları ve fırınları da kullanmasını bilmek gerekir. Kaynamadan sonra, tencereyi ocaktan indirmek yerine, ısıyı bir-iki ayar düşürmelisiniz. Yemek pişiminden 10-15 dakika kapatılan ocaklar sayesinde yüzde 15 enerji tasarrufu gerçekleştirmiş olursunuz. 
+&emsp;Buzdolabının yeri fırın ve kalorifer yakınları değildir. Buzdolabı, 25 derecelik bir mutfakta, 20 derecelik bir mutfağa nazaran yüzde 20 daha fazla elektrik tüketir. 
+&emsp;60 kilowatt’lık bir ampul yerine, floresan tipi, az enerji tüketen, çok verimli ampuller, her gece milyonlarca kilowatt’lık elektrik tasarrufu sağlar.
+&emsp;Televizyon ve video gibi elektronik cihazlarınızı, tembellik etmeyin kalkıp kapatın. Kumanda düğmesinden kapatılan “standby” sistemi, inanılmayacak oranda elektrik tüketimine sebep oluyor. Ayrıca bu cihazların “standby” durumundayken röntgen ışınları yaydığını ve elektromanyetik alanlar ürettiğini unutmayalım.
+&emsp;Çamaşır kurutma makinesi de neyin nesi? Bedava güneş ve rüzgâr varken avuç dolusu para harcamaya ne gerek var.
+&emsp;Aletlerinizi belirli aralıklarla kireçten arındırın, 1 mm kalınlıktaki kireç tabaka,%10 enerji ziyanı demek.
+&emsp;Bulaşık makinesinde “tasarruf Düğmesi”ni kullanmayı ihmal etmeyin. Bu şekilde en az %25 enerji tasarrufu yapabilirsiniz.
+&emsp;Kaynatılacak çamaşırlarda %40 enerji tasarrufu yapabilirsiniz.
+&emsp;Kalorifer radyatörlerinizi sık sık temizlemeyi unutmayın. Tozu alınmayan, iyi temizlenmeyen kalorifer radyatörleri, hem ısıyı tam kapasite iletmez, hem de eve hoş olmayan bir kokunun yayılmasına sebep olur.
+&emsp;Kış aylarında evlerinizi kıs ama kuvvetli bir hava akımıyla havalandırın. Duvarlarınızı asla soğutmayın.
+&emsp;Damlayan muslukları mutlaka onarın. Damlayan musluklar, ayda 170 ile 500 litre suyun boşa gitmesine neden oluyor. Bir başka deyişle 1 ila 3 küvet dolusu su demek bu. 
+&emsp;Çamaşırlarınızı, elektriğin en yoğun kullanıldığı saatlerde yıkamayın. İşlerin en yoğun olduğu saatlerde kullanılan çamaşır makinesi, elektrik santralleri ve su şebekelerindeki üretimi zorlar, işin daha az olduğu saatlerde ise, elektrik santrali üretim için daha fazla enerjiye gerek duymayacaktır.
+&emsp;Bebeklerin altını bağlamak için yıkanabilen kumaş bezler mi, yoksa atılabilecek kâğıt bezler mi kullanılmalı? Hangisi çevreye daha az zarar verir? Çevre temizliği ilgilenen bilim adamları, son günlerde yoğun şekilde tartışılan bu konuya kesin bir cevap veremiyorlar. Kumaş bezler, yıkarken enerji tüketimi ve su kirliliğini arttırırken, kâğıt bezler ağaç katliamını artırıyor. Bu durumda, kumaş bezlerin keseyi koruduğu kesin gibi gözüküyor. 
+&emsp;Tuvaletlere hoş koku veren çeşitli sprey ve taşlar var. Ancak bunlar çevre kirliliğine neden oluyor. Oysa tuvalete hoş bir koku yaymanın daha basit bir yolu var.  Ampulün üzerine sevdiğiniz bir parfümden sıkarsanız, lambayı yaktığınızda, her tuvalete girişinizde ampulün ısınmasıyla birlikte parfümün de etkisini fark edersiniz.
+&emsp;Bulaşık makineleri, sanıldığından daha az su tüketiyor. Elde yıkama daha çok enerji ve su tüketimine neden olurken, bulaşık makinesi özellikle kalabalık ailelerde yararlı oluyor.
+&emsp;Alışverişlerde karton veya pet şişeli meşrubatlar yerine cam şişeleri tercih edin. Konserveler için de aynısı söz konusu. Cam şişeler tam 60 kez yeniden kullanılabiliyor.
+    `,
+    questions: [
+      {
+        question: "Hangi tencereler yemeği diğer çeşitlerine oranla daha çabuk pişirirler?",
+        options: [
+          "Emaye tencereler",
+          "Çelik tencereler",
+          "Düdüklü tencereler",
+          "Tabanı düz olmayan tencereler",
+        ],
+        answer: 2
+      },
+      {
+        question: "Kapalı bir tencere aynı büyüklükteki kapaksız bir tencerenin harcadığı ……………… enerji ile yetinir.",
+        options: [
+          "1 / 2 ile yetinir.",
+          "1 / 3 ile yetinir.",
+          "1 / 4 ile yetinir.",
+          "1 / 5 ile yetinir."
+        ],
+        answer: 2
+      },
+      {
+        question: "Buzdolabı için ideal yer ve ısı ne olmalıdır?",
+        options: [
+          "Kalorifer yanında olmalı.",
+          "30 derecede mutfağa yakın yerde.",
+          "25 derecelik mutfak ortamında.",
+          "20 derecelik mutfak ortamında.",
+        ],
+        answer: 3
+      },
+      {
+        question: "Yemek pişiminden 10-15 dakika önce kapatılan ocaklar % 12 enerji tasarrufu sağlamış olur.",
+        options: [
+          "Doğru",
+          "Yanlış"
+        ],
+        answer: 1
+      },
+      {
+        question: "Parçada anlatılmak istenen konu nedir?",
+        options: [
+          "Enerjiden tasarruf edilmesi.",
+          "Çevrenin temiz tutulması.",
+          "Enerji tasarrufu ve çevrenin korunması.",
+          "Yeni enerji kaynaklarının bulunması.",
+        ],
+        answer: 2
+      },
+      {
+        question: "Bebeklerin altına bağlanan kumaş bezler mi yoksa kağıt bezler mi, hangisi çevreye daha az zarar verir?",
+        options: [
+          "Kumaş bezler.",
+          "Kağıt bezler.",
+          "Kesin bir cevap yok.",
+          "Her ikisi de aynı oranda.",
+        ],
+        answer: 2
+      },
+      {
+        question: "Ampulün üzerine sıkılan güzel koku ile hangi zararlı kullanım önlenir?",
+        options: [
+          "Fazla su tüketimi.",
+          "Tuvaletlerdeki spreylerin çevreyi kirletmesi.",
+          "Kaloriferlerdeki kötü kokuların odayı kirletmesi.",
+          "Fazla elektrik tüketimi.",
+        ],
+        answer: 1
+      },
+      {
+        question: "Aletlerimizden arındırmadığımız 1 mm. Kalınlığındaki kireç tabaka ne kadar enerji kaybına neden olur?",
+        options: [
+          "7 enerji kaybı.",
+          "%10 enerji kaybı.",
+          "%12 enerji kaybı.",
+          "%13 enerji kaybı.",
+        ],
+        answer: 1
+      },
+    ],
+    keyWords: "Enerji, Tüketim, Azaltmak, Fayda",
+    NK: [
+      { question: "Kim", answer: "-" },
+      { question: "Ne", answer: "Çevreyi koruma yöntemleri" },
+      { question: "Ne Zamana", answer: "Her zaman" },
+      { question: "Nerede", answer: "Dünyada" },
+      { question: "Nasıl", answer: "Tasarruf sağlayarak" },
+      { question: "Niçin", answer: "Enerji üretimini azaltmak için" },
+    ]
+  },
+  {
+    title: "YAĞMURDAKİ KEDİ",
+    wordCount: 694,
+    text: `
+&emsp;Otelde sadece iki Amerikalı kalıyordu. Odalarına gidip gelirken merdivende rastladıkları insanların hiçbirini tanımıyorlardı. Odaları ikinci kattaydı, deniz görüyordu. Parkta büyük palmiyeler ve yeşil sıralar vardı. İyi havalarda parkta daima sehpalı bir ressam bulunurdu. Ressamlar palmiyelerin biçimini, denize ve parka bakan otellerin parlak renklerini severlerdi. İtalyanlar çok uzaklardan savaş anıtını görmeye gelirlerdi. Bronzdan yapılmıştı anıt. Yağmurda pırıl pırıl olurdu. Yağmur yağıyordu. Palmiyelerden sular damlıyordu. Çakıl yollarda küçük gölcükler olmuştu. Yağmurda deniz uzun bir şerit halinde kıyıda çatlıyor, tekrar gelip çatlamak için geri çekiliyordu. Otomobiller, meydandan, savaş anıtının yanından gitmişlerdi. Meydanın karşı tarafındaki kahvenin kapısında bir garson durmuş, boş meydana bakıyordu.
+&emsp;Amerikalı kadın pencereden dışarı bakıyordu. Dışarıda tam onların penceresinin altında, sular damlayan yeşil masalardan birinin altına bir kedi sinmişti. Kedi üstüne sular damlamasın diye büzülüp bir biçime girmeye uğraşıyordu. "İnip şu kediciği alacağım" dedi Amerikalı kadın:
+&emsp;"Ben alayım" dedi kocası yattığı yerden. "Hayır, ben alırım. Islanmamak için masanın altında uğraşıp duruyor." Kocası yatağın ayakucundaki iki yastığın üstüne ayaklarını dikmiş, okumasını sürdürdü. "Islanma" dedi adam.
+&emsp;Kadın aşağı indi, otelin sahibi, kadın yazıhanenin önünden geçerken kalkıp eğildi. Masası yazıhanenin en dibindeydi. Yaşlı bir adamdı çok uzun boyluydu. "II pjove." Dedi kadın. Seviyordu otelciyi.
+&emsp;"Si, si Signora, brutto etmpo. Çok kötü hava."
+&emsp;Adam loş odanın en dibindeki masasının arkasında ayakta duruyordu. Adamı seviyordu kadın. Şikâyetleri büyük bir ciddiyetle dinleyişini seviyordu. Ağır başlığını seviyordu. Kendine hizmet etmek istemesini seviyordu. Kocaman yaşlı yüzünü, büyük ellerini seviyordu. 
+&emsp;Adamı severek, kapıyı açtı ve dışarı baktı. Yağmur daha şiddetli yağıyordu. Muşamba pelerinli bir adam kahveye doğru meydanı geçiyordu. Kedi herhalde sağ tarafta bir yerdeydi. Saçak altından yürüyebilirdi. Kadın kapıda dururken, arkasından bir şemsiye açılıverdi. Odalarına bakan hizmetçi kadındı.
+&emsp;"Islanmayın" gülümsedi. İtalyanca konuşuyordu. Kuşkusuz otelci göndermişti kadını.  Hizmetçi üstüne şemsiye tutaraktan kadın çakıl yoldan pencerelerinin altına dek yürüdü. Masa oradaydı, yağmurda yıkanmış, parlak yeşil olmuştu, ama kedi yoktu. Kadın bozuldu birden. Hizmetçi, kadına baktı.
+&emsp;"Ha perduto qualque cosa, Signora?"
+&emsp;"Ber kedi vardı." Dedi Amerikalı kadın.
+&emsp;"Bir kedi mi?"
+&emsp;"Si, il gatto."
+&emsp;"Bir kedi mi?" Hizmetçi güldü. "Yağmurda bir kedi?"
+&emsp;"Evet," dedi kadın, "masanın altındaydı." Sonra, "Ah, öyle istiyordum ki o kediyi. Bir kedicik istiyordum."
+&emsp;Kadın İngilizce konuşunca hizmetçinin yüzü asıldı.
+&emsp;"Gelin, Signora," dedi. "İçeri girelim. Islanacaksınız."
+&emsp;"Öyle" dedi Amerikalı kadın.
+&emsp;Çakıl patikadan yürüyerek döndüler, kadın kapıdan içeri girdi. Hizmetçi şemsiyeyi kapatmak için dışarıda kaldı. Amerikalı kadın yazıhanenin önünden geçerken patron, masasından eğildi. Kadının içinde bir şeyler kıpırdadı, güçlü ve küçük. Patronun bu biçim davranışından, kendisini hem pek ufak, hem de pek önemli hissediyordu. Bir an olağanüstü önemli biri sanıverdi kendini. Merdivenlerden çıktı. Odanın kapısını açtı. George yataktaydı, okuyordu.
+&emsp;"Kediyi aldın mı?" diye sordu, kitabı elinden bıraktı.
+&emsp;"Gitmiş."
+&emsp;"Kim bilir nereye gitti." dedi, gözlerini dinlendiriyordu.
+&emsp;Kadın yatağa oturdu.
+&emsp;"Öyle istiyordum ki," dedi, "Niye bu kadar çok istedim, bilmem. Zavallı kediciği çok istedim. Yağmurda zavallı bir kedicik olmanın hiç de hoş bir yanı yok." George yine okuyordu.
+&emsp;Kadın kalktı, tuvalet masasına, aynanın önüne, oturdu; bir el aynası alıp kendine baktı. Profilini inceledi, önce bir yanını sonra öteki yanını. Sonra da boyunun ve başının arkasını inceledi. "Saçımı uzatmayı düşünüyorum, ne dersin?" diye sordu, tekrar görünüşüne bakarak George başını kaldırdı, kızın ensesini gördü, oğlan çocuk gibi iyice kısacak kesilmişti. "Ben bu halini seviyorum." "Ben bıktım." dedi kadın. "Oğlan çocuğuna benzemekten bıktım." "George yatakta biçim değiştirdi. Kadın konuşmaya başladığından beri gözlerini ayırmamıştı. "Böyle çok iyisin." dedi.
+&emsp;Kadın aynayı tuvaletin üstüne bıraktı, pencereye gitti. Hava kararıyordu."Saçımı sımsıkı, dümdüz arkaya tarayıp, şöyle hissedebileceğim kocaman bir topuz yapmak istiyorum." dedi kadın. "Kucağında oturup, ben başını okşayınca mırlayan bir kedim olsun istiyorum." "Ha?"  dedi George yataktan. "Sonra sofrada kendi gümüş takımlarım olsun, mumlar olsun istiyorum. Sonra bahar gelsin, saçımı dışarıda bir aynanın önünde fırçalayayım istiyorum. Bir kedicik istiyorum, yeni elbiseler istiyorum." "Ay sus, bir şeyler bulsana okuyacak." dedi George.
+&emsp;Karısı pencereden bakıyordu. Şimdi hava iyice kararmıştı ve hâlâ palmiye ağaçlarına yağmur yağıyordu. "Ne olursa olsun bir kedi istiyorum." dedi, kadın. "Bir kedi istiyorum. Şimdi hemen bir kedi istiyorum. Uzun saçlarım ya da başka bir eğlence olmasa bile kedim olabilir." George kadını dinlemiyordu. Kitabını okuyordu o. Karısı pencereden dışarı baktı. Meydanın ışıkları yanmıştı.
+&emsp;Birisi kapıyı vurdu. "Avanti," dedi George. Başını kitaptan kaldırdı. Kapıda hizmetçi duruyordu. Kucağında sallanan, sımsıkı tuttuğu üç renkli bir kedi vardı. "Affedersiniz," dedi, "Patron bunu Signora'ya vermemi söyledi."
+    `,
+    questions: [
+      {
+        question: "Olay hangi ülkede geçiyor?",
+        options: [
+          "Amerika",
+          "İngiltere",
+          "İtalya",
+          "İspanya"
+        ],
+        answer: 2
+      },
+      {
+        question: "Amerikalı kadın saçları ile ilgili nasıl bir değişiklik düşünüyor?",
+        options: [
+          "Kestirmek",
+          "Boyatmak",
+          "Uzatmak",
+          "Değişiklik istemiyor",
+        ],
+        answer: 2
+      },
+      {
+        question: "Otelin hizmetçisi Amerikalı kadına ne getirdi?",
+        options: [
+          "Üzüm",
+          "Gümüş ayna",
+          "Kitap",
+          "Kedi",
+        ],
+        answer: 3
+      },
+      {
+        question: "Amerikalı kadının yağmurda dışarı çıkmasının nedeni nedir?",
+        options: [
+          "Yağmurda dolaşmayı seviyordu",
+          "Otelde çok sıkılmıştı",
+          "Masanın altındaki kediyi alacaktı",
+          "Savaş anıtını görmek istiyordu.",
+        ],
+        answer: 2
+      },
+      {
+        question: "Otelin sahibini aşağıdakilerden hangisi tanımlamıyor?",
+        options: [
+          "Yaşlı",
+          "Uzun boylu",
+          "Ağır başlı",
+          "Yakışıklı",
+        ],
+        answer: 3
+      },
+    ],
+    keyWords: "Yağmur, Kedi, Üzülmek, Duyarlı Otel Sahibi, Bulamamak, Kedi Bulundu",
+    NK: [
+      { question: "Kim", answer: "Amerikalı karı koca, Otel sahibi, Hizmetçi" },
+      { question: "Ne", answer: "Yağmurdaki kediyi almak" },
+      { question: "Ne Zamana", answer: "-" },
+      { question: "Nerede", answer: "İtalyada bir otel" },
+      { question: "Nasıl", answer: "Girdiği masanın altından çıkararak" },
+      { question: "Niçin", answer: "Yağmurda ıslanmasını üzüldüğü için" },
+    ]
   },
   // {
   //   title: "XXX",
