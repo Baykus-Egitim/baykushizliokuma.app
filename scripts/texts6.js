@@ -1217,8 +1217,8 @@ var texts = [
     title: "ÇEVREYİ KORUMA YÖNTEMLERİ",
     wordCount: 482,
     text: `
-&emsp;Tencerelerinizin dip çapı, ocağınızla uyum sağlamalı ve ocağınıza oturmalı. Düz olmayan, ateşe göre çok büyük, çok küçük tencere dipleri  %40 enerji kaybına sebep oluyor. Ayrıca çelik tencereler, emaye tencerelere oranla, yemeği daha çabuk pişirir. Çünkü ısıyı yüzde 35 oranındaki azınlıkta dışarı verir. Düdüklü tencereler daha da marifetlidir.
-&emsp;Her tencerenin bir kapağı vardır ve mutlaka kullanılmalıdır. Kapaklı tencere, aynı büyüklükteki kapaksız tencerenin harcadığı enerjinin dörtte biriyle yetinir. 
+&emsp;Tencerelerinizin dip çapı, ocağınızla uyum sağlamalı ve ocağınıza oturmalı. Düz olmayan, ateşe göre çok büyük, çok küçük tencere dipleri &percnt;40 enerji kaybına sebep oluyor. Ayrıca çelik tencereler, emaye tencerelere oranla, yemeği daha çabuk pişirir. Çünkü ısıyı yüzde ${35} oranındaki azınlıkta dışarı verir. Düdüklü tencereler daha da marifetlidir.
+&emsp;Her tencerenin bir kapağı vardır ve mutlaka kullanılmalıdır. Kapaklı tencere, aynı büyüklükteki kapaksız tencerenin harcadığı enerjinin dörtte biriyle yetinir.
 &emsp;Elektrikli ocakları ve fırınları da kullanmasını bilmek gerekir. Kaynamadan sonra, tencereyi ocaktan indirmek yerine, ısıyı bir-iki ayar düşürmelisiniz. Yemek pişiminden 10-15 dakika kapatılan ocaklar sayesinde yüzde 15 enerji tasarrufu gerçekleştirmiş olursunuz. 
 &emsp;Buzdolabının yeri fırın ve kalorifer yakınları değildir. Buzdolabı, 25 derecelik bir mutfakta, 20 derecelik bir mutfağa nazaran yüzde 20 daha fazla elektrik tüketir. 
 &emsp;60 kilowatt’lık bir ampul yerine, floresan tipi, az enerji tüketen, çok verimli ampuller, her gece milyonlarca kilowatt’lık elektrik tasarrufu sağlar.

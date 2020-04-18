@@ -159,6 +159,9 @@ String.prototype.turkishToLower = function () {
 function hasLetter(myString) {
   return /[A-Z]/i.test(myString);
 }
+function hasAlphaNumeric(myString) {
+  return /[A-Z0-9]/i.test(myString);
+}
 function hasNumber(myString) {
   return /\d/i.test(myString);
 }

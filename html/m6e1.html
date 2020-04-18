@@ -146,7 +146,7 @@
           if (hasLetter(paragraphs[i])) {
             var words = paragraphs[i].split(" ")
             for (var j = 0; j < words.length; ++j) {
-              if (hasLetter(words[j])) {
+              if (hasAlphaNumeric(words[j])) {
                 let word = words[j]
                 if (nonWords.indexOf(words[j + 1]) > -1 || nonWords.indexOf(words[j]) > -1) { word += " " + words[j + 1]; ++j }
                 if (j == words.length - 1) $("#playground").append(`<span class="word invisible">${word}<wbr><br></span>`)

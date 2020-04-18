@@ -136,7 +136,7 @@
       $("#playground > div").remove()
       var paragraphs = text.text.split("\n")
       for (var i = 0; i < paragraphs.length; ++i) {
-        if (hasLetter(paragraphs[i])) {
+        if (hasAlphaNumeric(paragraphs[i])) {
           $("#playground").append(`<div class="ml-2 mb-3"></div>`)
           var words = paragraphs[i].split(" ")
           for (var j = 0; j < words.length; ++j) {
@@ -203,7 +203,7 @@
         // console.log(rowIndex)
         // console.log(rowsNonFocused)
         let wordEl= $(`.word`).not(".invisible")[rowPos[rowIndex].words[randomInt(0, rowPos[rowIndex].words.length)]]
-        while(!hasLetter($(wordEl).text())) wordEl= $(`.word`).not(".invisible")[rowPos[rowIndex].words[randomInt(0, rowPos[rowIndex].words.length)]]
+        while(!hasAlphaNumeric($(wordEl).text())) wordEl= $(`.word`).not(".invisible")[rowPos[rowIndex].words[randomInt(0, rowPos[rowIndex].words.length)]]
         $(wordEl).addClass("border-solid")
         // $($(`.word`).not(".invisible")[rowPos[rowIndex].words[randomInt(0, rowPos[rowIndex].words.length)]]).addClass("border-solid")
         ++iteration
