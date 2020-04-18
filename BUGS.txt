@@ -9,3 +9,5 @@
 - m4e3 algrotihm check
 - m4e6: gölgeleme önce gölgele sonra göster
 - scrollable score modal on mobile
+- programlar tireler arası boşluk
+- m2e1: çerçeve yere yapışmıyor.
