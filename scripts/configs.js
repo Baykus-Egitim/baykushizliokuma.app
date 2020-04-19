@@ -144,7 +144,7 @@ var configs = [
   },
   {
     exerciseId: "m3e1",
-    startInfo: "Ekranda çıkan kelimeleri hızlı bir şekilde okuyun. Kelimeler birbiriyle aynı ise sağ tuşa, farklı ise sol tuşa basınız.",
+    startInfo: "Ekranda çıkan kelimeleri hızlı bir şekilde okuyun. Kelimeler birbiriyle aynı ise sol tuşa, farklı ise sağ tuşa basınız.",
     stats: [
       { id: "date", label: "Tarih" },
       { id: "speedLevel", label: "Hız" },
