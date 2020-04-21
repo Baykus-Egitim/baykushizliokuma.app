@@ -118,9 +118,6 @@
       `)
 
       $(".video-link").click(() => {
-        console.log(event.target)
-        console.log($(event.target).parent()[0])
-        console.log($(event.target).parent().parent()[0])
         const id = Number($(event.target).parent().parent().attr("id").replace("video", ""))
         // console.log(id)
         const video = `/videolar/Modül-${module}/small_aac_${id + 1}.mp4`
