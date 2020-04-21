@@ -1420,6 +1420,80 @@ var texts = [
       { question: "Niçin", answer: "Yağmurda ıslanmasını üzüldüğü için" },
     ]
   },
+  {
+    title: "THOMAS EDISON",
+    wordCount: 222,
+    text: `
+&emsp;Kimileri bazı peygamberleri, Edison ile kıyaslarlar: "Acaba hangisi üstün" diye? Karşılaştırma ne denli uyumludur bilinmez. Ama bir benzerlik olsa gerek: Birinciler, manevi karanlıkları aydınlatmaya çabalamışlar, ikincisi ise dünyamızın fiziksel karanlığını hâlâ ışıklandırmaktadır, belki de yüzyıllarca daha.
+&emsp;Edison, 1847 Şubat'ının 11'inde Amerika'da Ohio'ya bağlı Milan'da doğdu. Yedi çocuklu bir ailenin en küçüğüdür. Zekâsının üstünlüğünden dolayı normal çocukların okullarında dikiş tutturamadı. Nihayet öğretmen olan annesinden özel ders alarak yetişti. On yaşında iken ilk okuduğu kitaplar: Gibson'un "Roma İmparatorluğu'nun Çöküşü", Hume'un "İngiltere Tarihi" ve "Bilim Hayatı" gibi eserlerdir.
+&emsp;Tom, 1859'da trende meyve satmaya başladı. Bu sırada, ilk tren gazetesi "Weekly Herald" da basılarak yayınlandı. Kazara vagonda çıkardığı yangın işinin sonu oldu. Bir gün istasyon memurunun çocuğunu demiryolu üzerinde ezilmekten kurtardı. İstasyon memuru kedisine telgrafı öğreterek operatör olmasını sağladı. Fakat çok iş değiştirdi. Faraday'ın "Deneyler Kitabı’nı okurken bir telgraf hattından aynı zamanda birden fazla mesaj gönderilmesi imkânını buldu. 1864'de otomatik telgraf yazıcısının beratını aldı. Önce bir atölyede iken, sonra onu bir fabrikaya çevirdi. İcatları büyük para karşılığı satın alınıyordu. 1880 yılı, dünyamızın ilk ampul ile aydınlandığı mutlu yıllardan sayılır. Yüzlerce ampulle aydınlanan parktaki halka karşı gece töreni konuşması şöyleydi: "Size ışık getiren bu teli, aynı zamanda asansör, dikiş makinesi ve benzeri mekanik araçları çalıştırmak için, hatta pişirmek için kullanabileceksiniz." Nitekim bir kaç yıl sonra Edison'un kurduğu elektrik ışığı şirketleri bir araya gelerek General Electric Company'yi meydana getirdiler."
+&emsp;Tom, eşiyle beraber 1889'da Fransız devriminin yüzüncü yıldönümü dolayısıyla düzenlenen sergide bulunmak üzere Paris'e gitti. Gezdiği yerlerde kendisini törenlerle karşıladılar. Adına nişanlar ve soyluluk unvanları verildi. Günde on beş saat çalışıyordu. Mucit'e başarılarının sebebi sorulunca "%2 içe doğma, %98 de terleme" diye özetlemiştir.
+&emsp;Hayatı boyunca buluşları birbirini kovaladı. İlkyazı makinesini geliştirdi. Motor endüstrisi ile diğer alanlardaki buluşları yanında akümülatörün de babası oldu. Sinema kamerasında ışıkla resim gösterme cihazının patenti de ona aittir. Birinci Dünya Savaşı sırasında Deniz Müşavirlik Kurumu Başkanlığı'na atandı. Kırk kadar buluşu tam bu zamana rastlar. Bütün buluşları sürekli çalışmaya borçlu olduğunu söylemekle beraber yaşamının son gününe kadar çalışacağını ve asla emekli olmayacağını da belirtmiştir. Ortalama sayısı 1200 kadar tutan patentlerin tek sahibi Edison'dur. Bu toplam, adeta dünyadaki tüm mucitler arasında bir rekor sayılır. Buluşların mali değeri on beş milyon doları geçer. Fonograf ve radyo alıcısı hakkındaki patentini de bu arada saymak gerekir. Ömrünün son yıllarında sentetik kauçuk elde etmeye çalışıyordu. Yaşamında iki kez evlenmiş ve eşleri kendisini buluşları yolunda daima desteklemişlerdir. Altı çocuğu olmuştur.
+&emsp;Edison 1 Ağustos 1931 günü laboratuvarında volkanize kauçuk üretimi üzerinde deney yaparken fenalık geçirdi. O günden 18 gün sonra 84 yaşında dünyaya gözlerini yumdu. O akşam Başkan Hovver acı haberi radyo aracılığıyla duyurduğu zaman, ülkesindeki bütün hemşerileri Edison'un kendilerine armağanı olan elektrik ışıklarını bir süre söndürerek yasına topluca katıldılar. İşte bir düğmeyle insanoğluna kendini her an anımsatan bu insanlık hizmetkârını, sınırsız minnet ve şükranla tüm insanlar kafa ve gönüllerinden asla çıkarmayacaklardır. Darısı gelecek insanlık hizmetlerinin başına olsun.
+    `,
+    questions: [
+      {
+        question: "Dünyamız ilk kez ampülle ne zaman aydınlandı?",
+        options: [
+          "1847",
+          "1859",
+          "1880",
+          "1864",
+        ],
+        answer: 2
+      },
+      {
+        question: "Aşağıdaki kişilerden hangisiyle Edison arasında benzerlik söz konusudur?",
+        options: [
+          "Roma İmparatoru",
+          "Peygamberler",
+          "Faraday",
+          "Başkan Hovver",
+        ],
+        answer: 1
+      },
+      {
+        question: "Edison başarılarının asıl nedenini nasıl açıklamaktadır?",
+        options: [
+          "Yetenek",
+          "İçe doğma",
+          "Zekâsının çalışmasına",
+          "Sürekli çalışmasına",
+        ],
+        answer: 3
+      },
+      {
+        question: "Edison kaç patent sahibidir?",
+        options: [
+          "1000",
+          "1200",
+          "1300",
+          "1400",
+        ],
+        answer: 1
+      },
+      {
+        question: "Edison'un buluşları arasında aşağıdakilerden hangisi yer almaz?",
+        options: [
+          "Otomatik telgraf yazıcısı",
+          "Elektrik",
+          "Telefon",
+          "Akümülatör",
+        ],
+        answer: 2
+      },
+    ],
+    keyWords: "Işık, Edison, Çalışmak, İcat, Patent",
+    NK:[
+  {question: "Kim", answer: "Edison, Başkan Hovver, İstasyon memuru, Annesi"},
+  {question: "Ne", answer: "Edison'un başarılarla ve çalışmayla dolu hayatı"},
+  {question: "Ne Zamana", answer: "1847-1931 arası, Edison'un ölümünden sonra"},
+  {question: "Nerede", answer: "Milan, Labaratuvarda, Paris, Park"},
+  {question: "Nasıl", answer: "Edison'un hayatındaki önemli olaylar kranolojik sırayla anlatılmış"},
+  {question: "Niçin", answer: "Edison emeğiyle çalışmasıyla birçok başarıya imza atmıştır"},
+    ]
+
+  },
   // {
   //   title: "XXX",
   //   wordCount: 222,
